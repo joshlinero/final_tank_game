@@ -1,0 +1,103 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use WORK.tank_const.all;
+
+entity pixelGenerator is
+	port(
+			clk, ROM_clk, rst_n, video_on, eof 				: in std_logic;
+			pixel_row, pixel_column						    : in std_logic_vector(9 downto 0);
+			red_out, green_out, blue_out					: out std_logic_vector(7 downto 0)
+		);
+end entity pixelGenerator;
+
+architecture behavioral of pixelGenerator is
+
+    constant color_red    : std_logic_vector(2 downto 0) := TANK_1_COLOR;
+    constant color_green  : std_logic_vector(2 downto 0) := "001";
+    constant color_blue   : std_logic_vector(2 downto 0) := "010";
+    constant color_yellow : std_logic_vector(2 downto 0) := "011";
+    constant color_magenta: std_logic_vector(2 downto 0) := "100";
+    constant color_cyan   : std_logic_vector(2 downto 0) := "101";
+    constant color_black  : std_logic_vector(2 downto 0) := "110";
+    constant color_white  : std_logic_vector(2 downto 0) := "111";
+
+
+    -- Tank control signals
+    signal colorAddress   : std_logic_vector (2 downto 0);
+    signal color          : std_logic_vector (23 downto 0);
+    signal pixel_row_int, pixel_column_int : natural;
+    signal x_start        : natural := (320 - (TANK_WIDTH / 2));
+    signal y_start        : natural := (470 - TANK_HIEGHT);
+    signal pulse_out      : std_logic;
+    signal direction      : std_logic := '1';
+
+    -- Component declarations
+    component colorROM is
+        port(
+            address : in std_logic_vector(2 downto 0);
+            clock   : in std_logic := '1';
+            q       : out std_logic_vector(23 downto 0)
+        );
+    end component colorROM;
+
+    component pll_counter is
+        port(
+            clk       : in std_logic;
+            rst_n     : in std_logic;
+            pulse_out : out std_logic
+        );
+    end component pll_counter;
+
+
+begin
+
+    --------------------------------------------------------------------------------------------
+    -- Tank movement process
+   move_tank : process(clk, rst_n, pulse_out, x_start, direction)
+	begin
+		 if rst_n = '0' then
+			  x_start <= (320 - (TANK_WIDTH / 2)); -- Reset x_start
+			  direction <= '1';
+		 elsif rising_edge(clk) then
+			  -- Default assignment to prevent latches
+			  x_start <= x_start;
+			  direction <= direction;
+			  if pulse_out = '1' then
+					if direction = '1' then
+						 if (x_start + TANK_WIDTH >= 640) then -- Hit right boundary
+							  direction <= '0'; -- Reverse to left
+						 else
+							  x_start <= x_start + to_integer(unsigned(speed));
+						 end if;
+					else
+						 if x_start = 0 then -- Hit left boundary
+							  direction <= '1'; -- Reverse to right
+						 else
+							  x_start <= x_start - to_integer(unsigned(speed));
+						 end if;
+					end if;
+			  end if;
+		 end if;
+	end process move_tank;
+
+
+    --------------------------------------------------------------------------------------------
+    -- Pixel drawing process
+   pixelDraw : process(clk, rst_n)
+	begin
+		 if rst_n = '0' then
+			  colorAddress <= color_white; -- Default color
+		 elsif rising_edge(clk) then
+			  -- Default assignment to prevent latches
+			  colorAddress <= color_white;
+			  if (pixel_row_int > y_start and pixel_row_int < y_start + TANK_HIEGHT and 
+					pixel_column_int > x_start and pixel_column_int < x_start + TANK_WIDTH) then
+					colorAddress <= color_red;
+			  end if;
+		 end if;
+	end process pixelDraw;
+
+
+end architecture behavioral;

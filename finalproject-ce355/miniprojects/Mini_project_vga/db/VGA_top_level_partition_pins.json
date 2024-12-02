@@ -1,0 +1,125 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "VGA_RED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_RED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_GREEN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLUE[7]",
+					"strict" : false
+				},
+				{
+					"name" : "HORIZ_SYNC",
+					"strict" : false
+				},
+				{
+					"name" : "VERT_SYNC",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_BLANK",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

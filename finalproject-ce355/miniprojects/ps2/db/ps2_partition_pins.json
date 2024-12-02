@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "scan_code[0]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[1]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[2]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[3]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[4]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[5]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[6]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_code[7]",
+					"strict" : false
+				},
+				{
+					"name" : "scan_readyo",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hist3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hist2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hist1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hist0[7]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_data",
+					"strict" : false
+				},
+				{
+					"name" : "keyboard_clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

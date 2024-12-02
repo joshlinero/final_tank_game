@@ -1,0 +1,389 @@
+Analysis & Synthesis report for de2lcd
+Fri Feb 27 11:26:19 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |de2lcd|next_command
+  9. State Machine - |de2lcd|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Feb 27 11:26:19 2015      ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name                      ; de2lcd                                     ;
+; Top-level Entity Name              ; de2lcd                                     ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 90                                         ;
+;     Total combinational functions  ; 88                                         ;
+;     Dedicated logic registers      ; 70                                         ;
+; Total registers                    ; 70                                         ;
+; Total pins                         ; 16                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; de2lcd             ; de2lcd             ;
+; Family name                                                                ; Cyclone IV E       ; Stratix II         ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; Off                ; Off                ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; de2lcd.vhd                       ; yes             ; User VHDL File  ; C:/Users/ece-lab3/Downloads/miniprojectps2lcd/de2lcd/de2lcd.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 90        ;
+;                                             ;           ;
+; Total combinational functions               ; 88        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 40        ;
+;     -- 3 input functions                    ; 4         ;
+;     -- <=2 input functions                  ; 44        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 69        ;
+;     -- arithmetic mode                      ; 19        ;
+;                                             ;           ;
+; Total registers                             ; 70        ;
+;     -- Dedicated logic registers            ; 70        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 16        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; CLK_400HZ ;
+; Maximum fan-out                             ; 50        ;
+; Total fan-out                               ; 453       ;
+; Average fan-out                             ; 2.29      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |de2lcd                    ; 88 (88)           ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |de2lcd             ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2lcd|next_command                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
+; Name                       ; next_command.DISPLAY_CLEAR ; next_command.DISPLAY_OFF ; next_command.RESET3 ; next_command.HOLD ; next_command.RESET1 ; next_command.TOGGLE_E ; next_command.RETURN_HOME ; next_command.WRITE_CHAR10 ; next_command.WRITE_CHAR9 ; next_command.WRITE_CHAR8 ; next_command.WRITE_CHAR7 ; next_command.WRITE_CHAR6 ; next_command.WRITE_CHAR5 ; next_command.WRITE_CHAR4 ; next_command.WRITE_CHAR3 ; next_command.WRITE_CHAR2 ; next_command.WRITE_CHAR1 ; next_command.MODE_SET ; next_command.DISPLAY_ON ; next_command.FUNC_SET ; next_command.RESET2 ;
++----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
+; next_command.RESET2        ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 0                   ;
+; next_command.FUNC_SET      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 1                     ; 1                   ;
+; next_command.DISPLAY_ON    ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 1                       ; 0                     ; 1                   ;
+; next_command.MODE_SET      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR1   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR2   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR3   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR4   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR5   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR6   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR7   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR8   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR9   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.WRITE_CHAR10  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 1                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.RETURN_HOME   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 1                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.TOGGLE_E      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 1                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.RESET1        ; 0                          ; 0                        ; 0                   ; 0                 ; 1                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.HOLD          ; 0                          ; 0                        ; 0                   ; 1                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.RESET3        ; 0                          ; 0                        ; 1                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.DISPLAY_OFF   ; 0                          ; 1                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
+; next_command.DISPLAY_CLEAR ; 1                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
++----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2lcd|state                                                                                                                                                                                                                                                                                                                                                                                              ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
+; Name                ; state.DISPLAY_CLEAR ; state.DISPLAY_OFF ; state.RESET3 ; state.RESET2 ; state.HOLD ; state.TOGGLE_E ; state.RETURN_HOME ; state.WRITE_CHAR10 ; state.WRITE_CHAR9 ; state.WRITE_CHAR8 ; state.WRITE_CHAR7 ; state.WRITE_CHAR6 ; state.WRITE_CHAR5 ; state.WRITE_CHAR4 ; state.WRITE_CHAR3 ; state.WRITE_CHAR2 ; state.WRITE_CHAR1 ; state.MODE_SET ; state.DISPLAY_ON ; state.FUNC_SET ; state.RESET1 ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
+; state.RESET1        ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 0            ;
+; state.FUNC_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 1              ; 1            ;
+; state.DISPLAY_ON    ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 1                ; 0              ; 1            ;
+; state.MODE_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR1   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR2   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR3   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR4   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR5   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR6   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR7   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR8   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR9   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.WRITE_CHAR10  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 1                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.RETURN_HOME   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 1                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.TOGGLE_E      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 1              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.HOLD          ; 0                   ; 0                 ; 0            ; 0            ; 1          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.RESET2        ; 0                   ; 0                 ; 0            ; 1            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.RESET3        ; 0                   ; 0                 ; 1            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.DISPLAY_OFF   ; 0                   ; 1                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
+; state.DISPLAY_CLEAR ; 1                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
++---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; LCD_RW~reg0                           ; Stuck at GND due to stuck port data_in ;
+; next_command.RESET1                   ; Merged with next_command.HOLD          ;
+; next_command.TOGGLE_E                 ; Merged with next_command.HOLD          ;
+; next_command.HOLD                     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 70    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |de2lcd|CLK_COUNT_400HZ[17] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 16                          ;
+; cycloneiii_ff         ; 70                          ;
+;     ENA               ; 1                           ;
+;     SCLR              ; 20                          ;
+;     plain             ; 49                          ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 91                          ;
+;     arith             ; 19                          ;
+;         2 data inputs ; 19                          ;
+;     normal            ; 72                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 40                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.96                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Fri Feb 27 11:26:15 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de2lcd -c de2lcd
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file de2lcd.vhd
+    Info (12022): Found design unit 1: de2lcd-a
+    Info (12023): Found entity 1: de2lcd
+Info (12127): Elaborating entity "de2lcd" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at de2lcd.vhd(8): used implicit default value for signal "SEC_LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at de2lcd.vhd(45): inferring latch(es) for signal or variable "init", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "init" at de2lcd.vhd(49)
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "DATA_BUS[0]~synth"
+    Warning (13010): Node "DATA_BUS[1]~synth"
+    Warning (13010): Node "DATA_BUS[2]~synth"
+    Warning (13010): Node "DATA_BUS[3]~synth"
+    Warning (13010): Node "DATA_BUS[4]~synth"
+    Warning (13010): Node "DATA_BUS[5]~synth"
+    Warning (13010): Node "DATA_BUS[6]~synth"
+    Warning (13010): Node "DATA_BUS[7]~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "SEC_LED" is stuck at GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 107 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 91 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 560 megabytes
+    Info: Processing ended: Fri Feb 27 11:26:19 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+

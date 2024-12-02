@@ -1,0 +1,48 @@
+
+State Machine - |de2lcd|next_command
+Name next_command.DISPLAY_CLEAR next_command.DISPLAY_OFF next_command.RESET3 next_command.HOLD next_command.RESET1 next_command.TOGGLE_E next_command.RETURN_HOME next_command.WRITE_CHAR10 next_command.WRITE_CHAR9 next_command.WRITE_CHAR8 next_command.WRITE_CHAR7 next_command.WRITE_CHAR6 next_command.WRITE_CHAR5 next_command.WRITE_CHAR4 next_command.WRITE_CHAR3 next_command.WRITE_CHAR2 next_command.WRITE_CHAR1 next_command.MODE_SET next_command.DISPLAY_ON next_command.FUNC_SET next_command.RESET2 
+next_command.RESET2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+next_command.FUNC_SET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+next_command.DISPLAY_ON 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+next_command.MODE_SET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+next_command.WRITE_CHAR1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+next_command.WRITE_CHAR2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+next_command.WRITE_CHAR3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+next_command.WRITE_CHAR4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR9 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.WRITE_CHAR10 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.RETURN_HOME 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.TOGGLE_E 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.RESET1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.HOLD 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.RESET3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_command.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |de2lcd|state
+Name state.DISPLAY_CLEAR state.DISPLAY_OFF state.RESET3 state.RESET2 state.HOLD state.TOGGLE_E state.RETURN_HOME state.WRITE_CHAR10 state.WRITE_CHAR9 state.WRITE_CHAR8 state.WRITE_CHAR7 state.WRITE_CHAR6 state.WRITE_CHAR5 state.WRITE_CHAR4 state.WRITE_CHAR3 state.WRITE_CHAR2 state.WRITE_CHAR1 state.MODE_SET state.DISPLAY_ON state.FUNC_SET state.RESET1 
+state.RESET1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.FUNC_SET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.DISPLAY_ON 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.MODE_SET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WRITE_CHAR1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.WRITE_CHAR2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.WRITE_CHAR3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.WRITE_CHAR4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.WRITE_CHAR5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.WRITE_CHAR6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WRITE_CHAR7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_CHAR8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_CHAR9 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_CHAR10 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RETURN_HOME 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TOGGLE_E 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.HOLD 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RESET2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RESET3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -6.140
+TNS   : -237.555
+
+Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -2.760
+TNS   : -83.426
+
+Type  : Slow 1200mV 85C Model Setup 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -2.410
+TNS   : -29.807
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -2.335
+TNS   : -2.335
+
+Type  : Slow 1200mV 85C Model Removal 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : 2.814
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -92.950
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -2.693
+TNS   : -60.518
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -1.285
+TNS   : -29.555
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -5.522
+TNS   : -210.417
+
+Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -2.453
+TNS   : -72.396
+
+Type  : Slow 1200mV 0C Model Setup 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -2.068
+TNS   : -25.100
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -1.989
+TNS   : -1.989
+
+Type  : Slow 1200mV 0C Model Removal 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : 2.519
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -92.950
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -2.649
+TNS   : -60.474
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -1.285
+TNS   : -29.555
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.461
+TNS   : -82.194
+
+Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -0.801
+TNS   : -18.659
+
+Type  : Fast 1200mV 0C Model Setup 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -0.702
+TNS   : -2.846
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.101
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -0.701
+TNS   : -0.701
+
+Type  : Fast 1200mV 0C Model Removal 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : 1.421
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -93.805
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -1.000
+TNS   : -46.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -1.000
+TNS   : -23.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1|ready_set'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------
