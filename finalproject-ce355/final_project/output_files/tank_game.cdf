@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/output_files/") File("tank_game.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/output_files/") File("tank_game.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

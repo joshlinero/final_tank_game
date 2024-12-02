@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tank_game
-Mon Dec  2 11:31:41 2024
+Mon Dec  2 17:40:36 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -21,11 +21,14 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
  13. Source assignments for pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated
  14. Parameter Settings for User Entity Instance: pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component
  15. altsyncram Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "pixelGenerator:videoGen|tank_shape:shape_inst"
- 17. Port Connectivity Checks: "pixelGenerator:videoGen|tank_mover:mover_inst"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 16. Port Connectivity Checks: "pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2"
+ 17. Port Connectivity Checks: "pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2"
+ 18. Port Connectivity Checks: "pixelGenerator:videoGen|ps2:u_ps2"
+ 19. Port Connectivity Checks: "pixelGenerator:videoGen|tank_bullet_shape:shape_inst"
+ 20. Port Connectivity Checks: "pixelGenerator:videoGen|tank_mover:mover_inst"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -52,16 +55,16 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec  2 11:31:41 2024              ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec  2 17:40:36 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; tank_game                                          ;
 ; Top-level Entity Name              ; tank_game                                          ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 254                                                ;
-;     Total combinational functions  ; 233                                                ;
-;     Dedicated logic registers      ; 99                                                 ;
-; Total registers                    ; 99                                                 ;
-; Total pins                         ; 30                                                 ;
+; Total logic elements               ; 730                                                ;
+;     Total combinational functions  ; 664                                                ;
+;     Dedicated logic registers      ; 198                                                ;
+; Total registers                    ; 198                                                ;
+; Total pins                         ; 32                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 192                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                  ;
@@ -172,82 +175,97 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                        ;
-+-----------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path              ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                             ; Library ;
-+-----------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ../miniprojects/Mini_project_vga/vga_sync.vhd ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd ;         ;
-; ../miniprojects/Mini_project_vga/colorROM.vhd ; yes             ; User Wizard-Generated File             ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd ;         ;
-; ../tank_testing/tank_const.vhd                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/tank_const.vhd                ;         ;
-; ../tank_testing/pll_counter.vhd               ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/pll_counter.vhd               ;         ;
-; tank_game.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_game.vhd                ;         ;
-; pixelGenerator.vhd                            ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd           ;         ;
-; tank_mover.vhd                                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_mover.vhd               ;         ;
-; tank_shape.vhd                                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_shape.vhd               ;         ;
-; color_constants.vhd                           ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/color_constants.vhd          ;         ;
-; altsyncram.tdf                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                      ;         ;
-; stratix_ram_block.inc                         ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                               ;         ;
-; lpm_mux.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                         ;         ;
-; lpm_decode.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                      ;         ;
-; aglobal231.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                                      ;         ;
-; a_rdenreg.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                       ;         ;
-; altrom.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altrom.inc                                                                          ;         ;
-; altram.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altram.inc                                                                          ;         ;
-; altdpram.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                                        ;         ;
-; db/altsyncram_e481.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/db/altsyncram_e481.tdf       ;         ;
-; ../miniprojects/Mini_project_vga/colorROM.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif ;         ;
-+-----------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                        ;
++-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                                             ; Library ;
++-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../tank_testing/oneshot.vhd                   ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/oneshot.vhd                   ;         ;
+; ../tank_testing/keyboard.vhd                  ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/keyboard.vhd                  ;         ;
+; ../tank_testing/ps2.vhd                       ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd                       ;         ;
+; ../miniprojects/Mini_project_vga/vga_sync.vhd ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd ;         ;
+; ../miniprojects/Mini_project_vga/colorROM.vhd ; yes             ; User Wizard-Generated File             ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd ;         ;
+; ../tank_testing/tank_const.vhd                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/tank_const.vhd                ;         ;
+; ../tank_testing/pll_counter.vhd               ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd               ;         ;
+; tank_game.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_game.vhd                ;         ;
+; pixelGenerator.vhd                            ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd           ;         ;
+; tank_mover.vhd                                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_mover.vhd               ;         ;
+; tank_shape.vhd                                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_shape.vhd               ;         ;
+; color_constants.vhd                           ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/color_constants.vhd          ;         ;
+; tank_speed.vhd                                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd               ;         ;
+; bullet_mover.vhd                              ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/bullet_mover.vhd             ;         ;
+; fire_bullet.vhd                               ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd              ;         ;
+; altsyncram.tdf                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                                      ;         ;
+; stratix_ram_block.inc                         ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                               ;         ;
+; lpm_mux.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                                         ;         ;
+; lpm_decode.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                                      ;         ;
+; aglobal231.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                                                      ;         ;
+; a_rdenreg.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                       ;         ;
+; altrom.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altrom.inc                                                                                          ;         ;
+; altram.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altram.inc                                                                                          ;         ;
+; altdpram.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                                                        ;         ;
+; db/altsyncram_e481.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/db/altsyncram_e481.tdf       ;         ;
+; ../miniprojects/Mini_project_vga/colorROM.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif ;         ;
++-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                      ;
-+---------------------------------------------+------------------------------------+
-; Resource                                    ; Usage                              ;
-+---------------------------------------------+------------------------------------+
-; Estimated Total logic elements              ; 254                                ;
-;                                             ;                                    ;
-; Total combinational functions               ; 233                                ;
-; Logic element usage by number of LUT inputs ;                                    ;
-;     -- 4 input functions                    ; 62                                 ;
-;     -- 3 input functions                    ; 53                                 ;
-;     -- <=2 input functions                  ; 118                                ;
-;                                             ;                                    ;
-; Logic elements by mode                      ;                                    ;
-;     -- normal mode                          ; 88                                 ;
-;     -- arithmetic mode                      ; 145                                ;
-;                                             ;                                    ;
-; Total registers                             ; 99                                 ;
-;     -- Dedicated logic registers            ; 99                                 ;
-;     -- I/O registers                        ; 0                                  ;
-;                                             ;                                    ;
-; I/O pins                                    ; 30                                 ;
-; Total memory bits                           ; 192                                ;
-;                                             ;                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                  ;
-;                                             ;                                    ;
-; Maximum fan-out node                        ; VGA_SYNC:videoSync|pixel_clock_int ;
-; Maximum fan-out                             ; 71                                 ;
-; Total fan-out                               ; 1075                               ;
-; Average fan-out                             ; 2.58                               ;
-+---------------------------------------------+------------------------------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 730           ;
+;                                             ;               ;
+; Total combinational functions               ; 664           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 178           ;
+;     -- 3 input functions                    ; 130           ;
+;     -- <=2 input functions                  ; 356           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 254           ;
+;     -- arithmetic mode                      ; 410           ;
+;                                             ;               ;
+; Total registers                             ; 198           ;
+;     -- Dedicated logic registers            ; 198           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 32            ;
+; Total memory bits                           ; 192           ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; RESET_N~input ;
+; Maximum fan-out                             ; 107           ;
+; Total fan-out                               ; 2551          ;
+; Average fan-out                             ; 2.69          ;
++---------------------------------------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name     ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |tank_game                                   ; 233 (0)             ; 99 (0)                    ; 192         ; 0            ; 0       ; 0         ; 30   ; 0            ; |tank_game                                                                                                        ; tank_game       ; work         ;
-;    |VGA_SYNC:videoSync|                      ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|VGA_SYNC:videoSync                                                                                     ; VGA_SYNC        ; work         ;
-;    |pixelGenerator:videoGen|                 ; 174 (0)             ; 53 (0)                    ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen                                                                                ; pixelGenerator  ; work         ;
-;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors                                                                ; colorROM        ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481 ; work         ;
-;       |pll_counter:pll|                      ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|pll_counter:pll                                                                ; pll_counter     ; work         ;
-;       |tank_mover:mover_inst|                ; 77 (77)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst                                                          ; tank_mover      ; work         ;
-;       |tank_shape:shape_inst|                ; 70 (70)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_shape:shape_inst                                                          ; tank_shape      ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |tank_game                                   ; 664 (0)             ; 198 (0)                   ; 192         ; 0            ; 0       ; 0         ; 32   ; 0            ; |tank_game                                                                                                        ; tank_game         ; work         ;
+;    |VGA_SYNC:videoSync|                      ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|VGA_SYNC:videoSync                                                                                     ; VGA_SYNC          ; work         ;
+;    |pixelGenerator:videoGen|                 ; 605 (31)            ; 152 (0)                   ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen                                                                                ; pixelGenerator    ; work         ;
+;       |bullet_mover:mover_inst2|             ; 68 (68)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|bullet_mover:mover_inst2                                                       ; bullet_mover      ; work         ;
+;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors                                                                ; colorROM          ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481   ; work         ;
+;       |fire_bullet:fire_bullet_inst|         ; 23 (3)              ; 36 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst                                                   ; fire_bullet       ; work         ;
+;          |ps2:u_ps2|                         ; 20 (0)              ; 35 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2                                         ; ps2               ; work         ;
+;             |keyboard:u1|                    ; 18 (18)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1                             ; keyboard          ; work         ;
+;             |oneshot:pulser|                 ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|oneshot:pulser                          ; oneshot           ; work         ;
+;       |pll_counter:pll|                      ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|pll_counter:pll                                                                ; pll_counter       ; work         ;
+;       |tank_bullet_shape:shape_inst|         ; 341 (341)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_bullet_shape:shape_inst                                                   ; tank_bullet_shape ; work         ;
+;       |tank_mover:mover_inst|                ; 86 (86)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst                                                          ; tank_mover        ; work         ;
+;       |tank_speed:speed_ctrl|                ; 29 (14)             ; 31 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_speed:speed_ctrl                                                          ; tank_speed        ; work         ;
+;          |ps2:u_ps2|                         ; 15 (0)              ; 28 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2                                                ; ps2               ; work         ;
+;             |keyboard:u1|                    ; 13 (13)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1                                    ; keyboard          ; work         ;
+;             |oneshot:pulser|                 ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tank_game|pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|oneshot:pulser                                 ; oneshot           ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -260,14 +278,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; VGA_SYNC:videoSync|pixel_row[9]       ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                         ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Register name                                                                           ; Reason for Removal                                                                               ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|clock_enable ; Merged with pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|clock_enable     ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[7]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[7] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[6]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[6] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[5]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[5] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[4]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[4] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[3]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[3] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[2]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[2] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[1]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[1] ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|filter[0]           ; Merged with pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|filter[0] ;
+; VGA_SYNC:videoSync|pixel_row[9]                                                         ; Stuck at GND due to stuck port data_in                                                           ;
+; Total Number of Removed Registers = 10                                                  ;                                                                                                  ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -275,39 +302,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 99    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 198   ;
+; Number of registers using Synchronous Clear  ; 2     ;
 ; Number of registers using Synchronous Load   ; 31    ;
-; Number of registers using Asynchronous Clear ; 53    ;
+; Number of registers using Asynchronous Clear ; 91    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 75    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------+
-; Inverted Register Statistics                                            ;
-+---------------------------------------------------------------+---------+
-; Inverted Register                                             ; Fan out ;
-+---------------------------------------------------------------+---------+
-; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[8]~reg0 ; 6       ;
-; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[5]~reg0 ; 6       ;
-; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[4]~reg0 ; 6       ;
-; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[0]~reg0 ; 5       ;
-; pixelGenerator:videoGen|tank_mover:mover_inst|direction~reg0  ; 33      ;
-; Total number of inverted registers = 5                        ;         ;
-+---------------------------------------------------------------+---------+
++---------------------------------------------------------------------------+
+; Inverted Register Statistics                                              ;
++-----------------------------------------------------------------+---------+
+; Inverted Register                                               ; Fan out ;
++-----------------------------------------------------------------+---------+
+; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[8]~reg0   ; 9       ;
+; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[5]~reg0   ; 9       ;
+; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[4]~reg0   ; 9       ;
+; pixelGenerator:videoGen|tank_mover:mover_inst|x_start[0]~reg0   ; 10      ;
+; pixelGenerator:videoGen|tank_mover:mover_inst|direction~reg0    ; 35      ;
+; pixelGenerator:videoGen|tank_speed:speed_ctrl|speed_internal[0] ; 5       ;
+; Total number of inverted registers = 6                          ;         ;
++-----------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tank_game|VGA_SYNC:videoSync|v_count[6]                                  ;
-; 3:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst|x_start[11]~reg0 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst|x_start[8]~reg0  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tank_game|VGA_SYNC:videoSync|v_count[3]                                                                    ;
+; 3:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; Yes        ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst|x_start[16]~reg0                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|keyboard_clk_filtered ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|bullet_mover:mover_inst2|y_bullet[18]~reg0                               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2|keyboard:u1|INCNT[3]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2|keyboard:u1|INCNT[3]                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tank_game|pixelGenerator:videoGen|tank_mover:mover_inst|x_start[8]~reg0                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -400,31 +432,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Port Connectivity Checks: "pixelGenerator:videoGen|tank_shape:shape_inst" ;
-+----------------------+-------+----------+---------------------------------+
-; Port                 ; Type  ; Severity ; Details                         ;
-+----------------------+-------+----------+---------------------------------+
-; pixel_row[30..10]    ; Input ; Info     ; Stuck at GND                    ;
-; pixel_column[30..10] ; Input ; Info     ; Stuck at GND                    ;
-; y_start[8..6]        ; Input ; Info     ; Stuck at VCC                    ;
-; y_start[30..9]       ; Input ; Info     ; Stuck at GND                    ;
-; y_start[5..2]        ; Input ; Info     ; Stuck at GND                    ;
-; y_start[1]           ; Input ; Info     ; Stuck at VCC                    ;
-; y_start[0]           ; Input ; Info     ; Stuck at GND                    ;
-; tank_color           ; Input ; Info     ; Stuck at GND                    ;
-+----------------------+-------+----------+---------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:u_ps2"                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; hist3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pixelGenerator:videoGen|tank_mover:mover_inst"                                            ;
-+-------------+-------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type  ; Severity ; Details                                                                             ;
-+-------------+-------+----------+-------------------------------------------------------------------------------------+
-; speed[2..1] ; Input ; Info     ; Stuck at GND                                                                        ;
-; speed[0]    ; Input ; Info     ; Stuck at VCC                                                                        ;
-; direction   ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+-------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|fire_bullet:fire_bullet_inst|ps2:u_ps2"                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; hist3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|ps2:u_ps2"                                                         ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; scan_code   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; scan_readyo ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist3       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hist0       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|tank_bullet_shape:shape_inst" ;
++----------------------+-------+----------+----------------------------------------+
+; Port                 ; Type  ; Severity ; Details                                ;
++----------------------+-------+----------+----------------------------------------+
+; pixel_row[30..10]    ; Input ; Info     ; Stuck at GND                           ;
+; pixel_column[30..10] ; Input ; Info     ; Stuck at GND                           ;
+; y_start[8..6]        ; Input ; Info     ; Stuck at VCC                           ;
+; y_start[30..9]       ; Input ; Info     ; Stuck at GND                           ;
+; y_start[5..2]        ; Input ; Info     ; Stuck at GND                           ;
+; y_start[1]           ; Input ; Info     ; Stuck at VCC                           ;
+; y_start[0]           ; Input ; Info     ; Stuck at GND                           ;
+; tank_color           ; Input ; Info     ; Stuck at GND                           ;
++----------------------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|tank_mover:mover_inst"                                          ;
++-----------+-------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                             ;
++-----------+-------+----------+-------------------------------------------------------------------------------------+
+; direction ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+-------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -432,27 +500,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 99                          ;
-;     CLR               ; 22                          ;
+; boundary_port         ; 32                          ;
+; cycloneiii_ff         ; 198                         ;
+;     CLR               ; 60                          ;
 ;     CLR SLD           ; 31                          ;
-;     ENA               ; 21                          ;
-;     plain             ; 25                          ;
-; cycloneiii_lcell_comb ; 233                         ;
-;     arith             ; 145                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 97                          ;
-;         3 data inputs ; 47                          ;
-;     normal            ; 88                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 62                          ;
+;     ENA               ; 75                          ;
+;     SCLR              ; 2                           ;
+;     plain             ; 30                          ;
+; cycloneiii_lcell_comb ; 664                         ;
+;     arith             ; 410                         ;
+;         2 data inputs ; 307                         ;
+;         3 data inputs ; 103                         ;
+;     normal            ; 254                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 178                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.18                        ;
+; Max LUT depth         ; 9.40                        ;
+; Average LUT depth     ; 6.07                        ;
 +-----------------------+-----------------------------+
 
 
@@ -461,7 +529,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -471,49 +539,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Mon Dec  2 11:31:32 2024
+    Info: Processing started: Mon Dec  2 17:40:26 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tank_game -c tank_game
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/finalproject-ce355/miniprojects/mini_project_vga/vga_sync.vhd
-    Info (12022): Found design unit 1: VGA_SYNC-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 16
-    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/finalproject-ce355/miniprojects/mini_project_vga/colorrom.vhd
-    Info (12022): Found design unit 1: colorrom-SYN File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 52
-    Info (12023): Found entity 1: colorROM File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 42
-Info (12021): Found 2 design units, including 0 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/finalproject-ce355/tank_testing/tank_const.vhd
-    Info (12022): Found design unit 1: tank_const File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/tank_const.vhd Line: 5
-    Info (12022): Found design unit 2: tank_const-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/tank_const.vhd Line: 15
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/finalproject-ce355/tank_testing/pll_counter.vhd
-    Info (12022): Found design unit 1: pll_counter-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/pll_counter.vhd Line: 13
-    Info (12023): Found entity 1: pll_counter File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/tank_testing/pll_counter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/oneshot.vhd
+    Info (12022): Found design unit 1: oneshot-dd File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/oneshot.vhd Line: 14
+    Info (12023): Found entity 1: oneshot File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/oneshot.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/keyboard.vhd
+    Info (12022): Found design unit 1: keyboard-a File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/keyboard.vhd Line: 14
+    Info (12023): Found entity 1: keyboard File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/keyboard.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd
+    Info (12022): Found design unit 1: ps2-structural File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd Line: 20
+    Info (12023): Found entity 1: ps2 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/vga_sync.vhd
+    Info (12022): Found design unit 1: VGA_SYNC-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 16
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/colorrom.vhd
+    Info (12022): Found design unit 1: colorrom-SYN File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 52
+    Info (12023): Found entity 1: colorROM File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 42
+Info (12021): Found 2 design units, including 0 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/tank_const.vhd
+    Info (12022): Found design unit 1: tank_const File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/tank_const.vhd Line: 5
+    Info (12022): Found design unit 2: tank_const-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/tank_const.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd
+    Info (12022): Found design unit 1: pll_counter-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd Line: 13
+    Info (12023): Found entity 1: pll_counter File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tank_game.vhd
-    Info (12022): Found design unit 1: tank_game-structural File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_game.vhd Line: 17
-    Info (12023): Found entity 1: tank_game File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_game.vhd Line: 5
+    Info (12022): Found design unit 1: tank_game-structural File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_game.vhd Line: 19
+    Info (12023): Found entity 1: tank_game File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_game.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pixelgenerator.vhd
-    Info (12022): Found design unit 1: pixelGenerator-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 16
-    Info (12023): Found entity 1: pixelGenerator File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 8
+    Info (12022): Found design unit 1: pixelGenerator-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 17
+    Info (12023): Found entity 1: pixelGenerator File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tank_mover.vhd
-    Info (12022): Found design unit 1: tank_mover-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_mover.vhd Line: 17
-    Info (12023): Found entity 1: tank_mover File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_mover.vhd Line: 6
+    Info (12022): Found design unit 1: tank_mover-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_mover.vhd Line: 17
+    Info (12023): Found entity 1: tank_mover File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_mover.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file tank_shape.vhd
-    Info (12022): Found design unit 1: tank_shape-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_shape.vhd Line: 18
-    Info (12023): Found entity 1: tank_shape File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_shape.vhd Line: 7
+    Info (12022): Found design unit 1: tank_bullet_shape-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_shape.vhd Line: 21
+    Info (12023): Found entity 1: tank_bullet_shape File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_shape.vhd Line: 7
 Info (12021): Found 2 design units, including 0 entities, in source file color_constants.vhd
-    Info (12022): Found design unit 1: color_constants File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/color_constants.vhd Line: 4
-    Info (12022): Found design unit 2: color_constants-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/color_constants.vhd Line: 16
+    Info (12022): Found design unit 1: color_constants File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/color_constants.vhd Line: 4
+    Info (12022): Found design unit 2: color_constants-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/color_constants.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file tank_speed.vhd
+    Info (12022): Found design unit 1: tank_speed-Behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 16
+    Info (12023): Found entity 1: tank_speed File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file bullet_mover.vhd
+    Info (12022): Found design unit 1: bullet_mover-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/bullet_mover.vhd Line: 18
+    Info (12023): Found entity 1: bullet_mover File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/bullet_mover.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file fire_bullet.vhd
+    Info (12022): Found design unit 1: fire_bullet-Behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 16
+    Info (12023): Found entity 1: fire_bullet File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 6
 Info (12127): Elaborating entity "tank_game" for the top level hierarchy
-Info (12128): Elaborating entity "pixelGenerator" for hierarchy "pixelGenerator:videoGen" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_game.vhd Line: 47
-Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(21): used explicit default value for signal "y_start" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 21
-Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(24): used explicit default value for signal "tank_color" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 24
-Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(26): used explicit default value for signal "speed" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(39): object "pixel_row_int" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 39
-Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(39): object "pixel_column_int" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 39
-Info (12128): Elaborating entity "pll_counter" for hierarchy "pixelGenerator:videoGen|pll_counter:pll" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 81
-Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:videoGen|colorROM:colors" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 84
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
-Info (12130): Elaborated megafunction instantiation "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
-Info (12133): Instantiated megafunction "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Info (12128): Elaborating entity "pixelGenerator" for hierarchy "pixelGenerator:videoGen" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_game.vhd Line: 50
+Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(21): used explicit default value for signal "y_start" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 21
+Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(27): used explicit default value for signal "tank_color" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(32): object "ps2_scan_code" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(33): object "ps2_scan_ready" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(34): object "history0" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 34
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(34): object "history1" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 34
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(34): object "history2" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 34
+Warning (10036): Verilog HDL or VHDL warning at pixelGenerator.vhd(34): object "history3" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 34
+Info (12128): Elaborating entity "pll_counter" for hierarchy "pixelGenerator:videoGen|pll_counter:pll" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 146
+Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:videoGen|colorROM:colors" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 150
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Info (12130): Elaborated megafunction instantiation "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Info (12133): Instantiated megafunction "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "colorROM.mif"
@@ -528,27 +617,42 @@ Info (12133): Instantiated megafunction "pixelGenerator:videoGen|colorROM:colors
     Info (12134): Parameter "width_a" = "24"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_e481.tdf
-    Info (12023): Found entity 1: altsyncram_e481 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/db/altsyncram_e481.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_e481 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/db/altsyncram_e481.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_e481" for hierarchy "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113018): Width of data items in "colorROM.mif" is greater than the memory width. Truncating data items to fit in memory. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif Line: 23
-Info (12128): Elaborating entity "tank_mover" for hierarchy "pixelGenerator:videoGen|tank_mover:mover_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 88
-Info (12128): Elaborating entity "tank_shape" for hierarchy "pixelGenerator:videoGen|tank_shape:shape_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/pixelGenerator.vhd Line: 99
-Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:videoSync" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_game.vhd Line: 55
+Warning (113018): Width of data items in "colorROM.mif" is greater than the memory width. Truncating data items to fit in memory. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif Line: 23
+Info (12128): Elaborating entity "tank_mover" for hierarchy "pixelGenerator:videoGen|tank_mover:mover_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 154
+Info (12128): Elaborating entity "tank_bullet_shape" for hierarchy "pixelGenerator:videoGen|tank_bullet_shape:shape_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 165
+Info (12128): Elaborating entity "bullet_mover" for hierarchy "pixelGenerator:videoGen|bullet_mover:mover_inst2" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 179
+Warning (10492): VHDL Process Statement warning at bullet_mover.vhd(47): signal "bullet_internal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/bullet_mover.vhd Line: 47
+Info (12128): Elaborating entity "ps2" for hierarchy "pixelGenerator:videoGen|ps2:u_ps2" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 191
+Info (12128): Elaborating entity "keyboard" for hierarchy "pixelGenerator:videoGen|ps2:u_ps2|keyboard:u1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd Line: 47
+Info (12128): Elaborating entity "oneshot" for hierarchy "pixelGenerator:videoGen|ps2:u_ps2|oneshot:pulser" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/ps2.vhd Line: 57
+Info (12128): Elaborating entity "fire_bullet" for hierarchy "pixelGenerator:videoGen|fire_bullet:fire_bullet_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 206
+Warning (10036): Verilog HDL or VHDL warning at fire_bullet.vhd(20): object "history0" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at fire_bullet.vhd(20): object "history1" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at fire_bullet.vhd(20): object "history2" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at fire_bullet.vhd(20): object "history3" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/fire_bullet.vhd Line: 20
+Info (12128): Elaborating entity "tank_speed" for hierarchy "pixelGenerator:videoGen|tank_speed:speed_ctrl" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/pixelGenerator.vhd Line: 216
+Warning (10036): Verilog HDL or VHDL warning at tank_speed.vhd(20): object "history0" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at tank_speed.vhd(20): object "history1" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at tank_speed.vhd(20): object "history2" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at tank_speed.vhd(20): object "history3" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 20
+Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:videoSync" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_game.vhd Line: 58
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/final_project/tank_mover.vhd Line: 13
+Info (13000): Registers with preset signals will power-up high File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project/tank_speed.vhd Line: 55
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 310 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 789 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 256 logic cells
+    Info (21061): Implemented 733 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4823 megabytes
-    Info: Processing ended: Mon Dec  2 11:31:41 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Mon Dec  2 17:40:36 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 

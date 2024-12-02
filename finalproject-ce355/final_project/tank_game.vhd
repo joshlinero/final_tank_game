@@ -9,7 +9,9 @@ entity tank_game is
 	
 			--VGA 
 			VGA_RED, VGA_GREEN, VGA_BLUE 					: out std_logic_vector(7 downto 0); 
-			HORIZ_SYNC, VERT_SYNC, VGA_BLANK, VGA_CLK		: out std_logic
+			HORIZ_SYNC, VERT_SYNC, VGA_BLANK, VGA_CLK		: out std_logic;
+			
+			keyboard_clk, keyboard_data                  : in std_logic
 
 		);
 end entity tank_game;
@@ -20,7 +22,8 @@ component pixelGenerator is
 	port(
 			clk, ROM_clk, rst_n, video_on, eof 				: in std_logic;
 			pixel_row, pixel_column						    : in std_logic_vector(9 downto 0);
-			red_out, green_out, blue_out					: out std_logic_vector(7 downto 0)
+			red_out, green_out, blue_out					: out std_logic_vector(7 downto 0);
+			keyboard_clk, keyboard_data              : in std_logic
 		);
 end component pixelGenerator;
 
@@ -45,7 +48,7 @@ begin
 --------------------------------------------------------------------------------------------
 
 	videoGen : pixelGenerator
-		port map(CLOCK_50, VGA_clk_int, RESET_N, video_on_int, eof, pixel_row_int, pixel_column_int, VGA_RED, VGA_GREEN, VGA_BLUE);
+		port map(CLOCK_50, VGA_clk_int, RESET_N, video_on_int, eof, pixel_row_int, pixel_column_int, VGA_RED, VGA_GREEN, VGA_BLUE, keyboard_clk, keyboard_data);
 
 --------------------------------------------------------------------------------------------
 --This section should not be modified in your design.  This section handles the VGA timing signals

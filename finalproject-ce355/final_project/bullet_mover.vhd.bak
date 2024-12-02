@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use WORK.tank_const.all;
+
+entity bullet_mover is
+    port(
+        clk        : in std_logic;
+        rst_n      : in std_logic;
+        pulse_out  : in std_logic;
+        fire_bullet : in std_logic; -- Signal indicating button press to fire the bullet
+        y_bullet   : inout natural; -- Bullet's y-coordinate
+        bullet     : inout std_logic -- Bullet active flag
+    );
+end entity bullet_mover;
+
+architecture behavioral of bullet_mover is
+    constant SCREEN_TOP : natural := 0; -- Adjust based on screen dimensions
+begin
+    process(clk, rst_n)
+    begin
+        if rst_n = '0' then
+            bullet <= '0'; -- Reset bullet state to inactive
+            y_bullet <= 0; -- Reset bullet position
+        elsif rising_edge(clk) then
+            if pulse_out = '1' then
+                if fire_bullet = '1' and bullet = '0' then
+                    -- Fire the bullet: activate and set initial position
+                    bullet <= '1';
+                    y_bullet <= BULLET_START_Y; -- Assume BULLET_START_Y is defined in constants
+                elsif bullet = '1' then
+                    -- Move the bullet upward
+                    if y_bullet > SCREEN_TOP then
+                        y_bullet <= y_bullet - 1; -- Move bullet up by one pixel
+                    else
+                        -- Deactivate bullet if it moves off-screen
+                        bullet <= '0';
+                    end if;
+                end if;
+            end if;
+        end if;
+    end process;
+end architecture behavioral;

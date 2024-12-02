@@ -1,5 +1,5 @@
 Flow report for tank_game
-Mon Dec  2 11:32:01 2024
+Mon Dec  2 17:40:56 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Mon Dec  2 11:31:58 2024              ;
+; Flow Status                        ; Successful - Mon Dec  2 17:40:53 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; tank_game                                          ;
 ; Top-level Entity Name              ; tank_game                                          ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE115F29C7                                      ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 246 / 114,480 ( < 1 % )                            ;
-;     Total combinational functions  ; 233 / 114,480 ( < 1 % )                            ;
-;     Dedicated logic registers      ; 99 / 114,480 ( < 1 % )                             ;
-; Total registers                    ; 99                                                 ;
-; Total pins                         ; 30 / 529 ( 6 % )                                   ;
+; Total logic elements               ; 711 / 114,480 ( < 1 % )                            ;
+;     Total combinational functions  ; 666 / 114,480 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 198 / 114,480 ( < 1 % )                            ;
+; Total registers                    ; 198                                                ;
+; Total pins                         ; 32 / 529 ( 6 % )                                   ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                    ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2024 11:31:32 ;
+; Start date & time ; 12/02/2024 17:40:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tank_game           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2543711158273.173316069223068          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 2543711158273.173318282611508          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -94,11 +94,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4823 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:12     ; 1.0                     ; 5866 MB             ; 00:00:21                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4704 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4881 MB             ; 00:00:02                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:43                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4819 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:13     ; 1.0                     ; 5865 MB             ; 00:00:25                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4698 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4886 MB             ; 00:00:02                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
