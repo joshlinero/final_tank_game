@@ -10,40 +10,52 @@ entity bullet_mover is
         pulse_out   : in std_logic;
         fire_bullet : in std_logic; -- Signal indicating button press to fire the bullet
         y_bullet    : inout natural; -- Bullet's y-coordinate
+        x_start     : in natural; -- Initial x-coordinate of the bullet
+        x_bullet    : out natural; -- Current x-coordinate of the bullet
         bullet      : out std_logic  -- Bullet active flag
     );
 end entity bullet_mover;
 
 
 architecture behavioral of bullet_mover is
-    signal bullet_internal : std_logic := '0'; -- Internal signal for bullet active flag
-    constant SCREEN_TOP    : natural := 0; -- Adjust based on screen dimensions
+    signal bullet_active : std_logic := '0'; -- Internal flag for bullet state
+    signal y_bullet_reg  : natural := 0;     -- Register for y-coordinate
+    signal x_bullet_reg  : natural := 0;     -- Register for x-coordinate
 begin
-    --bullet <= bullet_internal; -- Assign internal signal to output port
-
+    -- Main process handling bullet logic
     process(clk, rst_n)
     begin
         if rst_n = '0' then
-            bullet_internal <= '0'; -- Reset bullet state to inactive
-				y_bullet <= 0; -- Reset position
+            -- Reset logic
+            bullet_active <= '0';
+            y_bullet_reg <= 0;
+            x_bullet_reg <= 0;
         elsif rising_edge(clk) then
-				y_bullet <= y_bullet;
             if pulse_out = '1' then
-                if fire_bullet = '1' and bullet_internal = '0' then
-                    -- Fire the bullet: activate and set initial position
-                    bullet_internal <= '1';
-                    y_bullet <= BULLET_START_Y; 
-                elsif bullet_internal = '1' then
-                    -- Move the bullet upward
-                    if y_bullet > SCREEN_TOP then
-                        y_bullet <= y_bullet - 1; -- Move bullet up by one pixel
+                -- Fire a new bullet if no bullet is active
+                if bullet_active = '0' and fire_bullet = '1' then
+                    bullet_active <= '1';         -- Activate bullet
+                    y_bullet_reg <= BULLET_START_Y; -- Set starting Y position
+                    x_bullet_reg <= x_start + 10; -- Set starting X position
+                end if;
+
+                -- Move the bullet upward if active
+                if bullet_active = '1' then
+                    if y_bullet_reg > SCREEN_TOP then
+                        y_bullet_reg <= y_bullet_reg - 3; -- Move bullet upward
                     else
-                        -- Deactivate bullet if it moves off-screen
-                        bullet_internal <= '0';
+                        -- Deactivate bullet when it reaches the top
+                        bullet_active <= '0';
+                        y_bullet_reg <= 0;
+                        x_bullet_reg <= 0;
                     end if;
                 end if;
             end if;
         end if;
-		  bullet <= bullet_internal; -- Assign internal signal to output port
     end process;
+
+    -- Update outputs
+    y_bullet <= y_bullet_reg;
+    x_bullet <= x_bullet_reg;
+    bullet <= bullet_active;
 end architecture behavioral;

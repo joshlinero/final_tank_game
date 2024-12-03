@@ -14,13 +14,14 @@ entity tank_bullet_shape is
         y_bullet       : in natural;
         tank_color     : in std_logic_vector(2 downto 0);
         bullet         : in std_logic;
+		  fire_bullet    : in std_logic;
         colorAddress   : out std_logic_vector(2 downto 0)
     );
 end entity tank_bullet_shape;
 
 architecture behavioral of tank_bullet_shape is
 begin
-    process(pixel_row, pixel_column, x_start, y_start, x_bullet, y_bullet, tank_color, bullet)
+    process(pixel_row, pixel_column, x_start, y_start, x_bullet, y_bullet, tank_color, bullet, fire_bullet)
     begin
         if bullet = '1' then
             -- Check bullet boundaries first for priority
@@ -35,8 +36,10 @@ begin
                    pixel_column >= x_start + (TANK_WIDTH / 2) - (TANK_GUNW / 2) and 
                    pixel_column <= x_start + (TANK_WIDTH / 2) + (TANK_GUNW / 2)) then
                 colorAddress <= tank_color; -- Tank gun color
-				elsif (pixel_row < 50) then
-					 colorAddress <= color_green;
+				--elsif fire_bullet = '1' then
+				--   if (pixel_row < 50 and pixel_column < 50) then
+				--		 colorAddress <= color_yellow;
+				--   end if;
             else
                 colorAddress <= color_white; -- Default background color
             end if;
@@ -49,6 +52,10 @@ begin
                    pixel_column >= x_start + (TANK_WIDTH / 2) - (TANK_GUNW / 2) and 
                    pixel_column <= x_start + (TANK_WIDTH / 2) + (TANK_GUNW / 2)) then
                 colorAddress <= tank_color; -- Tank gun color
+				elsif fire_bullet = '1' then
+				   if (pixel_row < 50 and pixel_column < 50) then
+						 colorAddress <= color_green;
+				   end if;
             else
                 colorAddress <= color_white; -- Default background color
             end if;

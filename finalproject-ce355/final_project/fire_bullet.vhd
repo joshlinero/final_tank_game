@@ -8,7 +8,7 @@ entity fire_bullet is
 		  keyboard_clk : in std_logic;
         keyboard_data : in std_logic;
         clk : in std_logic;
-        reset : in std_logic;
+        rst_n : in std_logic;
         fire_bullet : out std_logic
     );
 end fire_bullet;
@@ -38,7 +38,7 @@ begin
         keyboard_clk => keyboard_clk,
         keyboard_data => keyboard_data,
         clock_50MHz => clk,
-        reset => reset,
+        reset => rst_n,
         scan_code => ps2_scan_code,
         scan_readyo => ps2_scan_ready,
         hist3 => history3,
@@ -47,14 +47,14 @@ begin
         hist0 => history0
     );	
 		
-    process(clk, reset)
+    process(clk, rst_n, ps2_scan_ready)
     begin
-        if reset = '1' then
+        if rst_n = '1' then
             fire_flag <= '0';
         elsif rising_edge(clk) then
             if ps2_scan_ready = '1' then
                 case ps2_scan_code is
-                    when "00011101" => -- Key 'W'
+                    when "000101011" => -- Key 'W'
                         fire_flag <= '1'; -- Set fire flag
                     when others =>
                         fire_flag <= '0'; -- Reset fire flag if no match

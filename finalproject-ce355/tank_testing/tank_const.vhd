@@ -9,12 +9,14 @@ package tank_const is
 	 constant TANK_GUNW   : natural := 6;
 	 constant TANK_GUNH   : natural := 15;
 	 constant TANK_1_COLOR : std_logic_vector(2 downto 0) := "000";
-	 constant BULLET_H    : natural := 25;
-	 constant BULLET_W    : natural := 25;
-	 constant BULLET_START_Y : natural := 435;
+	 constant BULLET_H    : natural := 40;
+	 constant BULLET_W    : natural := 30;
+	 constant BULLET_START_Y : natural := 395;
 	 constant SPEED_SLOW   : std_logic_vector(2 downto 0) := "001";
     constant SPEED_MEDIUM : std_logic_vector(2 downto 0) := "010";
     constant SPEED_FAST   : std_logic_vector(2 downto 0) := "100";
+	 
+	 constant SCREEN_TOP    : natural := 0; 
 	 
     --Other constants, types, subroutines, components go here
 	 

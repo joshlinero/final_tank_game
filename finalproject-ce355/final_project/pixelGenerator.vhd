@@ -19,7 +19,7 @@ architecture behavioral of pixelGenerator is
     -- Tank control signals
     signal x_start        : natural := (320 - (TANK_WIDTH / 2));
     signal y_start        : natural := (470 - TANK_HIEGHT);
-	 signal x_bullet       : natural := 320;
+	 signal x_bullet       : natural := (320 - (BULLET_W / 2));
     signal y_bullet       : natural := (470 - TANK_HIEGHT - TANK_GUNH);
 	 
     signal direction      : std_logic := '1';
@@ -77,6 +77,7 @@ architecture behavioral of pixelGenerator is
 			  y_bullet       : in natural;
 			  tank_color     : in std_logic_vector(2 downto 0);
 			  bullet         : in std_logic;
+			  fire_bullet : in std_logic;
 			  colorAddress   : out std_logic_vector(2 downto 0)
 		 );
     end component tank_bullet_shape;
@@ -100,7 +101,9 @@ architecture behavioral of pixelGenerator is
             keyboard_data : in std_logic;
             clk : in std_logic;
             rst_n : in std_logic;
-            speed : out std_logic_vector(2 downto 0)
+            speed : out std_logic_vector(2 downto 0);
+				bullet : in std_logic;
+				fire_bullet : out std_logic
         );
     end component tank_speed;
 	 
@@ -111,20 +114,13 @@ architecture behavioral of pixelGenerator is
             pulse_out : in std_logic;
 				fire_bullet : in std_logic;
             y_bullet   : inout natural;
+				x_start     : in natural;
+		      x_bullet    : out natural;
             bullet     : out std_logic
         );
     end component bullet_mover;
 	 
 -- Add the fire_bullet component declaration
-	component fire_bullet is
-		 port(
-			  keyboard_clk : in std_logic;
-           keyboard_data : in std_logic;
-			  clk : in std_logic;
-			  reset : in std_logic;
-			  fire_bullet : out std_logic
-		 );
-	end component fire_bullet;
 	
 	-- Add this signal for the fire_bullet output
 	signal fire_bullet_signal : std_logic;
@@ -139,8 +135,6 @@ begin
     -- Convert pixel positions to integers
     pixel_row_int <= to_integer(unsigned(pixel_row));
     pixel_column_int <= to_integer(unsigned(pixel_column));
-	 
-    x_bullet <= x_start + (TANK_WIDTH / 2);
 
     -- PLL Counter
     pll : pll_counter
@@ -172,6 +166,7 @@ begin
 				y_bullet     => y_bullet,
             tank_color   => tank_color,
 				bullet       => bullet,
+				fire_bullet  => fire_bullet_signal,
             colorAddress => colorAddress
         );
 
@@ -183,6 +178,8 @@ begin
             pulse_out => pulse_out,
             fire_bullet => fire_bullet_signal, -- Triggered by fire_bullet module
             y_bullet   => y_bullet,
+				x_start    => x_start,
+		      x_bullet   => x_bullet,
             bullet     => bullet
         );
 
@@ -203,14 +200,6 @@ begin
         );
 
     -- Fire Bullet Logic
-    fire_bullet_inst : fire_bullet
-        port map(
-		      keyboard_clk => keyboard_clk,
-				keyboard_data => keyboard_data,
-            clk => clk,
-            reset => rst_n,
-            fire_bullet => fire_bullet_signal -- Output signal for firing
-        );
 
     -- Tank Controller
     speed_ctrl : tank_speed
@@ -219,7 +208,9 @@ begin
             keyboard_data => keyboard_data,
             clk => clk,
             rst_n => rst_n,
-            speed => speed -- Output speed signal for tank movement
+            speed => speed, -- Output speed signal for tank movement
+				bullet => bullet,
+				fire_bullet => fire_bullet_signal
         );
 
 end architecture behavioral;
