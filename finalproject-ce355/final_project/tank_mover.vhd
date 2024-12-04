@@ -28,14 +28,15 @@ begin
 
             if pulse_out = '1' then
                 if direction = '1' then
-                    if (x_start + TANK_WIDTH >= 640 and x_start + TANK_WIDTH < 680) then -- Hit right boundary
+                    if (x_start + TANK_WIDTH >= 640 and x_start + TANK_WIDTH < 690) then -- Hit right boundary
                         direction <= '0'; -- Reverse to left
                     else
                         x_start <= x_start + to_integer(unsigned(speed));
                     end if;
                 else
-                    if (x_start <= 0 or x_start >= 680) then -- Hit left boundary
+                    if (x_start <= 0 or x_start >= 690) then -- Hit left boundary
                         direction <= '1'; -- Reverse to right
+								x_start <= 0;
                     else
                         x_start <= x_start - to_integer(unsigned(speed));
                     end if;

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/finalproject-ce355/miniprojects/Mini_project_vga/") File("VGA_top_level.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/") File("VGA_top_level.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

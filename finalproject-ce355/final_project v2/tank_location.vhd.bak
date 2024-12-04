@@ -1,0 +1,49 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use work.tank_const.all;
+use work.game_library.all;
+
+entity tank_location is
+	port(
+		clk, rst_n, we  : in std_logic;
+		--x_coord		  : in natural;
+		--y_coord       : in natural;
+		position_in   : in position;
+		position_out  : out position;
+		speed_in      : in integer;
+		speed_out     : out integer
+	);	
+	generic(
+		tank_loc      : position 
+	);
+end entity tank_location;
+
+architecture behavioral of tank_location is
+	signal temp_pos     : position;
+	signal temp_speed   : integer;
+begin
+	
+	process(clk, rst_n)
+		
+	begin
+		if (rst_n = '1') then
+			temp_pos(0) <= tank_loc(0);
+			temp_pos(1) <= tank_loc(1);
+			temp_speed <= SPEED_SLOW;
+			
+		elsif (rising_edge(clk)) then
+			if (we = '1') then 
+				temp_pos <= position_in;
+				temp_speed <= speed_in;
+				
+			else 
+				position_out <= temp_pos;
+				speed_out <= temp_speed;
+				
+			end if;
+			
+		end if;	
+	end process;
+	
+end architecture behavioral;

@@ -1,6 +1,9 @@
 library IEEE;
 
 use IEEE.std_logic_1164.all;
+use work.game_library.all;
+use work.tank_const.all;
+
 
 entity VGA_top_level is
 	port(
@@ -20,7 +23,11 @@ component pixelGenerator is
 	port(
 			clk, ROM_clk, rst_n, video_on, eof 				: in std_logic;
 			pixel_row, pixel_column						    : in std_logic_vector(9 downto 0);
-			red_out, green_out, blue_out					: out std_logic_vector(7 downto 0)
+			red_out, green_out, blue_out					: out std_logic_vector(7 downto 0);
+			tank_1_pos 										: in position;
+			tank_1_display 								: in std_logic;
+			tank_2_pos 										: in position;
+			tank_2_display 								: in std_logic
 		);
 end component pixelGenerator;
 
@@ -38,14 +45,21 @@ signal pixel_row_int 										: std_logic_vector(9 downto 0);
 signal pixel_column_int 									: std_logic_vector(9 downto 0);
 signal video_on_int											: std_logic;
 signal VGA_clk_int											: std_logic;
-signal eof													: std_logic;
+signal eof													   : std_logic;
+signal posis1                                    : position;
+signal posis2                                    : position;
 
 begin
 
 --------------------------------------------------------------------------------------------
 
+	posis1(0) <= TANK_1_POS_X;
+   posis1(1) <= TANK_1_POS_Y;
+	posis2(0) <= TANK_2_POS_X;
+   posis2(1) <= TANK_2_POS_Y;
+
 	videoGen : pixelGenerator
-		port map(CLOCK_50, VGA_clk_int, RESET_N, video_on_int, eof, pixel_row_int, pixel_column_int, VGA_RED, VGA_GREEN, VGA_BLUE);
+		port map(CLOCK_50, VGA_clk_int, RESET_N, video_on_int, eof, pixel_row_int, pixel_column_int, VGA_RED, VGA_GREEN, VGA_BLUE, posis1, '1', posis2, '1');
 
 --------------------------------------------------------------------------------------------
 --This section should not be modified in your design.  This section handles the VGA timing signals

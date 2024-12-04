@@ -1,0 +1,50 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use work.game_components.all;
+use work.tank_const.all;
+
+entity bullet_location is
+	port(
+		clk, rst_n, we : in std_logic;
+		bull_pos_in    : in position;
+		bull_pos_out   : out position;
+		fired_in       : in std_logic;
+		fired_out      : out std_logic
+	);
+	generic(
+		bullet_loc      : position 
+	);
+end entity bullet_location;
+
+architecture behavioral of bullet is
+  
+  signal temp_pos    : position;
+  signal fired_flag  : std_logic;
+
+begin
+
+  process(clk, rst)
+  begin
+
+    if (rst_n = '1') then
+		temp_pos(0) <= bullet_loc(0);
+		temp_pos(1) <= bullet_loc(1);
+		fired_flag <= '0';
+		
+    elsif (rising_edge(clk)) then
+      if (we = '1') then
+        if (fired_in = '1') then
+          temp_pos <= bull_pos_in;
+        end if;
+		  
+		  fired_flag <= fired_in;
+
+      else
+        bull_pos_out <= bullet_loc;
+        fired_out <= fired_flag;
+		  
+      end if;
+    end if;
+  end process;
+end architecture behavioral;

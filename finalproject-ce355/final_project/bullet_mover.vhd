@@ -36,12 +36,12 @@ begin
                 if bullet_active = '0' and fire_bullet = '1' then
                     bullet_active <= '1';         -- Activate bullet
                     y_bullet_reg <= BULLET_START_Y; -- Set starting Y position
-                    x_bullet_reg <= x_start + 10; -- Set starting X position
+                    x_bullet_reg <= x_start + 5; -- Set starting X position
                 end if;
 
                 -- Move the bullet upward if active
                 if bullet_active = '1' then
-                    if y_bullet_reg > SCREEN_TOP then
+                    if y_bullet_reg >= SCREEN_TOP then
                         y_bullet_reg <= y_bullet_reg - 3; -- Move bullet upward
                     else
                         -- Deactivate bullet when it reaches the top

@@ -1,5 +1,5 @@
 Flow report for VGA_top_level
-Mon Nov 25 12:04:10 2024
+Tue Dec  3 19:53:18 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov 25 12:04:07 2024              ;
+; Flow Status                        ; Successful - Tue Dec  3 19:53:15 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; VGA_top_level                                      ;
 ; Top-level Entity Name              ; VGA_top_level                                      ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE115F29C7                                      ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 73 / 114,480 ( < 1 % )                             ;
-;     Total combinational functions  ; 60 / 114,480 ( < 1 % )                             ;
-;     Dedicated logic registers      ; 38 / 114,480 ( < 1 % )                             ;
-; Total registers                    ; 38                                                 ;
+; Total logic elements               ; 94 / 114,480 ( < 1 % )                             ;
+;     Total combinational functions  ; 85 / 114,480 ( < 1 % )                             ;
+;     Dedicated logic registers      ; 48 / 114,480 ( < 1 % )                             ;
+; Total registers                    ; 48                                                 ;
 ; Total pins                         ; 30 / 529 ( 6 % )                                   ;
 ; Total virtual pins                 ; 0                                                  ;
-; Total memory bits                  ; 96 / 3,981,312 ( < 1 % )                           ;
+; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                    ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                      ;
 +------------------------------------+----------------------------------------------------+
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/25/2024 12:03:44 ;
+; Start date & time ; 12/03/2024 19:52:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA_top_level       ;
 +-------------------+---------------------+
@@ -76,12 +76,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 2543711158273.173255782430384          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 2543711158273.173327717135008          ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                    ; --            ; --          ; eda_blast_fpga ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
@@ -91,11 +93,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4826 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:11     ; 1.0                     ; 5861 MB             ; 00:00:17                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4704 MB             ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4823 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:12     ; 1.0                     ; 5854 MB             ; 00:00:18                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4701 MB             ; 00:00:02                           ;
 ; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4867 MB             ; 00:00:02                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:38                           ;
+; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:40                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -20,7 +20,7 @@ architecture Behavioral of tank_speed is
     signal ps2_scan_code  : std_logic_vector(7 downto 0);
     signal ps2_scan_ready : std_logic;
     signal history0, history1, history2, history3 : std_logic_vector(7 downto 0);
-    signal speed_internal : std_logic_vector(2 downto 0) := "001"; -- Default speed
+    signal speed_internal : std_logic_vector(2 downto 0) := SPEED_SLOW; -- Default speed
 	 signal fire_flag : std_logic := '0';
 
     component ps2 is

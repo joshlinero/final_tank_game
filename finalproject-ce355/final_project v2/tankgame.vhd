@@ -138,9 +138,23 @@ architecture structure of tankgame is
 	signal VGA_clk_int	:	std_logic;
 	signal eof				:	std_logic;
 	
+	signal tank_1_init_pos : position;
+	signal tank_2_init_pos : position;
+	signal tank_1_bull_init_pos : position;
+	signal tank_2_bull_init_pos : position;
+	
 begin
 
 	reset <= not reset_n;
+	
+	tank_1_init_pos(0) <= TANK_1_POS_X;
+	tank_1_init_pos(1) <= TANK_1_POS_Y;
+	tank_2_init_pos(0) <= TANK_2_POS_X;
+	tank_2_init_pos(1) <= TANK_2_POS_Y;
+	tank_1_bull_init_pos(0) <= TANK_1_BULL_POS_X;
+	tank_1_bull_init_pos(1) <= TANK_1_BULL_POS_Y;
+	tank_2_bull_init_pos(0) <= TANK_2_BULL_POS_X;
+	tank_2_bull_init_pos(1) <= TANK_2_BULL_POS_Y;
 	
 	shoot_in_proc: process(clk, reset) is begin
 		case hist0 is
@@ -273,38 +287,35 @@ begin
 		
 		tank_1 : tank
 			generic map(
-				pos_x_init => TANK_1_INIT_POS_X,
-				pos_y_init => TANK_1_INIT_POS_Y
+				tank_loc => tank_1_init_pos
 			);
 			port map(
 				clk => clk,
 				rst => reset,
 				we => global_we,
-				pos_in => tank_1_curr_pos,
-				pos_out => tank_1_next_pos,
+				tank_pos_in => tank_1_curr_pos,
+				tank_pos_out => tank_1_next_pos,
 				speed_in => tank_1_curr_speed,
 				speed_out => tank_1_next_speed
 			);
 			
 		tank_2 : tank
 			generic map(
-				pos_x_init => TANK_2_INIT_POS_X,
-				pos_y_init => TANK_2_INIT_POS_Y
+				tank_loc => tank_2_init_pos
 			);
 			port map(
 				clk => clk,
 				rst => reset,
 				we => global_we,
-				pos_in => tank_2_curr_pos,
-				pos_out => tank_2_next_pos,
+				tank_pos_in => tank_2_curr_pos,
+				tank_pos_out => tank_2_next_pos,
 				speed_in => tank_2_curr_speed,
 				speed_out => tank_2_next_speed
 			);
 			
 		bul_1 : bullet
 			generic map(
-				default_pos_x => TANK_1_INIT_POS_X,
-				default_pos_y => TANK_1_INIT_POS_Y
+				bull_loc => tank_1_bull_init_pos
 			);
 			port map(
 				clk => clk,
@@ -318,8 +329,7 @@ begin
 		
 		bul_2 : bullet
 			generic map(
-				default_pos_x => TANK_2_INIT_POS_X,
-				default_pos_y => TANK_2_INIT_POS_Y
+				bull_loc => tank_2_bull_init_pos
 			);
 			port map(
 				clk => clk,

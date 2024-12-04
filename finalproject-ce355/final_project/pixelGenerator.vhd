@@ -16,17 +16,33 @@ end entity pixelGenerator;
 
 architecture behavioral of pixelGenerator is
 
-    -- Tank control signals
-    signal x_start        : natural := (320 - (TANK_WIDTH / 2));
-    signal y_start        : natural := (470 - TANK_HIEGHT);
-	 signal x_bullet       : natural := (320 - (BULLET_W / 2));
-    signal y_bullet       : natural := (470 - TANK_HIEGHT - TANK_GUNH);
-	 
-    signal direction      : std_logic := '1';
+	 signal tank_number        : std_logic;  
+
+    -- Tank 1 signals
+	 signal x_start1           : natural := (320 - (TANK_WIDTH / 2));
+	 signal y_start1				: natural := (470 - TANK_HIEGHT);
+	 signal x_bullet1          : natural;
+    signal y_bullet1          : natural;
+	 signal direction1         : std_logic := '1';
+	 signal colorAddress_tank1 : std_logic_vector(2 downto 0);
+	 signal tank_color1        : std_logic_vector(2 downto 0) := TANK_1_COLOR;
+	 signal speed1             : std_logic_vector(2 downto 0);
+	 signal fire_bullet_signal1: std_logic;
+	 signal bullet1            : std_logic;
+	
+	 -- Tank 2 signals
+	 signal x_start2				: natural := (320 + (TANK_WIDTH / 2));
+	 signal y_start2				: natural := (30 - TANK_HIEGHT);
+	 signal x_bullet2          : natural;
+    signal y_bullet2          : natural;
+	 signal direction2         : std_logic := '0';
+	 signal colorAddress_tank2 : std_logic_vector(2 downto 0);
+	 signal tank_color2        : std_logic_vector(2 downto 0) := TANK_2_COLOR;
+	 signal speed2              : std_logic_vector(2 downto 0);
+	 signal fire_bullet_signal2: std_logic;
+	 signal bullet2            : std_logic;
+		 
     signal pulse_out      : std_logic;
-    signal tank_color     : std_logic_vector(2 downto 0) := color_red;
-    signal colorAddress   : std_logic_vector(2 downto 0);
-    signal speed          : std_logic_vector(2 downto 0);
 
     -- Signals for PS2 component
     signal ps2_scan_code  : std_logic_vector(7 downto 0);
@@ -69,6 +85,7 @@ architecture behavioral of pixelGenerator is
 
     component tank_bullet_shape is
         port(
+		     tank_number    : in std_logic;
 			  pixel_row      : in natural;
 			  pixel_column   : in natural;
 			  x_start        : in natural;
@@ -120,11 +137,7 @@ architecture behavioral of pixelGenerator is
         );
     end component bullet_mover;
 	 
--- Add the fire_bullet component declaration
-	
-	-- Add this signal for the fire_bullet output
-	signal fire_bullet_signal : std_logic;
-	signal bullet : std_logic;
+
 begin
 
     -- Output pixel colors
@@ -142,46 +155,92 @@ begin
 
     -- Color ROM
     colors : colorROM
-        port map(address => colorAddress, clock => ROM_clk, q => color);
+        port map(address => colorAddress_tank1, clock => ROM_clk, q => color);
 
     -- Tank Mover
-    mover_inst : tank_mover
-        port map(
-            clk       => clk,
-            rst_n     => rst_n,
-            pulse_out => pulse_out,
-            speed     => speed, -- Controlled by tank_controller
-            x_start   => x_start,
-            direction => direction
+    -- Tank 1 mover
+	  mover_tank1 : tank_mover
+		  port map(
+			clk       => clk,
+			rst_n     => rst_n,
+			pulse_out => pulse_out,
+			speed     => speed1, -- Could be independent if needed
+			x_start   => x_start1,
+			direction => direction1
+		);
+
+	  -- Tank 2 mover
+		mover_tank2 : tank_mover
+		  port map(
+          clk       => clk,
+          rst_n     => rst_n,
+          pulse_out => pulse_out,
+          speed     => speed2, -- Could be independent if needed
+          x_start   => x_start2,
+          direction => direction2
         );
 
     -- Tank Shape and Bullet Shape
-    shape_inst : tank_bullet_shape
-        port map(
-            pixel_row    => pixel_row_int,
-            pixel_column => pixel_column_int,
-            x_start      => x_start,
-            y_start      => y_start,
-				x_bullet     => x_bullet,
-				y_bullet     => y_bullet,
-            tank_color   => tank_color,
-				bullet       => bullet,
-				fire_bullet  => fire_bullet_signal,
-            colorAddress => colorAddress
-        );
+    -- Tank 1 shape and bullet
+	shape_tank1 : tank_bullet_shape
+		port map(
+		  tank_number  => '0',	
+        pixel_row    => pixel_row_int,
+        pixel_column => pixel_column_int,
+        x_start      => x_start1,
+        y_start      => y_start1,
+        x_bullet     => x_bullet1, 
+        y_bullet     => y_bullet1, 
+        tank_color   => tank_color1,
+        bullet       => bullet1, 
+        fire_bullet  => fire_bullet_signal1, 
+        colorAddress => colorAddress_tank1
+    );
+
+	-- Tank 2 shape and bullet
+	shape_tank2 : tank_bullet_shape
+		port map(
+		  tank_number  => '1',	 
+        pixel_row    => pixel_row_int,
+        pixel_column => pixel_column_int,
+        x_start      => x_start2,
+        y_start      => y_start2,
+        x_bullet     => x_bullet2, 
+        y_bullet     => y_bullet2, 
+        tank_color   => tank_color2,
+        bullet       => bullet2, 
+        fire_bullet  => fire_bullet_signal2, 
+        colorAddress => colorAddress_tank2
+    );
+
 
     -- Bullet Mover
-    mover_inst2 : bullet_mover
-        port map(
-            clk       => clk,
-            rst_n     => rst_n,
-            pulse_out => pulse_out,
-            fire_bullet => fire_bullet_signal, -- Triggered by fire_bullet module
-            y_bullet   => y_bullet,
-				x_start    => x_start,
-		      x_bullet   => x_bullet,
-            bullet     => bullet
-        );
+    -- Tank 1 Bullet Mover
+	bullet_mover_tank1 : bullet_mover
+		port map(
+        clk         => clk,
+        rst_n       => rst_n,
+        pulse_out   => pulse_out,
+        fire_bullet => fire_bullet_signal1, -- Specific to Tank 1
+        y_bullet    => y_bullet1,
+        x_start     => x_start1,
+        x_bullet    => x_bullet1,
+        bullet      => bullet1
+    );
+
+	-- Tank 2 Bullet Mover
+	bullet_mover_tank2 : bullet_mover
+		port map(
+        clk         => clk,
+        rst_n       => rst_n,
+        pulse_out   => pulse_out,
+        fire_bullet => fire_bullet_signal2, -- Specific to Tank 2
+        y_bullet    => y_bullet2,
+        x_start     => x_start2,
+        x_bullet    => x_bullet2,
+        bullet      => bullet2
+    );
+
 
 
     -- PS2 Keyboard
@@ -201,17 +260,30 @@ begin
 
     -- Fire Bullet Logic
 
-    -- Tank Controller
-    speed_ctrl : tank_speed
-        port map(
-            keyboard_clk => keyboard_clk,
-            keyboard_data => keyboard_data,
-            clk => clk,
-            rst_n => rst_n,
-            speed => speed, -- Output speed signal for tank movement
-				bullet => bullet,
-				fire_bullet => fire_bullet_signal
-        );
+    -- Tank 1 Speed Control
+	speed_ctrl_tank1 : tank_speed
+		port map(
+        keyboard_clk => keyboard_clk,
+        keyboard_data => keyboard_data,
+        clk => clk,
+        rst_n => rst_n,
+        speed => speed1, -- For Tank 1
+        bullet => bullet1,
+        fire_bullet => fire_bullet_signal1
+    );
+
+		-- Tank 2 Speed Control
+	speed_ctrl_tank2 : tank_speed
+		port map(
+        keyboard_clk => keyboard_clk,
+        keyboard_data => keyboard_data,
+        clk => clk,
+        rst_n => rst_n,
+        speed => speed2, -- For Tank 2
+        bullet => bullet2,
+        fire_bullet => fire_bullet_signal2
+    );
+
 
 end architecture behavioral;
 

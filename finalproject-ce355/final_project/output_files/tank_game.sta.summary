@@ -2,44 +2,36 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -12.160
-TNS   : -22.667
+Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -7.984
+TNS   : -112.149
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -5.949
-TNS   : -482.981
+Slack : -6.080
+TNS   : -386.436
 
-Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -4.875
-TNS   : -151.879
-
-Type  : Slow 1200mV 85C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : -2.715
-TNS   : -30.824
-
-Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -3.687
-TNS   : -5.767
+Type  : Slow 1200mV 85C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -2.792
+TNS   : -37.247
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.385
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : 0.403
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
 Slack : 0.404
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : -2.240
-TNS   : -2.240
+Type  : Slow 1200mV 85C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.404
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : 2.712
+Type  : Slow 1200mV 85C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : -1.814
+TNS   : -1.814
+
+Type  : Slow 1200mV 85C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : 2.263
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
@@ -50,56 +42,44 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_cloc
 Slack : -2.693
 TNS   : -60.518
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
 Slack : -1.285
 TNS   : -29.555
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
 Slack : -1.285
 TNS   : -1.285
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -0.241
-TNS   : -2.526
-
-Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -11.264
-TNS   : -20.959
+Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -7.135
+TNS   : -98.247
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -5.306
-TNS   : -427.274
+Slack : -5.460
+TNS   : -338.094
 
-Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -4.341
-TNS   : -133.911
-
-Type  : Slow 1200mV 0C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : -2.379
-TNS   : -26.222
-
-Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -3.231
-TNS   : -5.031
+Type  : Slow 1200mV 0C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -2.505
+TNS   : -31.990
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.338
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : 0.353
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : 0.354
+Slack : 0.355
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : -1.910
-TNS   : -1.910
+Type  : Slow 1200mV 0C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.355
+TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : 2.431
+Type  : Slow 1200mV 0C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : -1.504
+TNS   : -1.504
+
+Type  : Slow 1200mV 0C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : 2.006
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
@@ -110,76 +90,60 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock
 Slack : -2.649
 TNS   : -60.474
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
 Slack : -1.285
 TNS   : -29.555
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
 Slack : -1.285
 TNS   : -1.285
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -0.320
-TNS   : -3.524
-
-Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -6.007
-TNS   : -11.081
+Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
+Slack : -3.425
+TNS   : -32.560
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -2.320
-TNS   : -166.698
+Slack : -2.461
+TNS   : -128.128
 
-Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -2.086
-TNS   : -54.781
-
-Type  : Fast 1200mV 0C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : -0.874
-TNS   : -3.236
-
-Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -1.919
-TNS   : -3.055
+Type  : Fast 1200mV 0C Model Setup 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : -0.953
+TNS   : -6.178
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.124
+Slack : 0.175
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : 0.180
+Slack : 0.182
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
-Slack : 0.181
+Type  : Fast 1200mV 0C Model Hold 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Slack : 0.183
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : -0.758
-TNS   : -0.758
+Type  : Fast 1200mV 0C Model Recovery 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : -0.525
+TNS   : -0.525
 
-Type  : Fast 1200mV 0C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
-Slack : 1.473
+Type  : Fast 1200mV 0C Model Removal 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
+Slack : 1.229
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -142.220
+TNS   : -144.863
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
 Slack : -1.000
 TNS   : -46.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|keyboard_clk_filtered'
 Slack : -1.000
 TNS   : -23.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl|ps2:b_ps2|keyboard:u1|ready_set'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pixelGenerator:videoGen|tank_speed:speed_ctrl_tank1|ps2:b_ps2|keyboard:u1|ready_set'
 Slack : -1.000
 TNS   : -1.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_column[0]'
-Slack : -0.046
-TNS   : -0.204
 
 ------------------------------------------------------------

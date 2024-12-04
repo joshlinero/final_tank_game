@@ -1,0 +1,120 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use work.tank_const.all;
+use work.game_library.all;
+
+
+entity game_update_logic is
+	port(
+		clk, rst_n, global_write_enable : in std_logic;
+
+		--Tank attribute inputs
+		tank_1_pos_in, tank_2_pos_in : in position;
+
+		--Tank attribute outputs
+		tank_1_pos_out, tank_2_pos_out : out position;
+		tank_1_display, tank_2_display : out std_logic;
+
+	);
+end entity game_update_logic;
+
+
+architecture behavioral of game_update_logic is
+
+	signal temp_tank_1_pos, temp_tank_2_pos : position;
+	signal tank_1_speed, tank_2_speed : natural := 5;
+	signal tank_1_dir, tank_2_dir : std_logic := '0';
+	
+	begin
+	
+	move_tank : process(clk, rst_n) is
+		variable tank_1_pos_temp, tank_2_pos_temp : natural;
+		variable tank_A_dir, tank_B_dir, tank_A_dir_flag, tank_B_dir_flag: std_logic := '0';
+	begin
+		if (rst = '1') then
+			temp_tank_1_pos(0) <= TANK_1_POS_X;
+			temp_tank_1_pos(1) <= TANK_1_POS_Y;
+			
+		elsif (rising_edge(clk)) then
+			if (global_write_enable = '1') then --read state
+				--tank A
+				tank_A_pos_temp := tank_A_pos_in(0);
+				if (tank_A_dir = '1') then --update position based on direction
+					-- go further right
+					tank_A_pos(0) <= tank_A_pos_temp + tank_A_speed_in;
+				else
+					-- go further left
+					tank_A_pos(0) <= tank_A_pos_temp - tank_A_speed_in;
+				end if;
+
+				--tank B
+				tank_B_pos_temp := tank_B_pos_in(0);
+				if (tank_B_dir = '1') then --update position based on direction
+					-- go further right
+					tank_B_pos(0) <= tank_B_pos_temp + tank_B_speed_in;
+				else
+					-- go further left
+					tank_B_pos(0) <= tank_B_pos_temp - tank_B_speed_in;
+				end if;
+
+				tank_A_pos(1) <= tank_A_pos_in(1);
+				tank_B_pos(1) <= tank_B_pos_in(1);
+				tank_A_dir_flag := '0';
+				tank_B_dir_flag := '0';
+			else 								--write state
+				--tank A
+				if (((tank_A_pos(0) - TANK_WIDTH/2) >= TANK_WIDTH_BUFFER) and ((tank_A_pos(0) + TANK_WIDTH/2) < (col_size - 1 - TANK_WIDTH_BUFFER))) then
+					--tank within bounds
+					tank_A_pos_out(0) <= tank_A_pos(0);
+					-- tank_A_pos_out(0) <= 800; --for debugging
+
+				else
+					--tank out of bounds
+					if (tank_A_dir_flag = '0') then
+						tank_A_dir := not tank_A_dir;
+						tank_A_dir_flag := '1';
+					else
+						tank_A_dir_flag := '1';
+					end if;
+
+					if ((tank_A_pos(0) + TANK_WIDTH/2) > (col_size - 1 - TANK_WIDTH_BUFFER)) then --position beyond right bound
+						tank_A_pos_out(0) <= col_size - 1 - TANK_WIDTH_BUFFER - TANK_WIDTH/2;
+						-- tank_A_pos_out(0) <= 800; --for debugging
+
+					else --position beneath left bound
+						tank_A_pos_out(0) <= 0 + TANK_WIDTH_BUFFER + TANK_WIDTH/2;
+						-- tank_A_pos_out(0) <= 800; --for debugging
+					end if;
+				end if;
+
+				--tank B
+				if ((tank_B_pos(0) - TANK_WIDTH/2) >= TANK_WIDTH_BUFFER and (tank_B_pos(0) + TANK_WIDTH/2) <= (col_size - 1 - TANK_WIDTH_BUFFER)) then
+					--tank within bounds
+					tank_B_pos_out(0) <= tank_B_pos(0);
+				else
+					--tank out of bounds
+					if (tank_B_dir_flag = '0') then
+						tank_B_dir := not tank_B_dir;
+						tank_B_dir_flag := '1';
+					else
+						tank_B_dir_flag := '1';
+					end if;
+
+					if ((tank_B_pos(0) + TANK_WIDTH/2) > (col_size - 1 - TANK_WIDTH_BUFFER)) then --position beyond right bound
+						tank_B_pos_out(0) <= col_size - 1 - TANK_WIDTH_BUFFER - TANK_WIDTH/2;
+					else --position beneath left bound
+						tank_B_pos_out(0) <= 0 + TANK_WIDTH_BUFFER + TANK_WIDTH/2;
+					end if;
+				end if;
+				-- tank_A_pos_out(0) <= 900;
+				-- tank_A_pos_out(1) <= 800; --for debugging
+				tank_A_pos_out(1) <= tank_A_pos(1); --fixed vertical value
+				tank_B_pos_out(1) <= tank_B_pos(1); --fixed vertical value
+			end if;
+
+		end if;
+	end process;
+
+end architecture behavioral;

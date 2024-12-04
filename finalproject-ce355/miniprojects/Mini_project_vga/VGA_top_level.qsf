@@ -43,11 +43,6 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:11:04  FEBRUARY 23, 2010"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Standard Edition"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
-set_global_assignment -name VHDL_FILE VGA_top_level.vhd
-set_global_assignment -name SOURCE_FILE colorROM.cmp
-set_global_assignment -name VHDL_FILE colorROM.vhd
-set_global_assignment -name VHDL_FILE pixelGenerator.vhd
-set_global_assignment -name VHDL_FILE vga_sync.vhd
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
@@ -86,4 +81,15 @@ set_location_assignment PIN_Y2 -to CLOCK_50
 set_location_assignment PIN_G13 -to HORIZ_SYNC
 set_location_assignment PIN_AB28 -to RESET_N
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE ../../tank_testing/pll_counter.vhd
+set_global_assignment -name VHDL_FILE "../../final_project v2/game_library.vhd"
+set_global_assignment -name VHDL_FILE ../../tank_testing/tank_const.vhd
+set_global_assignment -name VHDL_FILE VGA_top_level.vhd
+set_global_assignment -name SOURCE_FILE colorROM.cmp
+set_global_assignment -name VHDL_FILE colorROM.vhd
+set_global_assignment -name VHDL_FILE pixelGenerator.vhd
+set_global_assignment -name VHDL_FILE vga_sync.vhd
+set_global_assignment -name VHDL_FILE game_update_logic.vhd

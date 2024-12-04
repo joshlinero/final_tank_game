@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Dec  3 15:23:41 2024
+Analysis & Synthesis Status : Successful - Tue Dec  3 17:51:38 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 Revision Name : tank_game
 Top-level Entity Name : tank_game
 Family : Cyclone IV E
-Total logic elements : 666
-    Total combinational functions : 618
+Total logic elements : 686
+    Total combinational functions : 638
     Dedicated logic registers : 202
 Total registers : 202
 Total pins : 32
