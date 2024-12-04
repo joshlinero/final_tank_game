@@ -31,6 +31,13 @@ entity tankgame is
 		seg_out_2	:	out std_logic_vector(6 downto 0)
 		
 		-- LCD (to implement)
+		LCD_RS : out std_logic;
+		LCD_E  : out std_logic;
+		LCD_ON  : out std_logic;
+		RESET_LED : out std_logic;
+		SEC_LED : out std_logic;
+		LCD_RW : buffer std_logic;
+		DATA_BUS : inout std_logic_vector(7 DOWNTO 0);
 	);
 		
 end entity tankgame;
@@ -98,6 +105,16 @@ architecture structure of tankgame is
 	signal key_ready							:	std_logic;
 	signal bul_1_fix							:	position;
 	signal bul_2_fix							:	position;
+	
+	signal LCD_RS_signal : std_logic;
+	signal LCD_E_signal : std_logic;
+	signal LCD_ON_signal : std_logic;
+	signal RESET_LED_signal : std_logic;
+	signal SEC_LED_signal : std_logic;
+	signal LCD_RW_signal : std_logic;						
+	signal DATA_BUS_signal 	: std_logic_vector(7 downto 0);
+	signal winner_signal : std_logic;			
+	signal no_winner_signal : std_logic;
 	
 	component pixelgenerator is
 		port(
@@ -258,6 +275,16 @@ begin
 	
 	seg_out_1 <= segments_out_signal_1;
 	seg_out_2 <= segments_out_signal_2;
+	
+	no_winner_signal <= '1' when 
+	     ((score_1_signal < 3) and (score_2_signal < 3)) 
+		   else
+				'0';
+								
+	winner_signal <= '1' when 
+			(score_1_signal >= 3) 
+			else
+				'0';
 
 	reset <= not reset_n;
 	
@@ -477,6 +504,21 @@ begin
 		port map(
 			data_in => score_2_slv,
 			segments_out => segments_out_signal_2
+		);
+		
+		lcd_message : de2lcd
+		port map(
+			reset => reset_n,
+			clk_50Mhz => clk,
+		   LCD_RS => LCD_RS_signal,
+			LCD_E => LCD_E_signal,
+			LCD_ON => LCD_ON_signal,
+			RESET_LED => RESET_LED_signal,
+			SEC_LED => SEC_LED_signal,
+			LCD_RW => LCD_RW_signal,						
+			DATA_BUS	=> DATA_BUS_signal,			
+			winner => winner_signal,			
+			no_winner => no_winner_signal	
 		);
 	
 end architecture structure;
