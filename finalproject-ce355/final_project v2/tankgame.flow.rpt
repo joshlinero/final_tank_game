@@ -1,6 +1,6 @@
 Flow report for tankgame
-Wed Dec  4 10:21:48 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Wed Dec  4 12:28:21 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -38,26 +38,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------------+
-; Flow Summary                                                                            ;
-+------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Wed Dec  4 10:21:44 2024              ;
-; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
-; Revision Name                      ; tankgame                                           ;
-; Top-level Entity Name              ; tankgame                                           ;
-; Family                             ; Cyclone IV E                                       ;
-; Device                             ; EP4CE115F29C7                                      ;
-; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 2,667 / 114,480 ( 2 % )                            ;
-;     Total combinational functions  ; 2,476 / 114,480 ( 2 % )                            ;
-;     Dedicated logic registers      ; 815 / 114,480 ( < 1 % )                            ;
-; Total registers                    ; 815                                                ;
-; Total pins                         ; 47 / 529 ( 9 % )                                   ;
-; Total virtual pins                 ; 0                                                  ;
-; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                          ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                    ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                      ;
-+------------------------------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Flow Summary                                                                        ;
++------------------------------------+------------------------------------------------+
+; Flow Status                        ; Successful - Wed Dec  4 12:28:18 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; tankgame                                       ;
+; Top-level Entity Name              ; tankgame                                       ;
+; Family                             ; Cyclone IV E                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 2,905 / 114,480 ( 3 % )                        ;
+;     Total combinational functions  ; 2,806 / 114,480 ( 2 % )                        ;
+;     Dedicated logic registers      ; 914 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 914                                            ;
+; Total pins                         ; 61 / 529 ( 12 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/04/2024 10:21:08 ;
+; Start date & time ; 12/04/2024 12:27:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tankgame            ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2543711158273.173332926858612          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 277302806905695.173333687418848        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -92,11 +92,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4847 MB             ; 00:00:20                           ;
-; Fitter               ; 00:00:21     ; 1.1                     ; 5897 MB             ; 00:00:39                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4707 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4892 MB             ; 00:00:03                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:05                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4901 MB             ; 00:00:19                           ;
+; Fitter               ; 00:00:11     ; 1.2                     ; 6734 MB             ; 00:00:30                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4705 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.6                     ; 5024 MB             ; 00:00:02                           ;
+; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:53                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -105,10 +105,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

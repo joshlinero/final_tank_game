@@ -172,15 +172,59 @@
 					"strict" : false
 				},
 				{
+					"name" : "LCD_RS",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_E",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_LED",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50MHZ",
 					"strict" : false
 				},
 				{
 					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "reset_n",
 					"strict" : false
 				},
 				{

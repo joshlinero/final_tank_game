@@ -28,7 +28,7 @@ entity tankgame is
 		
 		-- Score
 		seg_out_1	:	out std_logic_vector(6 downto 0);
-		seg_out_2	:	out std_logic_vector(6 downto 0)
+		seg_out_2	:	out std_logic_vector(6 downto 0);
 		
 		-- LCD (to implement)
 		LCD_RS : out std_logic;
@@ -37,7 +37,7 @@ entity tankgame is
 		RESET_LED : out std_logic;
 		SEC_LED : out std_logic;
 		LCD_RW : buffer std_logic;
-		DATA_BUS : inout std_logic_vector(7 DOWNTO 0);
+		DATA_BUS : inout std_logic_vector(7 DOWNTO 0)
 	);
 		
 end entity tankgame;
@@ -244,6 +244,17 @@ architecture structure of tankgame is
 		);
 	end component leddcd;
 	
+	component de2lcd is
+		port(
+			reset, clk_50Mhz				: IN	STD_LOGIC;
+		 LCD_RS, LCD_E, LCD_ON, RESET_LED, SEC_LED		: OUT	STD_LOGIC;
+		 LCD_RW						: BUFFER STD_LOGIC;
+		 DATA_BUS				: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 winner              : in std_logic;
+		 no_winner              : in std_logic
+		);
+	end component de2lcd;
+	
 	
 	-- VGA signals
 	signal pixel_row_int	:	std_logic_vector(9 downto 0);
@@ -285,6 +296,14 @@ begin
 			(score_1_signal >= 3) 
 			else
 				'0';
+				
+	LCD_RS <= LCD_RS_signal; 
+	LCD_E <= LCD_E_signal;
+	LCD_ON <= LCD_ON_signal;
+	RESET_LED <= RESET_LED_signal;
+	SEC_LED <= SEC_LED_signal;
+	LCD_RW <= LCD_RW_signal;
+	DATA_BUS <= DATA_BUS_signal;
 
 	reset <= not reset_n;
 	
