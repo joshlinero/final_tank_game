@@ -83,7 +83,6 @@ set_location_assignment PIN_AB28 -to RESET_N
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_FILE ../../tank_testing/pll_counter.vhd
 set_global_assignment -name VHDL_FILE "../../final_project v2/game_library.vhd"
 set_global_assignment -name VHDL_FILE ../../tank_testing/tank_const.vhd
@@ -93,3 +92,4 @@ set_global_assignment -name VHDL_FILE colorROM.vhd
 set_global_assignment -name VHDL_FILE pixelGenerator.vhd
 set_global_assignment -name VHDL_FILE vga_sync.vhd
 set_global_assignment -name VHDL_FILE game_update_logic.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -5,17 +5,17 @@ use work.tank_const.all;
 
 package tank_const is
 
-    constant TANK_HIEGHT : natural := 20;
+    constant TANK_HEIGHT : natural := 20;
     constant TANK_WIDTH : natural := 30;
 	 constant TANK_GUNW   : natural := 6;
 	 constant TANK_GUNH   : natural := 15;
 	 constant TANK_1_POS_X : natural := 320 - (TANK_WIDTH / 2);
-	 constant TANK_1_POS_Y : natural := 470 - TANK_HIEGHT;
+	 constant TANK_1_POS_Y : natural := 470 - TANK_HEIGHT;
 	 constant TANK_2_POS_X : natural := (320 + (TANK_WIDTH / 2));
-	 constant TANK_2_POS_Y : natural := 30 - TANK_HIEGHT;
+	 constant TANK_2_POS_Y : natural := 30 - TANK_HEIGHT;
 	 constant TANK_1_BULL_POS_X : natural := TANK_1_POS_X + (TANK_WIDTH / 2) - (TANK_GUNW/2);
 	 constant TANK_1_BULL_POS_Y : natural := TANK_1_POS_Y - TANK_GUNH;
-	 constant TANK_2_BULL_POS_X : natural := TANK_2_POS_X + TANK_WIDTH / 2) - (TANK_GUNW/2);
+	 constant TANK_2_BULL_POS_X : natural := TANK_2_POS_X + (TANK_WIDTH / 2) - (TANK_GUNW/2);
 	 constant TANK_2_BULL_POS_Y : natural := TANK_2_POS_Y + TANK_GUNH;
 	 constant TANK_1_COLOR : std_logic_vector(2 downto 0) := "000";
 	 constant TANK_2_COLOR : std_logic_vector(2 downto 0) := "010";

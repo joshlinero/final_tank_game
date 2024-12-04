@@ -1,5 +1,5 @@
 Flow report for VGA_top_level
-Tue Dec  3 19:53:18 2024
+Tue Dec  3 21:35:51 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec  3 19:53:15 2024              ;
+; Flow Status                        ; Successful - Tue Dec  3 21:35:48 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; VGA_top_level                                      ;
 ; Top-level Entity Name              ; VGA_top_level                                      ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE115F29C7                                      ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 94 / 114,480 ( < 1 % )                             ;
-;     Total combinational functions  ; 85 / 114,480 ( < 1 % )                             ;
-;     Dedicated logic registers      ; 48 / 114,480 ( < 1 % )                             ;
-; Total registers                    ; 48                                                 ;
+; Total logic elements               ; 603 / 114,480 ( < 1 % )                            ;
+;     Total combinational functions  ; 594 / 114,480 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 135 / 114,480 ( < 1 % )                            ;
+; Total registers                    ; 135                                                ;
 ; Total pins                         ; 30 / 529 ( 6 % )                                   ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                          ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2024 19:52:51 ;
+; Start date & time ; 12/03/2024 21:35:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA_top_level       ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 2543711158273.173327717135008          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 2543711158273.173328332230984          ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
@@ -93,11 +93,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4823 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:12     ; 1.0                     ; 5854 MB             ; 00:00:18                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4701 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4867 MB             ; 00:00:02                           ;
-; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:40                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4835 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:14     ; 1.0                     ; 5866 MB             ; 00:00:25                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4704 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4871 MB             ; 00:00:02                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

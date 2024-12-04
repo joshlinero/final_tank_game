@@ -32,12 +32,6 @@ port(
 	clk: in std_logic );
 end component oneshot;
 
-component leddcd is
-port(
-	data_in      : in std_logic_vector(3 downto 0);
-	segments_out : out std_logic_vector(6 downto 0)
-);
-end component leddcd;
 
 signal scan2 : std_logic;
 signal scan_code2 : std_logic_vector( 7 downto 0 );
@@ -84,10 +78,6 @@ begin
 	end if;
 end process a1;
 
-led_display: leddcd port map(
-   data_in => scan_code2(3 downto 0), -- Use lower 4 bits of scan_code2
-   segments_out => segment_out
-);
 
 
 end architecture structural;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_top_level
-Tue Dec  3 19:53:00 2024
+Tue Dec  3 21:35:30 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -16,14 +16,16 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
   8. Analysis & Synthesis RAM Summary
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated
- 13. Parameter Settings for User Entity Instance: pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component
- 14. altsyncram Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "pixelGenerator:videoGen"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated
+ 14. Parameter Settings for User Entity Instance: pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "pixelGenerator:videoGen|game_update_logic:game_update_inst"
+ 17. Port Connectivity Checks: "pixelGenerator:videoGen"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +52,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  3 19:53:00 2024              ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  3 21:35:30 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; VGA_top_level                                      ;
 ; Top-level Entity Name              ; VGA_top_level                                      ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 106                                                ;
-;     Total combinational functions  ; 85                                                 ;
-;     Dedicated logic registers      ; 48                                                 ;
-; Total registers                    ; 48                                                 ;
+; Total logic elements               ; 615                                                ;
+;     Total combinational functions  ; 594                                                ;
+;     Dedicated logic registers      ; 135                                                ;
+; Total registers                    ; 135                                                ;
 ; Total pins                         ; 30                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 192                                                ;
@@ -175,12 +177,14 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path        ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                                                       ; Library ;
 +-----------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../../tank_testing/pll_counter.vhd      ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd                         ;         ;
 ; ../../final_project v2/game_library.vhd ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd                    ;         ;
 ; ../../tank_testing/tank_const.vhd       ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/tank_const.vhd                          ;         ;
 ; VGA_top_level.vhd                       ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/VGA_top_level.vhd      ;         ;
 ; colorROM.vhd                            ; yes             ; User Wizard-Generated File             ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd           ;         ;
 ; pixelGenerator.vhd                      ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd     ;         ;
 ; vga_sync.vhd                            ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd           ;         ;
+; game_update_logic.vhd                   ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd  ;         ;
 ; altsyncram.tdf                          ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                ;         ;
 ; stratix_ram_block.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                         ;         ;
 ; lpm_mux.inc                             ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                   ;         ;
@@ -195,51 +199,53 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                      ;
-+---------------------------------------------+------------------------------------+
-; Resource                                    ; Usage                              ;
-+---------------------------------------------+------------------------------------+
-; Estimated Total logic elements              ; 106                                ;
-;                                             ;                                    ;
-; Total combinational functions               ; 85                                 ;
-; Logic element usage by number of LUT inputs ;                                    ;
-;     -- 4 input functions                    ; 45                                 ;
-;     -- 3 input functions                    ; 11                                 ;
-;     -- <=2 input functions                  ; 29                                 ;
-;                                             ;                                    ;
-; Logic elements by mode                      ;                                    ;
-;     -- normal mode                          ; 67                                 ;
-;     -- arithmetic mode                      ; 18                                 ;
-;                                             ;                                    ;
-; Total registers                             ; 48                                 ;
-;     -- Dedicated logic registers            ; 48                                 ;
-;     -- I/O registers                        ; 0                                  ;
-;                                             ;                                    ;
-; I/O pins                                    ; 30                                 ;
-; Total memory bits                           ; 192                                ;
-;                                             ;                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                  ;
-;                                             ;                                    ;
-; Maximum fan-out node                        ; VGA_SYNC:videoSync|pixel_clock_int ;
-; Maximum fan-out                             ; 71                                 ;
-; Total fan-out                               ; 515                                ;
-; Average fan-out                             ; 2.37                               ;
-+---------------------------------------------+------------------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 615            ;
+;                                             ;                ;
+; Total combinational functions               ; 594            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 114            ;
+;     -- 3 input functions                    ; 155            ;
+;     -- <=2 input functions                  ; 325            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 179            ;
+;     -- arithmetic mode                      ; 415            ;
+;                                             ;                ;
+; Total registers                             ; 135            ;
+;     -- Dedicated logic registers            ; 135            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 30             ;
+; Total memory bits                           ; 192            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 90             ;
+; Total fan-out                               ; 2123           ;
+; Average fan-out                             ; 2.61           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                              ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name     ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |VGA_top_level                               ; 85 (0)              ; 48 (0)                    ; 192         ; 0            ; 0       ; 0         ; 30   ; 0            ; |VGA_top_level                                                                                                        ; VGA_top_level   ; work         ;
-;    |VGA_SYNC:videoSync|                      ; 58 (58)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|VGA_SYNC:videoSync                                                                                     ; VGA_SYNC        ; work         ;
-;    |pixelGenerator:videoGen|                 ; 27 (27)             ; 2 (2)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen                                                                                ; pixelGenerator  ; work         ;
-;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors                                                                ; colorROM        ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481 ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |VGA_top_level                               ; 594 (0)             ; 135 (0)                   ; 192         ; 0            ; 0       ; 0         ; 30   ; 0            ; |VGA_top_level                                                                                                        ; VGA_top_level     ; work         ;
+;    |VGA_SYNC:videoSync|                      ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|VGA_SYNC:videoSync                                                                                     ; VGA_SYNC          ; work         ;
+;    |pixelGenerator:videoGen|                 ; 535 (390)           ; 89 (2)                    ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen                                                                                ; pixelGenerator    ; work         ;
+;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors                                                                ; colorROM          ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481   ; work         ;
+;       |game_update_logic:game_update_inst|   ; 118 (118)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|game_update_logic:game_update_inst                                             ; game_update_logic ; work         ;
+;       |pll_counter:pll|                      ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_top_level|pixelGenerator:videoGen|pll_counter:pll                                                                ; pll_counter       ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -252,15 +258,81 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+-----------------------------------------+-----------------------------------------------------+
-; Register name                           ; Reason for Removal                                  ;
-+-----------------------------------------+-----------------------------------------------------+
-; pixelGenerator:videoGen|colorAddress[2] ; Merged with pixelGenerator:videoGen|colorAddress[0] ;
-; VGA_SYNC:videoSync|pixel_row[9]         ; Stuck at GND due to stuck port data_in              ;
-; Total Number of Removed Registers = 2   ;                                                     ;
-+-----------------------------------------+-----------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                     ;
++--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+; Register name                                                                        ; Reason for Removal                                                                              ;
++--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|tank_2_display            ; Stuck at VCC due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|tank_1_display            ; Stuck at VCC due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][31] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][30] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][29] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][28] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][27] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][26] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][25] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][24] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][23] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][22] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][21] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][20] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][19] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][18] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][17] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][16] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][15] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][14] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][13] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][12] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][11] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][10] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][9]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][5]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][4]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][3]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][2]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][0]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][31] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][30] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][29] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][28] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][27] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][26] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][25] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][24] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][23] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][22] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][21] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][20] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][19] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][18] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][17] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][16] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][15] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][14] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][13] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][12] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][11] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][10] ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][9]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][8]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][7]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][6]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][5]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][4]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][2]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][0]  ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][1]  ; Merged with pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][3] ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[1][3]  ; Merged with pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][1] ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][1]  ; Merged with pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][6] ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][6]  ; Merged with pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][7] ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][7]  ; Merged with pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][8] ;
+; pixelGenerator:videoGen|colorAddress[2]                                              ; Merged with pixelGenerator:videoGen|colorAddress[0]                                             ;
+; VGA_SYNC:videoSync|pixel_row[9]                                                      ; Stuck at GND due to stuck port data_in                                                          ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][8]  ; Stuck at GND due to stuck port data_in                                                          ;
+; Total Number of Removed Registers = 68                                               ;                                                                                                 ;
++--------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -268,23 +340,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 48    ;
+; Total registers                              ; 135   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 87    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 85    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_top_level|VGA_SYNC:videoSync|v_count[9] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                  ;
++-------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                   ; Fan out ;
++-------------------------------------------------------------------------------------+---------+
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][8] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][5] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][4] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][0] ; 10      ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][8] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][6] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][3] ; 5       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][2] ; 6       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][1] ; 8       ;
+; pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][0] ; 10      ;
+; Total number of inverted registers = 10                                             ;         ;
++-------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_top_level|VGA_SYNC:videoSync|v_count[9]                                                        ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |VGA_top_level|pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][25] ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |VGA_top_level|pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][16] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |VGA_top_level|pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][1]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |VGA_top_level|pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][4]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -377,6 +472,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pixelGenerator:videoGen|game_update_logic:game_update_inst" ;
++---------------------+-------+----------+-----------------------------------------------+
+; Port                ; Type  ; Severity ; Details                                       ;
++---------------------+-------+----------+-----------------------------------------------+
+; global_write_enable ; Input ; Info     ; Stuck at VCC                                  ;
++---------------------+-------+----------+-----------------------------------------------+
+
+
 +--------------------------------------------------------+
 ; Port Connectivity Checks: "pixelGenerator:videoGen"    ;
 +----------------------+-------+----------+--------------+
@@ -415,21 +519,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 48                          ;
+; cycloneiii_ff         ; 135                         ;
+;     CLR               ; 23                          ;
 ;     ENA               ; 21                          ;
+;     ENA CLR           ; 64                          ;
 ;     plain             ; 27                          ;
-; cycloneiii_lcell_comb ; 85                          ;
-;     arith             ; 18                          ;
-;         2 data inputs ; 18                          ;
-;     normal            ; 67                          ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 45                          ;
+; cycloneiii_lcell_comb ; 594                         ;
+;     arith             ; 415                         ;
+;         2 data inputs ; 281                         ;
+;         3 data inputs ; 134                         ;
+;     normal            ; 179                         ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 114                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.83                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 6.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -448,10 +555,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Tue Dec  3 19:52:51 2024
+    Info: Processing started: Tue Dec  3 21:35:21 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_top_level -c VGA_top_level
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd
+    Info (12022): Found design unit 1: pll_counter-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd Line: 13
+    Info (12023): Found entity 1: pll_counter File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/tank_testing/pll_counter.vhd Line: 5
 Info (12021): Found 2 design units, including 0 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd
     Info (12022): Found design unit 1: game_library File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 4
     Info (12022): Found design unit 2: game_library-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 9
@@ -470,9 +580,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file pixelge
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
     Info (12022): Found design unit 1: VGA_SYNC-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 16
     Info (12023): Found entity 1: VGA_SYNC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file game_update_logic.vhd
+    Info (12022): Found design unit 1: game_update_logic-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 21
+    Info (12023): Found entity 1: game_update_logic File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 7
 Info (12127): Elaborating entity "VGA_top_level" for the top level hierarchy
 Info (12128): Elaborating entity "pixelGenerator" for hierarchy "pixelGenerator:videoGen" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/VGA_top_level.vhd Line: 61
-Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:videoGen|colorROM:colors" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd Line: 50
+Warning (10540): VHDL Signal Declaration warning at pixelGenerator.vhd(62): used explicit default value for signal "global_write_enable" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd Line: 62
+Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:videoGen|colorROM:colors" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd Line: 83
 Info (12128): Elaborating entity "altsyncram" for hierarchy "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
 Info (12130): Elaborated megafunction instantiation "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
 Info (12133): Instantiated megafunction "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
@@ -492,21 +606,37 @@ Info (12133): Instantiated megafunction "pixelGenerator:videoGen|colorROM:colors
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_e481.tdf
     Info (12023): Found entity 1: altsyncram_e481 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/db/altsyncram_e481.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_e481" for hierarchy "pixelGenerator:videoGen|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "pll_counter" for hierarchy "pixelGenerator:videoGen|pll_counter:pll" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd Line: 91
+Info (12128): Elaborating entity "game_update_logic" for hierarchy "pixelGenerator:videoGen|game_update_logic:game_update_inst" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/pixelGenerator.vhd Line: 99
+Warning (10540): VHDL Signal Declaration warning at game_update_logic.vhd(24): used explicit default value for signal "tank_1_speed" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 24
+Warning (10540): VHDL Signal Declaration warning at game_update_logic.vhd(24): used explicit default value for signal "tank_2_speed" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 24
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:videoSync" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/VGA_top_level.vhd Line: 69
+Info (13000): Registers with preset signals will power-up high File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][8] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][5] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[0][0] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_1_pos[1][8] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][8] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][6] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][2] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][1] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
+    Critical Warning (18010): Register pixelGenerator:videoGen|game_update_logic:game_update_inst|current_tank_2_pos[0][0] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/game_update_logic.vhd Line: 29
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "RESET_N" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/VGA_top_level.vhd Line: 11
-Info (21057): Implemented 163 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 671 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 109 logic cells
+    Info (21061): Implemented 617 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4823 megabytes
-    Info: Processing ended: Tue Dec  3 19:53:00 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Tue Dec  3 21:35:30 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:19
 
 

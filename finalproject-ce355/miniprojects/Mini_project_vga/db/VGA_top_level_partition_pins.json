@@ -118,6 +118,10 @@
 				{
 					"name" : "CLOCK_50",
 					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
+					"strict" : false
 				}
 			]
 		}

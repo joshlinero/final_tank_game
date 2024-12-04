@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Dec  4 06:29:35 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Revision Name : tankgame
+Top-level Entity Name : tankgame
+Family : Cyclone IV E
+Total logic elements : 1,895
+    Total combinational functions : 1,685
+    Dedicated logic registers : 559
+Total registers : 559
+Total pins : 47
+Total virtual pins : 0
+Total memory bits : 192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

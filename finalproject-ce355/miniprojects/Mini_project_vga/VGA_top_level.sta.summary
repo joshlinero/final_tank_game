@@ -3,72 +3,72 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -2.834
-TNS   : -5.840
+Slack : -7.741
+TNS   : -503.216
 
 Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -2.678
-TNS   : -76.798
-
-Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.339
-TNS   : 0.000
+Slack : -2.642
+TNS   : -87.205
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : 0.403
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.389
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -6.855
+TNS   : -118.650
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
 Slack : -2.693
 TNS   : -60.518
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -2.435
-TNS   : -5.037
+Slack : -6.905
+TNS   : -446.611
 
 Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -2.361
-TNS   : -65.766
-
-Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.321
-TNS   : 0.000
+Slack : -2.345
+TNS   : -75.404
 
 Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : 0.354
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -6.855
+TNS   : -118.650
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
 Slack : -2.649
 TNS   : -60.474
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.919
-TNS   : -1.648
+Slack : -3.331
+TNS   : -202.622
 
 Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : -0.760
-TNS   : -15.840
+Slack : -0.789
+TNS   : -20.518
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.124
+Slack : 0.136
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:videoSync|pixel_clock_int'
-Slack : 0.154
+Slack : 0.173
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -6.998
+TNS   : -119.132
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:videoSync|pixel_clock_int'
 Slack : -1.000
