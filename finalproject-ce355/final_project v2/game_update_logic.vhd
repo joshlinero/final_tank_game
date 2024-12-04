@@ -50,12 +50,13 @@ architecture behavioral of game_update_logic is
 	 signal temp_bullet_1_fired, temp_bullet_2_fired : std_logic;
 	 signal bullet_speed : natural := 8;
 	 signal bullet_1_disp_signal, bullet_2_disp_signal : std_logic;
-	 signal tank_1_bul_pos, tank_2_bul_pos : position;
+	 --signal tank_1_bul_pos, tank_2_bul_pos : position;
 	 signal score_1, score_2 : integer := 0;
 	 signal counter_1, counter_2 : integer := 0;
+	 signal bul_1_hit, bul_2_hit : std_logic := '0';
 begin
 
-    position_update : process(clk, rst_n)
+   position_update : process(clk, rst_n)
 	begin
 		 if rst_n = '1' then
 			  -- Reset positions and directions
@@ -168,106 +169,201 @@ begin
 	end process;
 	
 	--Process for UPDATING BULLET POSITION
-	tank_1_bul_disp <= bullet_1_disp_signal;
-	tank_2_bul_disp <= bullet_2_disp_signal;
-	
-	bullet_update : process(clk, rst_n) is
+	bul_update : process (clk, rst_n) is
+		variable temp_1_bul_pos : position;
+		variable temp_2_bul_pos : position;
+		variable temp_1_bul_fired : std_logic;
+		variable temp_2_bul_fired : std_logic;
+		variable temp_1_bul_disp : std_logic;
+		variable temp_2_bul_disp : std_logic;
 	begin
-	
-		tank_1_bul_pos(0) <= tank_1_bul_pos_in(0);
-		tank_2_bul_pos(0) <= tank_2_bul_pos_in(0);
 		if (rst_n = '1') then
-		   score_1 <= 0;
-			score_2 <= 0;
-			counter_1 <= 0;
-			counter_2 <= 0;
-			bullet_1_disp_signal <= '0';
-			bullet_2_disp_signal <= '0';
+			tank_1_bul_pos_out <= tank_1_pos_in;
+			tank_2_bul_pos_out <= tank_2_pos_in;
 			tank_1_bul_fired_out <= '0';
 			tank_2_bul_fired_out <= '0';
+			tank_1_bul_disp <= '0';
+			tank_2_bul_disp <= '0';
+			score_1 <= 0;
+			score_2 <= 0;
+			bul_1_hit <= '0';
+			bul_2_hit <= '0';
 		elsif (rising_edge(clk)) then
-			if global_write_enable = '1' then --read state
-					temp_bullet_1_fired <= tank_1_bul_fired_in;
-					tank_1_bul_pos(1) <= tank_1_bul_pos_in(1) - bullet_speed; --bullet A travels upwards
-					--tank_1_bul_pos(0) <= tank_1_bul_pos_in(0);
-					temp_bullet_2_fired <= tank_2_bul_fired_in;
-					tank_2_bul_pos(1) <= tank_2_bul_pos_in(1) + bullet_speed; --bullet B travels downwards
-					--tank_2_bul_pos(0) <= tank_2_bul_pos_in(0);
-
-			else 					--write state
-				if (((tank_1_bul_pos(1) - BULLET_H < tank_2_pos_in(1) + TANK_HEIGHT + TANK_GUNH) -- Bullet's top edge < Tank 2's bottom edge
-					and (tank_1_bul_pos(1) + BULLET_H > tank_2_pos_in(1)) -- Bullet's bottom edge > Tank 2's top edge
-					and (tank_1_bul_pos(0) - BULLET_W < tank_2_pos_in(0) + TANK_WIDTH) -- Bullet's left edge < Tank 2's right edge
-					and (tank_1_bul_pos(0) + BULLET_W > tank_2_pos_in(0))
-					and temp_bullet_1_fired = '1'
-					and counter_1 = 1000000)) then
-					bullet_1_disp_signal <= '0';
-					tank_1_bul_fired_out <= '0';
-					temp_bullet_1_fired <= '0';
-					score_1 <= score_1 + 1;
-					tank_1_bul_pos_out <= tank_1_pos_in;
-					counter_1 <= 0;
-				
-				elsif (temp_bullet_1_fired = '1' and ((tank_1_bul_pos(1)) - BULLET_H <= 0)) then
-					-- bullet out of bounds, reset conditions
-					tank_1_bul_fired_out <= '0';
-					bullet_1_disp_signal <= '0';
-					temp_bullet_1_fired <= '0';
-					tank_1_bul_pos_out <= tank_1_pos_in;
-				elsif (temp_bullet_1_fired = '0' and tank_1_fire = '1') then
-					--player first fires bullet
-					tank_1_bul_pos_out(0) <= tank_1_pos_in(0) + (TANK_WIDTH/2);
-					tank_1_bul_pos_out(1) <= tank_1_pos_in(1) - (TANK_HEIGHT) - (TANK_GUNH) - (BULLET_H/2);
-					bullet_1_disp_signal <= '1';
-					tank_1_bul_fired_out <= '1';
-
-				elsif (temp_bullet_1_fired = '1') then
-					--bullet already fired
-					tank_1_bul_pos_out <= tank_1_bul_pos;
-					bullet_1_disp_signal <= '1';
-					tank_1_bul_fired_out <= '1';
-				end if;
-				if (counter_1 < 1000000) then
+		
+			temp_1_bul_pos := tank_1_bul_pos_in;
+			temp_2_bul_pos := tank_2_bul_pos_in;
+			temp_1_bul_fired := tank_1_bul_fired_in;
+			temp_2_bul_fired := tank_2_bul_fired_in;
+			temp_1_bul_disp := '0';
+			temp_2_bul_disp := '0';
+			bul_1_hit <= bul_1_hit;
+			bul_2_hit <= bul_2_hit;
+			
+			if (global_write_enable = '1') then
+			
+				if (counter_1 < 30) then
 					counter_1 <= counter_1 + 1;
+				elsif (counter_1 = 30) then
+					bul_1_hit <= '0';
 				end if;
-
-				if (((tank_2_bul_pos(1) + BULLET_H > tank_1_pos_in(1) - TANK_GUNH) 
-					   and (tank_2_bul_pos(1) - BULLET_H < tank_1_pos_in(1) + TANK_HEIGHT) 
-					   and (tank_2_bul_pos(0) - BULLET_W < tank_1_pos_in(0) + TANK_WIDTH) 
-					   and (tank_2_bul_pos(0) + BULLET_W > tank_1_pos_in(0))
-					   and temp_bullet_2_fired = '1'
-						and counter_2 = 1000000)) then
-					bullet_2_disp_signal <= '0';
-					tank_2_bul_fired_out <= '0';
-					temp_bullet_2_fired <= '0';
-					score_2 <= score_2 + 1;
-					counter_2 <= 0;
-					tank_2_bul_pos_out <= tank_2_pos_in;
-				elsif (temp_bullet_2_fired = '1' and ((tank_2_bul_pos(1)) + BULLET_H >= 480)) then
-					-- bullet out of bounds, reset conditions
-					tank_2_bul_fired_out <= '0';
-					bullet_2_disp_signal <= '0';
-					temp_bullet_2_fired <= '0';
-					tank_2_bul_pos_out <= tank_2_pos_in;
-				elsif (temp_bullet_2_fired = '0' and tank_2_fire = '1') then
-					--player first fires bullet
-					tank_2_bul_pos_out(0) <= tank_2_pos_in(0) + (TANK_WIDTH/2);
-					tank_2_bul_pos_out(1) <= tank_2_pos_in(1) + (TANK_HEIGHT) + (TANK_GUNH) + (BULLET_H);
-					bullet_2_disp_signal <= '1';
-					tank_2_bul_fired_out <= '1';
-				elsif (temp_bullet_2_fired = '1') then
-					--bullet already fired
-					tank_2_bul_pos_out <= tank_2_bul_pos;
-					bullet_2_disp_signal <= '1';
-					tank_2_bul_fired_out <= '1';
+					
+				if ((tank_1_bul_pos_in(1) - BULLET_H < tank_2_pos_in(1) + TANK_HEIGHT + TANK_GUNH) -- Bullet's top edge < Tank 2's bottom edge
+					and (tank_1_bul_pos_in(1) + BULLET_H > tank_2_pos_in(1)) -- Bullet's bottom edge > Tank 2's top edge
+					and (tank_1_bul_pos_in(0) - BULLET_W < tank_2_pos_in(0) + TANK_WIDTH) -- Bullet's left edge < Tank 2's right edge
+					and (tank_1_bul_pos_in(0) + BULLET_W > tank_2_pos_in(0))
+					and bul_1_hit = '0'
+					and counter_1 = 30) then
+					
+					bul_1_hit <= '1';
+					temp_1_bul_fired := '0';
+					score_1 <= score_1 + 1;
+					temp_1_bul_pos := tank_1_pos_in;
+					temp_1_bul_disp := '0';
+					counter_1 <= 0;
+					
+				elsif (tank_1_bul_fired_in = '1' and ((tank_1_bul_pos_in(1)) - BULLET_H <= 0)) then
+				
+					temp_1_bul_fired := '0';
+					temp_1_bul_pos := tank_1_pos_in;
+					temp_1_bul_disp := '0';
+					
+				elsif (tank_1_bul_fired_in = '1' and bul_1_hit = '0') then
+				
+					temp_1_bul_pos(1) := tank_1_bul_pos_in(1) - bullet_speed;
+					temp_1_bul_disp := '1';
+					temp_1_bul_fired := '1';
+					
+				elsif (tank_1_fire = '1' and tank_1_bul_fired_in = '0') then
+				
+					temp_1_bul_pos(0) := tank_1_pos_in(0) + (TANK_WIDTH / 2);
+					temp_1_bul_pos(1) := tank_1_pos_in(1) - (TANK_HEIGHT) - (TANK_GUNH) - (BULLET_H / 2);
+					temp_1_bul_disp := '1';
+					temp_1_bul_fired := '1';
+					
 				end if;
-				if counter_2 < 1000000 then
-					counter_2 <= counter_2 + 1;
-				end if;
-
+				
+				tank_1_bul_pos_out <= temp_1_bul_pos;
+				tank_1_bul_fired_out <= temp_1_bul_fired;
+				tank_1_bul_disp <= temp_1_bul_disp;
+				
 			end if;
 		end if;
-	end process;
+	
+	end process bul_update;
+	
+--	bullet_update : process(clk, rst_n) is
+--		variable tank_1_bul_pos : position;
+--		variable tank_2_bul_pos : position;
+--		variable score_1_incremented : std_logic := '0';
+--		variable score_2_incremented : std_logic := '0';
+--	begin
+--	
+--		tank_1_bul_disp <= bullet_1_disp_signal;
+--		tank_2_bul_disp <= bullet_2_disp_signal;
+--		
+--		tank_1_bul_pos(0) := tank_1_bul_pos_in(0);
+--		tank_2_bul_pos(0) := tank_2_bul_pos_in(0);
+--		
+--		if (rst_n = '1') then
+--		   score_1 <= 0;
+--			score_2 <= 0;
+--			counter_1 <= 0;
+--			counter_2 <= 0;
+--			bullet_1_disp_signal <= '0';
+--			bullet_2_disp_signal <= '0';
+--			tank_1_bul_fired_out <= '0';
+--			tank_2_bul_fired_out <= '0';
+--			tank_1_bul_pos(1) := tank_1_pos_in(1);
+--			tank_2_bul_pos(1) := tank_2_pos_in(1);
+--			
+--		elsif (rising_edge(clk)) then
+--			if global_write_enable = '1' then --read state
+--					temp_bullet_1_fired <= tank_1_bul_fired_in;
+--					tank_1_bul_pos(1) := tank_1_bul_pos_in(1) - bullet_speed; --bullet A travels upwards
+--					--tank_1_bul_pos(0) <= tank_1_bul_pos_in(0);
+--					temp_bullet_2_fired <= tank_2_bul_fired_in;
+--					tank_2_bul_pos(1) := tank_2_bul_pos_in(1) + bullet_speed; --bullet B travels downwards
+--					--tank_2_bul_pos(0) <= tank_2_bul_pos_in(0);
+--
+--			else 					--write state
+--				if (score_1_incremented = '1') then
+--					counter_2 <= counter_1 + 1;
+--					bullet_1_disp_signal <= '0';
+--					tank_1_bul_pos_out <= tank_1_pos_in;
+--					tank_1_bul_fired_out <= '0';
+--					if (counter_1 = 30) then
+--						score_1_incremented := '0';
+--						counter_1 <= 0;
+--					end if;
+--				elsif (((tank_1_bul_pos(1) - BULLET_H < tank_2_pos_in(1) + TANK_HEIGHT + TANK_GUNH) -- Bullet's top edge < Tank 2's bottom edge
+--					and (tank_1_bul_pos(1) + BULLET_H > tank_2_pos_in(1)) -- Bullet's bottom edge > Tank 2's top edge
+--					and (tank_1_bul_pos(0) - BULLET_W < tank_2_pos_in(0) + TANK_WIDTH) -- Bullet's left edge < Tank 2's right edge
+--					and (tank_1_bul_pos(0) + BULLET_W > tank_2_pos_in(0))
+--					and score_1_incremented = '0')) then
+--					
+--					bullet_1_disp_signal <= '0';
+--					temp_bullet_1_fired <= '0';
+--					score_1 <= score_1 + 1;
+--					score_1_incremented := '1';
+--					tank_1_bul_pos_out <= tank_1_pos_in;
+--				
+--				elsif (temp_bullet_1_fired = '1' and ((tank_1_bul_pos(1)) - BULLET_H <= 0)) then
+--					-- bullet out of bounds, reset conditions
+--					tank_1_bul_fired_out <= '0';
+--					bullet_1_disp_signal <= '0';
+--					temp_bullet_1_fired <= '0';
+--					tank_1_bul_pos_out <= tank_1_pos_in;
+--				elsif (temp_bullet_1_fired = '0' and tank_1_fire = '1') then
+--					--player first fires bullet
+--					tank_1_bul_pos_out(0) <= tank_1_pos_in(0) + (TANK_WIDTH/2);
+--					tank_1_bul_pos_out(1) <= tank_1_pos_in(1) - (TANK_HEIGHT) - (TANK_GUNH) - (BULLET_H/2);
+--					bullet_1_disp_signal <= '1';
+--					tank_1_bul_fired_out <= '1';
+--
+--				elsif (temp_bullet_1_fired = '1') then
+--					--bullet already fired
+--					tank_1_bul_pos_out <= tank_1_bul_pos;
+--					bullet_1_disp_signal <= '1';
+--					tank_1_bul_fired_out <= '1';
+--				end if;
+--
+--				if (((tank_2_bul_pos(1) + BULLET_H > tank_1_pos_in(1) - TANK_GUNH) 
+--					   and (tank_2_bul_pos(1) - BULLET_H < tank_1_pos_in(1) + TANK_HEIGHT) 
+--					   and (tank_2_bul_pos(0) - BULLET_W < tank_1_pos_in(0) + TANK_WIDTH) 
+--					   and (tank_2_bul_pos(0) + BULLET_W > tank_1_pos_in(0))
+--					   and temp_bullet_2_fired = '1'
+--						and counter_2 = 1000000)) then
+--					bullet_2_disp_signal <= '0';
+--					tank_2_bul_fired_out <= '0';
+--					temp_bullet_2_fired <= '0';
+--					score_2 <= score_2 + 1;
+--					counter_2 <= 0;
+--					tank_2_bul_pos_out <= tank_2_pos_in;
+--				elsif (temp_bullet_2_fired = '1' and ((tank_2_bul_pos(1)) + BULLET_H >= 480)) then
+--					-- bullet out of bounds, reset conditions
+--					tank_2_bul_fired_out <= '0';
+--					bullet_2_disp_signal <= '0';
+--					temp_bullet_2_fired <= '0';
+--					tank_2_bul_pos_out <= tank_2_pos_in;
+--				elsif (temp_bullet_2_fired = '0' and tank_2_fire = '1') then
+--					--player first fires bullet
+--					tank_2_bul_pos_out(0) <= tank_2_pos_in(0) + (TANK_WIDTH/2);
+--					tank_2_bul_pos_out(1) <= tank_2_pos_in(1) + (TANK_HEIGHT) + (TANK_GUNH) + (BULLET_H);
+--					bullet_2_disp_signal <= '1';
+--					tank_2_bul_fired_out <= '1';
+--				elsif (temp_bullet_2_fired = '1') then
+--					--bullet already fired
+--					tank_2_bul_pos_out <= tank_2_bul_pos;
+--					bullet_2_disp_signal <= '1';
+--					tank_2_bul_fired_out <= '1';
+--				end if;
+--				if counter_2 < 1000000 then
+--					counter_2 <= counter_2 + 1;
+--				end if;
+--
+--			end if;
+--		end if;
+--	end process;
 	
 	game_score_update : process(clk, rst_n) is
 	begin

@@ -272,36 +272,34 @@ begin
 		tank_2_speed2_key <= '0';
 		tank_2_speed3_key <= '0';
 	elsif (rising_edge(clk)) then
-		if key_ready = '1' then
-			if hist1 /= "11110000" then
-				case key_code is
-					when "00011101" =>
-						tank_1_fire_key <= '1';
-					when "00011100" =>
-						tank_1_speed1_key <= '1';
-					when "00011011" =>
-						tank_1_speed2_key <= '1';
-					when "00100011" =>
-						tank_1_speed3_key <= '1';
-					when "01000011" =>
-						tank_2_fire_key <= '1';
-					when "00111011" =>
-						tank_2_speed1_key <= '1';
-					when "01000010" =>
-						tank_2_speed2_key <= '1';
-					when "01001011" =>
-						tank_2_speed3_key <= '1';
-					when others =>
-						tank_1_fire_key <= '0';
-						tank_1_speed1_key <= '0';
-						tank_1_speed2_key <= '0';
-						tank_1_speed3_key <= '0';
-						tank_2_fire_key <= '0';
-						tank_2_speed1_key <= '0';
-						tank_2_speed2_key <= '0';
-						tank_2_speed3_key <= '0';
-					end case;
-				end if;
+		if key_ready = '1' and hist1 /= "11110000" then
+			case key_code is
+				when "00011101" =>
+					tank_1_fire_key <= '1';
+				when "00011100" =>
+					tank_1_speed1_key <= '1';
+				when "00011011" =>
+					tank_1_speed2_key <= '1';
+				when "00100011" =>
+					tank_1_speed3_key <= '1';
+				when "01000011" =>
+					tank_2_fire_key <= '1';
+				when "00111011" =>
+					tank_2_speed1_key <= '1';
+				when "01000010" =>
+					tank_2_speed2_key <= '1';
+				when "01001011" =>
+					tank_2_speed3_key <= '1';
+				when others =>
+					tank_1_fire_key 	<= '0';
+					tank_1_speed1_key <= '0';
+					tank_1_speed2_key <= '0';
+					tank_1_speed3_key <= '0';
+					tank_2_fire_key 	<= '0';
+					tank_2_speed1_key <= '0';
+					tank_2_speed2_key <= '0';
+					tank_2_speed3_key <= '0';
+				end case;
 			end if;
 		end if;
 	end process;

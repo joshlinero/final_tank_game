@@ -18,23 +18,26 @@ entity bullet_location is
 end entity bullet_location;
 
 architecture behavioral of bullet_location is
+	signal bul_fired : std_logic;
+	signal curr_pos : position;
 begin
 
   process(clk, rst_n)
   begin
 
     if (rst_n = '1') then
-		bull_pos_out <= bullet_loc;
-		fired_out <= '0';
+		curr_pos <= bullet_loc;
+		bul_fired <= '0';
 		
     elsif (rising_edge(clk)) then
       if (we = '1') then
         if (fired_in = '1') then
-          bull_pos_out <= bull_pos_in;
+          curr_pos <= bull_pos_in;
         end if;
-		  
-		  fired_out <= fired_in;
-		  
+		  bul_fired <= fired_in;
+		else
+			bull_pos_out <= curr_pos;
+			fired_out <= bul_fired;
       end if;
     end if;
   end process;
