@@ -1,5 +1,5 @@
 Flow report for tankgame2
-Thu Dec  5 16:46:31 2024
+Thu Dec  5 17:36:09 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec  5 16:46:29 2024          ;
+; Flow Status                        ; Successful - Thu Dec  5 17:36:07 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; tankgame2                                      ;
 ; Top-level Entity Name              ; tankgame2                                      ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 519 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 512 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 181 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 181                                            ;
+; Total logic elements               ; 512 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 504 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 150 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 150                                            ;
 ; Total pins                         ; 61 / 529 ( 12 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                      ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2024 16:46:10 ;
+; Start date & time ; 12/05/2024 17:35:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tankgame2           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 277302806905695.173343877024312        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 277302806905695.173344174802940        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -94,11 +94,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4886 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:08     ; 1.1                     ; 6694 MB             ; 00:00:24                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4702 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 5001 MB             ; 00:00:01                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:44                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4882 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:08     ; 1.1                     ; 6693 MB             ; 00:00:22                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4699 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 5031 MB             ; 00:00:01                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

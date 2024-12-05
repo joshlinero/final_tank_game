@@ -321,7 +321,7 @@ begin
 
 	reset <= not reset_n;
 	
-	shoot_in_proc: process(clk, reset) is
+	shoot_in_proc: process(clk, reset, key_ready, hist1, key_code) is
 		variable temp_1_speed : std_logic_vector(2 downto 0);
 	begin
 	if (reset = '1') then

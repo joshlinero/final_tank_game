@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tankgame2
-Thu Dec  5 16:46:18 2024
+Thu Dec  5 17:35:55 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -66,15 +66,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec  5 16:46:18 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 17:35:55 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; tankgame2                                      ;
 ; Top-level Entity Name              ; tankgame2                                      ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 567                                            ;
-;     Total combinational functions  ; 511                                            ;
-;     Dedicated logic registers      ; 181                                            ;
-; Total registers                    ; 181                                            ;
+; Total logic elements               ; 526                                            ;
+;     Total combinational functions  ; 503                                            ;
+;     Dedicated logic registers      ; 150                                            ;
+; Total registers                    ; 150                                            ;
 ; Total pins                         ; 61                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 192                                            ;
@@ -225,20 +225,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 567       ;
+; Estimated Total logic elements              ; 526       ;
 ;                                             ;           ;
-; Total combinational functions               ; 511       ;
+; Total combinational functions               ; 503       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 126       ;
-;     -- 3 input functions                    ; 80        ;
-;     -- <=2 input functions                  ; 305       ;
+;     -- 4 input functions                    ; 145       ;
+;     -- 3 input functions                    ; 47        ;
+;     -- <=2 input functions                  ; 311       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 205       ;
-;     -- arithmetic mode                      ; 306       ;
+;     -- normal mode                          ; 196       ;
+;     -- arithmetic mode                      ; 307       ;
 ;                                             ;           ;
-; Total registers                             ; 181       ;
-;     -- Dedicated logic registers            ; 181       ;
+; Total registers                             ; 150       ;
+;     -- Dedicated logic registers            ; 150       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 61        ;
@@ -247,9 +247,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 111       ;
-; Total fan-out                               ; 2043      ;
-; Average fan-out                             ; 2.41      ;
+; Maximum fan-out                             ; 80        ;
+; Total fan-out                               ; 1917      ;
+; Average fan-out                             ; 2.38      ;
 +---------------------------------------------+-----------+
 
 
@@ -258,16 +258,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |tankgame2                                   ; 511 (0)             ; 181 (0)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
+; |tankgame2                                   ; 503 (0)             ; 150 (0)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
 ;    |VGA_SYNC:sync|                           ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|VGA_SYNC:sync                                                                                     ; VGA_SYNC        ; work         ;
 ;    |de2lcd:lcd_message|                      ; 54 (54)             ; 45 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|de2lcd:lcd_message                                                                                ; de2lcd          ; work         ;
-;    |pixelGenerator:vid|                      ; 207 (207)           ; 1 (1)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
+;    |pixelGenerator:vid|                      ; 210 (210)           ; 1 (1)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
 ;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors                                                                ; colorROM        ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481 ; work         ;
 ;    |pll_counter:pll|                         ; 27 (27)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pll_counter:pll                                                                                   ; pll_counter     ; work         ;
-;    |tank_control:tank_1_control|             ; 164 (164)           ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control                                                                       ; tank_control    ; work         ;
-;    |tank_location:tank_1|                    ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_location:tank_1                                                                              ; tank_location   ; work         ;
+;    |tank_control:tank_1_control|             ; 151 (151)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control                                                                       ; tank_control    ; work         ;
+;    |tank_location:tank_1|                    ; 2 (2)               ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_location:tank_1                                                                              ; tank_location   ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -394,344 +394,310 @@ Encoding Type:  One-Hot
 +--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                      ;
-+------------------------------------------------------+------------------------------------------------------------------+
-; Register name                                        ; Reason for Removal                                               ;
-+------------------------------------------------------+------------------------------------------------------------------+
-; de2lcd:lcd_message|LCD_RW                            ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][31]            ; Stuck at VCC due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][9]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][8]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][7]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][6]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][5]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][2]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[0][1]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][31]            ; Stuck at VCC due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][9]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][8]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][7]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][6]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][5]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][2]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_2|bull_pos_out[1][1]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][31]            ; Stuck at VCC due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][9]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][8]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][7]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][6]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][5]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][2]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[0][1]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][31]            ; Stuck at VCC due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][9]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][8]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][7]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][6]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][5]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][2]             ; Stuck at GND due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][1]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][30]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][29]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][28]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][27]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][26]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][25]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][24]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][23]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][22]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][21]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][20]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][19]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][18]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][17]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][16]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][15]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][14]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][13]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][12]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][11]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][10]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][9]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][7]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][6]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][3]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][2]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][1]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][0]              ; Stuck at VCC due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][30]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][29]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][28]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][27]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][26]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][25]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][24]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][23]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][22]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][21]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][20]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][19]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][18]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][17]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][16]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][15]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][14]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][13]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][12]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][11]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][10]             ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][9]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][8]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][7]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][6]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][5]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][4]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[1][2]              ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_1|speed_out[1,2]                  ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_1|speed_out[0]                    ; Stuck at VCC due to stuck port data_in                           ;
-; bullet_location:bul_1|bull_pos_out[1][19]            ; Merged with bullet_location:bul_1|bull_pos_out[1][3]             ;
-; bullet_location:bul_1|bull_pos_out[1][3]             ; Merged with bullet_location:bul_1|bull_pos_out[1][4]             ;
-; bullet_location:bul_1|bull_pos_out[1][4]             ; Merged with bullet_location:bul_1|bull_pos_out[1][10]            ;
-; bullet_location:bul_1|bull_pos_out[1][10]            ; Merged with bullet_location:bul_1|bull_pos_out[1][11]            ;
-; bullet_location:bul_1|bull_pos_out[1][11]            ; Merged with bullet_location:bul_1|bull_pos_out[1][12]            ;
-; bullet_location:bul_1|bull_pos_out[1][12]            ; Merged with bullet_location:bul_1|bull_pos_out[1][13]            ;
-; bullet_location:bul_1|bull_pos_out[1][13]            ; Merged with bullet_location:bul_1|bull_pos_out[1][14]            ;
-; bullet_location:bul_1|bull_pos_out[1][14]            ; Merged with bullet_location:bul_1|bull_pos_out[1][15]            ;
-; bullet_location:bul_1|bull_pos_out[1][15]            ; Merged with bullet_location:bul_1|bull_pos_out[1][16]            ;
-; bullet_location:bul_1|bull_pos_out[1][16]            ; Merged with bullet_location:bul_1|bull_pos_out[1][17]            ;
-; bullet_location:bul_1|bull_pos_out[1][17]            ; Merged with bullet_location:bul_1|bull_pos_out[1][18]            ;
-; bullet_location:bul_1|bull_pos_out[1][18]            ; Merged with bullet_location:bul_1|bull_pos_out[0][30]            ;
-; bullet_location:bul_1|bull_pos_out[0][30]            ; Merged with bullet_location:bul_1|bull_pos_out[1][20]            ;
-; bullet_location:bul_1|bull_pos_out[1][20]            ; Merged with bullet_location:bul_1|bull_pos_out[1][21]            ;
-; bullet_location:bul_1|bull_pos_out[1][21]            ; Merged with bullet_location:bul_1|bull_pos_out[1][22]            ;
-; bullet_location:bul_1|bull_pos_out[1][22]            ; Merged with bullet_location:bul_1|bull_pos_out[1][23]            ;
-; bullet_location:bul_1|bull_pos_out[1][23]            ; Merged with bullet_location:bul_1|bull_pos_out[1][24]            ;
-; bullet_location:bul_1|bull_pos_out[1][24]            ; Merged with bullet_location:bul_1|bull_pos_out[1][25]            ;
-; bullet_location:bul_1|bull_pos_out[1][25]            ; Merged with bullet_location:bul_1|bull_pos_out[1][26]            ;
-; bullet_location:bul_1|bull_pos_out[1][26]            ; Merged with bullet_location:bul_1|bull_pos_out[1][27]            ;
-; bullet_location:bul_1|bull_pos_out[1][27]            ; Merged with bullet_location:bul_1|bull_pos_out[1][28]            ;
-; bullet_location:bul_1|bull_pos_out[1][28]            ; Merged with bullet_location:bul_1|bull_pos_out[1][29]            ;
-; bullet_location:bul_1|bull_pos_out[1][29]            ; Merged with bullet_location:bul_1|bull_pos_out[1][30]            ;
-; bullet_location:bul_1|bull_pos_out[1][30]            ; Merged with bullet_location:bul_2|bull_pos_out[0][30]            ;
-; bullet_location:bul_2|bull_pos_out[0][30]            ; Merged with bullet_location:bul_1|bull_pos_out[0][3]             ;
-; bullet_location:bul_1|bull_pos_out[0][3]             ; Merged with bullet_location:bul_1|bull_pos_out[0][4]             ;
-; bullet_location:bul_1|bull_pos_out[0][4]             ; Merged with bullet_location:bul_1|bull_pos_out[0][10]            ;
-; bullet_location:bul_1|bull_pos_out[0][10]            ; Merged with bullet_location:bul_1|bull_pos_out[0][11]            ;
-; bullet_location:bul_1|bull_pos_out[0][11]            ; Merged with bullet_location:bul_1|bull_pos_out[0][12]            ;
-; bullet_location:bul_1|bull_pos_out[0][12]            ; Merged with bullet_location:bul_1|bull_pos_out[0][13]            ;
-; bullet_location:bul_1|bull_pos_out[0][13]            ; Merged with bullet_location:bul_1|bull_pos_out[0][14]            ;
-; bullet_location:bul_1|bull_pos_out[0][14]            ; Merged with bullet_location:bul_1|bull_pos_out[0][15]            ;
-; bullet_location:bul_1|bull_pos_out[0][15]            ; Merged with bullet_location:bul_1|bull_pos_out[0][16]            ;
-; bullet_location:bul_1|bull_pos_out[0][16]            ; Merged with bullet_location:bul_1|bull_pos_out[0][17]            ;
-; bullet_location:bul_1|bull_pos_out[0][17]            ; Merged with bullet_location:bul_1|bull_pos_out[0][18]            ;
-; bullet_location:bul_1|bull_pos_out[0][18]            ; Merged with bullet_location:bul_1|bull_pos_out[0][19]            ;
-; bullet_location:bul_1|bull_pos_out[0][19]            ; Merged with bullet_location:bul_1|bull_pos_out[0][20]            ;
-; bullet_location:bul_1|bull_pos_out[0][20]            ; Merged with bullet_location:bul_1|bull_pos_out[0][21]            ;
-; bullet_location:bul_1|bull_pos_out[0][21]            ; Merged with bullet_location:bul_1|bull_pos_out[0][22]            ;
-; bullet_location:bul_1|bull_pos_out[0][22]            ; Merged with bullet_location:bul_1|bull_pos_out[0][23]            ;
-; bullet_location:bul_1|bull_pos_out[0][23]            ; Merged with bullet_location:bul_1|bull_pos_out[0][24]            ;
-; bullet_location:bul_1|bull_pos_out[0][24]            ; Merged with bullet_location:bul_1|bull_pos_out[0][25]            ;
-; bullet_location:bul_1|bull_pos_out[0][25]            ; Merged with bullet_location:bul_1|bull_pos_out[0][26]            ;
-; bullet_location:bul_1|bull_pos_out[0][26]            ; Merged with bullet_location:bul_1|bull_pos_out[0][27]            ;
-; bullet_location:bul_1|bull_pos_out[0][27]            ; Merged with bullet_location:bul_1|bull_pos_out[0][28]            ;
-; bullet_location:bul_1|bull_pos_out[0][28]            ; Merged with bullet_location:bul_1|bull_pos_out[0][29]            ;
-; bullet_location:bul_1|bull_pos_out[0][29]            ; Merged with bullet_location:bul_2|bull_pos_out[0][18]            ;
-; bullet_location:bul_2|bull_pos_out[0][18]            ; Merged with bullet_location:bul_2|bull_pos_out[1][3]             ;
-; bullet_location:bul_2|bull_pos_out[1][3]             ; Merged with bullet_location:bul_2|bull_pos_out[1][4]             ;
-; bullet_location:bul_2|bull_pos_out[1][4]             ; Merged with bullet_location:bul_2|bull_pos_out[1][10]            ;
-; bullet_location:bul_2|bull_pos_out[1][10]            ; Merged with bullet_location:bul_2|bull_pos_out[1][11]            ;
-; bullet_location:bul_2|bull_pos_out[1][11]            ; Merged with bullet_location:bul_2|bull_pos_out[1][12]            ;
-; bullet_location:bul_2|bull_pos_out[1][12]            ; Merged with bullet_location:bul_2|bull_pos_out[1][13]            ;
-; bullet_location:bul_2|bull_pos_out[1][13]            ; Merged with bullet_location:bul_2|bull_pos_out[1][14]            ;
-; bullet_location:bul_2|bull_pos_out[1][14]            ; Merged with bullet_location:bul_2|bull_pos_out[1][15]            ;
-; bullet_location:bul_2|bull_pos_out[1][15]            ; Merged with bullet_location:bul_2|bull_pos_out[1][16]            ;
-; bullet_location:bul_2|bull_pos_out[1][16]            ; Merged with bullet_location:bul_2|bull_pos_out[1][17]            ;
-; bullet_location:bul_2|bull_pos_out[1][17]            ; Merged with bullet_location:bul_2|bull_pos_out[1][18]            ;
-; bullet_location:bul_2|bull_pos_out[1][18]            ; Merged with bullet_location:bul_2|bull_pos_out[1][19]            ;
-; bullet_location:bul_2|bull_pos_out[1][19]            ; Merged with bullet_location:bul_2|bull_pos_out[1][20]            ;
-; bullet_location:bul_2|bull_pos_out[1][20]            ; Merged with bullet_location:bul_2|bull_pos_out[1][21]            ;
-; bullet_location:bul_2|bull_pos_out[1][21]            ; Merged with bullet_location:bul_2|bull_pos_out[1][22]            ;
-; bullet_location:bul_2|bull_pos_out[1][22]            ; Merged with bullet_location:bul_2|bull_pos_out[1][23]            ;
-; bullet_location:bul_2|bull_pos_out[1][23]            ; Merged with bullet_location:bul_2|bull_pos_out[1][24]            ;
-; bullet_location:bul_2|bull_pos_out[1][24]            ; Merged with bullet_location:bul_2|bull_pos_out[1][25]            ;
-; bullet_location:bul_2|bull_pos_out[1][25]            ; Merged with bullet_location:bul_2|bull_pos_out[1][26]            ;
-; bullet_location:bul_2|bull_pos_out[1][26]            ; Merged with bullet_location:bul_2|bull_pos_out[1][27]            ;
-; bullet_location:bul_2|bull_pos_out[1][27]            ; Merged with bullet_location:bul_2|bull_pos_out[1][28]            ;
-; bullet_location:bul_2|bull_pos_out[1][28]            ; Merged with bullet_location:bul_2|bull_pos_out[1][29]            ;
-; bullet_location:bul_2|bull_pos_out[1][29]            ; Merged with bullet_location:bul_2|bull_pos_out[1][30]            ;
-; bullet_location:bul_2|bull_pos_out[1][30]            ; Merged with bullet_location:bul_2|bull_pos_out[0][3]             ;
-; bullet_location:bul_2|bull_pos_out[0][3]             ; Merged with bullet_location:bul_2|bull_pos_out[0][4]             ;
-; bullet_location:bul_2|bull_pos_out[0][4]             ; Merged with bullet_location:bul_2|bull_pos_out[0][10]            ;
-; bullet_location:bul_2|bull_pos_out[0][10]            ; Merged with bullet_location:bul_2|bull_pos_out[0][11]            ;
-; bullet_location:bul_2|bull_pos_out[0][11]            ; Merged with bullet_location:bul_2|bull_pos_out[0][12]            ;
-; bullet_location:bul_2|bull_pos_out[0][12]            ; Merged with bullet_location:bul_2|bull_pos_out[0][13]            ;
-; bullet_location:bul_2|bull_pos_out[0][13]            ; Merged with bullet_location:bul_2|bull_pos_out[0][14]            ;
-; bullet_location:bul_2|bull_pos_out[0][14]            ; Merged with bullet_location:bul_2|bull_pos_out[0][15]            ;
-; bullet_location:bul_2|bull_pos_out[0][15]            ; Merged with bullet_location:bul_2|bull_pos_out[0][16]            ;
-; bullet_location:bul_2|bull_pos_out[0][16]            ; Merged with bullet_location:bul_2|bull_pos_out[0][17]            ;
-; bullet_location:bul_2|bull_pos_out[0][17]            ; Merged with bullet_location:bul_2|bull_pos_out[0][19]            ;
-; bullet_location:bul_2|bull_pos_out[0][19]            ; Merged with bullet_location:bul_2|bull_pos_out[0][20]            ;
-; bullet_location:bul_2|bull_pos_out[0][20]            ; Merged with bullet_location:bul_2|bull_pos_out[0][21]            ;
-; bullet_location:bul_2|bull_pos_out[0][21]            ; Merged with bullet_location:bul_2|bull_pos_out[0][22]            ;
-; bullet_location:bul_2|bull_pos_out[0][22]            ; Merged with bullet_location:bul_2|bull_pos_out[0][23]            ;
-; bullet_location:bul_2|bull_pos_out[0][23]            ; Merged with bullet_location:bul_2|bull_pos_out[0][24]            ;
-; bullet_location:bul_2|bull_pos_out[0][24]            ; Merged with bullet_location:bul_2|bull_pos_out[0][25]            ;
-; bullet_location:bul_2|bull_pos_out[0][25]            ; Merged with bullet_location:bul_2|bull_pos_out[0][26]            ;
-; bullet_location:bul_2|bull_pos_out[0][26]            ; Merged with bullet_location:bul_2|bull_pos_out[0][27]            ;
-; bullet_location:bul_2|bull_pos_out[0][27]            ; Merged with bullet_location:bul_2|bull_pos_out[0][28]            ;
-; bullet_location:bul_2|bull_pos_out[0][28]            ; Merged with bullet_location:bul_2|bull_pos_out[0][29]            ;
-; bullet_location:bul_1|bull_pos_out[0][0]             ; Merged with bullet_location:bul_2|bull_pos_out[1][0]             ;
-; bullet_location:bul_2|bull_pos_out[1][0]             ; Merged with bullet_location:bul_2|bull_pos_out[0][0]             ;
-; bullet_location:bul_2|bull_pos_out[0][0]             ; Merged with bullet_location:bul_1|bull_pos_out[1][0]             ;
-; bullet_location:bul_1|bull_pos_out[1][0]             ; Merged with bullet_location:bul_2|bull_pos_out[0][29]            ;
-; tank_location:tank_2|tank_pos_out[0][4]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[0][5]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[0][8]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[1][0]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[1][1]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[1][31]             ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_location:tank_2|tank_pos_out[1][3]              ; Merged with tank_location:tank_2|tank_pos_out[0][31]             ;
-; tank_control:tank_1_control|tank_next_pos_out[1][31] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][0]  ;
-; tank_location:tank_1|tank_pos_out[1][0]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][0]  ;
-; tank_location:tank_1|tank_pos_out[1][31]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][0]  ;
-; tank_control:tank_1_control|tank_next_pos_out[1][6]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_control:tank_1_control|tank_next_pos_out[1][7]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_control:tank_1_control|tank_next_pos_out[1][8]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_location:tank_1|tank_pos_out[1][1]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_location:tank_1|tank_pos_out[1][6]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_location:tank_1|tank_pos_out[1][7]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_location:tank_1|tank_pos_out[1][8]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][1]  ;
-; tank_control:tank_1_control|tank_next_pos_out[1][11] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][12] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][13] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][14] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][15] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][16] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][17] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][18] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][19] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][20] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][21] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][22] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][23] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][24] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][25] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][26] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][27] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][28] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][29] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][2]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][30] ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][3]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][4]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][5]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][9]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][10]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][11]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][12]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][13]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][14]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][15]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][16]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][17]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][18]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][19]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][20]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][21]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][22]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][23]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][24]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][25]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][26]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][27]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][28]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][29]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][2]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][30]             ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][3]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][4]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][5]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_location:tank_1|tank_pos_out[1][9]              ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][10] ;
-; tank_control:tank_1_control|tank_next_pos_out[1][10] ; Stuck at GND due to stuck port data_in                           ;
-; tank_control:tank_1_control|tank_display             ; Stuck at VCC due to stuck port data_in                           ;
-; pixelGenerator:vid|colorAddress[0]                   ; Merged with pixelGenerator:vid|colorAddress[2]                   ;
-; bullet_location:bul_2|bull_pos_out[0][29]            ; Lost fanout                                                      ;
-; VGA_SYNC:sync|pixel_row[9]                           ; Stuck at GND due to stuck port data_in                           ;
-; tank_location:tank_2|tank_pos_out[0][31]             ; Lost fanout                                                      ;
-; tank_control:tank_1_control|current_state.die        ; Lost fanout                                                      ;
-; tank_control:tank_1_control|current_state.win        ; Lost fanout                                                      ;
-; de2lcd:lcd_message|next_command.TOGGLE_E             ; Merged with de2lcd:lcd_message|next_command.HOLD                 ;
-; de2lcd:lcd_message|state.WRITE_CHAR2                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR16                ;
-; de2lcd:lcd_message|state.WRITE_CHAR3                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR17                ;
-; de2lcd:lcd_message|state.WRITE_CHAR4                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR18                ;
-; de2lcd:lcd_message|state.WRITE_CHAR15                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR1                 ;
-; de2lcd:lcd_message|state.WRITE_CHAR5                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR19                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR2          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR16         ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR3          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR17         ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR4          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR18         ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR15         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR1          ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR5          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR19         ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR6          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR20         ;
-; de2lcd:lcd_message|state.WRITE_CHAR6                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR20                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR7          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR21         ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR9          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR23         ;
-; de2lcd:lcd_message|state.WRITE_CHAR7                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR21                ;
-; de2lcd:lcd_message|state.WRITE_CHAR9                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR23                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR8          ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR22         ;
-; de2lcd:lcd_message|state.WRITE_CHAR8                 ; Merged with de2lcd:lcd_message|state.WRITE_CHAR22                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR28         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR14         ;
-; de2lcd:lcd_message|state.WRITE_CHAR28                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR14                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR24         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR10         ;
-; de2lcd:lcd_message|state.WRITE_CHAR24                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR10                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR25         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR11         ;
-; de2lcd:lcd_message|state.WRITE_CHAR25                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR11                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR26         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR12         ;
-; de2lcd:lcd_message|state.WRITE_CHAR26                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR12                ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR27         ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR13         ;
-; de2lcd:lcd_message|state.WRITE_CHAR27                ; Merged with de2lcd:lcd_message|state.WRITE_CHAR13                ;
-; de2lcd:lcd_message|next_command.HOLD                 ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR1          ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR1                 ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR16         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR16                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR17         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR17                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR18         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR18                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR19         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR19                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR20         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR20                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR21         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR21                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR22         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR22                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR23         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR23                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR10         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR10                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR11         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR11                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR12         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR12                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR13         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR13                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR14         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR14                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.WRITE_CHAR29         ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.WRITE_CHAR29                ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|next_command.RETURN_HOME          ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|state.RETURN_HOME                 ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|DATA_BUS_VALUE[7]                 ; Stuck at GND due to stuck port data_in                           ;
-; de2lcd:lcd_message|DATA_BUS_VALUE[1]                 ; Merged with de2lcd:lcd_message|next_command.RESET1               ;
-; de2lcd:lcd_message|DATA_BUS_VALUE[0]                 ; Merged with de2lcd:lcd_message|next_command.DISPLAY_ON           ;
-; tank_control:tank_1_control|current_state.done       ; Lost fanout                                                      ;
-; de2lcd:lcd_message|DATA_BUS_VALUE[6]                 ; Merged with de2lcd:lcd_message|LCD_RS                            ;
-; pixelGenerator:vid|colorAddress[1]                   ; Merged with pixelGenerator:vid|colorAddress[2]                   ;
-; tank_control:tank_1_control|tank_next_pos_out[1][1]  ; Merged with tank_control:tank_1_control|tank_next_pos_out[1][0]  ;
-; Total Number of Removed Registers = 332              ;                                                                  ;
-+------------------------------------------------------+------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++-----------------------------------------------+----------------------------------------------------------+
+; Register name                                 ; Reason for Removal                                       ;
++-----------------------------------------------+----------------------------------------------------------+
+; de2lcd:lcd_message|LCD_RW                     ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][31]     ; Stuck at VCC due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][9]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][8]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][7]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][6]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][5]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][2]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[0][1]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][31]     ; Stuck at VCC due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][9]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][8]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][7]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][6]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][5]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][2]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_2|bull_pos_out[1][1]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][31]     ; Stuck at VCC due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][9]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][8]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][7]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][6]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][5]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][2]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[0][1]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][31]     ; Stuck at VCC due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][9]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][8]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][7]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][6]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][5]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][2]      ; Stuck at GND due to stuck port data_in                   ;
+; bullet_location:bul_1|bull_pos_out[1][1]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][30]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][29]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][28]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][27]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][26]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][25]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][24]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][23]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][22]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][21]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][20]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][19]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][18]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][17]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][16]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][15]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][14]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][13]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][12]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][11]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][10]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][9]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][7]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][6]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][3]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][2]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][1]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][0]       ; Stuck at VCC due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][30]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][29]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][28]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][27]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][26]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][25]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][24]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][23]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][22]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][21]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][20]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][19]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][18]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][17]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][16]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][15]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][14]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][13]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][12]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][11]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][10]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][9]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][8]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][7]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][6]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][5]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][4]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[1][2]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|speed_out[1,2]           ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|speed_out[0]             ; Stuck at VCC due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][30]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][29]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][28]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][27]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][26]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][25]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][24]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][23]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][22]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][21]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][20]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][19]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][18]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][17]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][16]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][15]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][14]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][13]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][12]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][11]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][10]      ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][9]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][5]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][4]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][3]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][2]       ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_1|tank_pos_out[1][0]       ; Merged with tank_location:tank_1|tank_pos_out[1][31]     ;
+; bullet_location:bul_2|bull_pos_out[0][25]     ; Merged with bullet_location:bul_2|bull_pos_out[0][26]    ;
+; bullet_location:bul_2|bull_pos_out[0][26]     ; Merged with bullet_location:bul_2|bull_pos_out[0][27]    ;
+; bullet_location:bul_2|bull_pos_out[0][27]     ; Merged with bullet_location:bul_2|bull_pos_out[0][28]    ;
+; bullet_location:bul_2|bull_pos_out[0][28]     ; Merged with bullet_location:bul_2|bull_pos_out[0][29]    ;
+; bullet_location:bul_2|bull_pos_out[0][29]     ; Merged with bullet_location:bul_1|bull_pos_out[1][3]     ;
+; bullet_location:bul_1|bull_pos_out[1][3]      ; Merged with bullet_location:bul_1|bull_pos_out[1][4]     ;
+; bullet_location:bul_1|bull_pos_out[1][4]      ; Merged with bullet_location:bul_1|bull_pos_out[1][10]    ;
+; bullet_location:bul_1|bull_pos_out[1][10]     ; Merged with bullet_location:bul_1|bull_pos_out[1][11]    ;
+; bullet_location:bul_1|bull_pos_out[1][11]     ; Merged with bullet_location:bul_1|bull_pos_out[1][12]    ;
+; bullet_location:bul_1|bull_pos_out[1][12]     ; Merged with bullet_location:bul_1|bull_pos_out[1][13]    ;
+; bullet_location:bul_1|bull_pos_out[1][13]     ; Merged with bullet_location:bul_1|bull_pos_out[1][14]    ;
+; bullet_location:bul_1|bull_pos_out[1][14]     ; Merged with bullet_location:bul_1|bull_pos_out[1][15]    ;
+; bullet_location:bul_1|bull_pos_out[1][15]     ; Merged with bullet_location:bul_1|bull_pos_out[1][16]    ;
+; bullet_location:bul_1|bull_pos_out[1][16]     ; Merged with bullet_location:bul_1|bull_pos_out[1][17]    ;
+; bullet_location:bul_1|bull_pos_out[1][17]     ; Merged with bullet_location:bul_1|bull_pos_out[1][18]    ;
+; bullet_location:bul_1|bull_pos_out[1][18]     ; Merged with bullet_location:bul_1|bull_pos_out[1][19]    ;
+; bullet_location:bul_1|bull_pos_out[1][19]     ; Merged with bullet_location:bul_1|bull_pos_out[1][20]    ;
+; bullet_location:bul_1|bull_pos_out[1][20]     ; Merged with bullet_location:bul_1|bull_pos_out[1][21]    ;
+; bullet_location:bul_1|bull_pos_out[1][21]     ; Merged with bullet_location:bul_1|bull_pos_out[1][22]    ;
+; bullet_location:bul_1|bull_pos_out[1][22]     ; Merged with bullet_location:bul_1|bull_pos_out[1][23]    ;
+; bullet_location:bul_1|bull_pos_out[1][23]     ; Merged with bullet_location:bul_1|bull_pos_out[1][24]    ;
+; bullet_location:bul_1|bull_pos_out[1][24]     ; Merged with bullet_location:bul_1|bull_pos_out[1][25]    ;
+; bullet_location:bul_1|bull_pos_out[1][25]     ; Merged with bullet_location:bul_1|bull_pos_out[1][26]    ;
+; bullet_location:bul_1|bull_pos_out[1][26]     ; Merged with bullet_location:bul_1|bull_pos_out[1][27]    ;
+; bullet_location:bul_1|bull_pos_out[1][27]     ; Merged with bullet_location:bul_1|bull_pos_out[1][28]    ;
+; bullet_location:bul_1|bull_pos_out[1][28]     ; Merged with bullet_location:bul_1|bull_pos_out[1][29]    ;
+; bullet_location:bul_1|bull_pos_out[1][29]     ; Merged with bullet_location:bul_1|bull_pos_out[1][30]    ;
+; bullet_location:bul_1|bull_pos_out[1][30]     ; Merged with bullet_location:bul_2|bull_pos_out[0][30]    ;
+; bullet_location:bul_2|bull_pos_out[0][30]     ; Merged with bullet_location:bul_1|bull_pos_out[0][3]     ;
+; bullet_location:bul_1|bull_pos_out[0][3]      ; Merged with bullet_location:bul_1|bull_pos_out[0][4]     ;
+; bullet_location:bul_1|bull_pos_out[0][4]      ; Merged with bullet_location:bul_1|bull_pos_out[0][10]    ;
+; bullet_location:bul_1|bull_pos_out[0][10]     ; Merged with bullet_location:bul_1|bull_pos_out[0][11]    ;
+; bullet_location:bul_1|bull_pos_out[0][11]     ; Merged with bullet_location:bul_1|bull_pos_out[0][12]    ;
+; bullet_location:bul_1|bull_pos_out[0][12]     ; Merged with bullet_location:bul_1|bull_pos_out[0][13]    ;
+; bullet_location:bul_1|bull_pos_out[0][13]     ; Merged with bullet_location:bul_1|bull_pos_out[0][14]    ;
+; bullet_location:bul_1|bull_pos_out[0][14]     ; Merged with bullet_location:bul_1|bull_pos_out[0][15]    ;
+; bullet_location:bul_1|bull_pos_out[0][15]     ; Merged with bullet_location:bul_1|bull_pos_out[0][16]    ;
+; bullet_location:bul_1|bull_pos_out[0][16]     ; Merged with bullet_location:bul_1|bull_pos_out[0][17]    ;
+; bullet_location:bul_1|bull_pos_out[0][17]     ; Merged with bullet_location:bul_1|bull_pos_out[0][18]    ;
+; bullet_location:bul_1|bull_pos_out[0][18]     ; Merged with bullet_location:bul_1|bull_pos_out[0][19]    ;
+; bullet_location:bul_1|bull_pos_out[0][19]     ; Merged with bullet_location:bul_1|bull_pos_out[0][20]    ;
+; bullet_location:bul_1|bull_pos_out[0][20]     ; Merged with bullet_location:bul_1|bull_pos_out[0][21]    ;
+; bullet_location:bul_1|bull_pos_out[0][21]     ; Merged with bullet_location:bul_1|bull_pos_out[0][22]    ;
+; bullet_location:bul_1|bull_pos_out[0][22]     ; Merged with bullet_location:bul_1|bull_pos_out[0][23]    ;
+; bullet_location:bul_1|bull_pos_out[0][23]     ; Merged with bullet_location:bul_1|bull_pos_out[0][24]    ;
+; bullet_location:bul_1|bull_pos_out[0][24]     ; Merged with bullet_location:bul_1|bull_pos_out[0][25]    ;
+; bullet_location:bul_1|bull_pos_out[0][25]     ; Merged with bullet_location:bul_1|bull_pos_out[0][26]    ;
+; bullet_location:bul_1|bull_pos_out[0][26]     ; Merged with bullet_location:bul_1|bull_pos_out[0][27]    ;
+; bullet_location:bul_1|bull_pos_out[0][27]     ; Merged with bullet_location:bul_1|bull_pos_out[0][28]    ;
+; bullet_location:bul_1|bull_pos_out[0][28]     ; Merged with bullet_location:bul_1|bull_pos_out[0][29]    ;
+; bullet_location:bul_1|bull_pos_out[0][29]     ; Merged with bullet_location:bul_1|bull_pos_out[0][30]    ;
+; bullet_location:bul_1|bull_pos_out[0][30]     ; Merged with bullet_location:bul_2|bull_pos_out[1][3]     ;
+; bullet_location:bul_2|bull_pos_out[1][3]      ; Merged with bullet_location:bul_2|bull_pos_out[1][4]     ;
+; bullet_location:bul_2|bull_pos_out[1][4]      ; Merged with bullet_location:bul_2|bull_pos_out[1][10]    ;
+; bullet_location:bul_2|bull_pos_out[1][10]     ; Merged with bullet_location:bul_2|bull_pos_out[1][11]    ;
+; bullet_location:bul_2|bull_pos_out[1][11]     ; Merged with bullet_location:bul_2|bull_pos_out[1][12]    ;
+; bullet_location:bul_2|bull_pos_out[1][12]     ; Merged with bullet_location:bul_2|bull_pos_out[1][13]    ;
+; bullet_location:bul_2|bull_pos_out[1][13]     ; Merged with bullet_location:bul_2|bull_pos_out[1][14]    ;
+; bullet_location:bul_2|bull_pos_out[1][14]     ; Merged with bullet_location:bul_2|bull_pos_out[1][15]    ;
+; bullet_location:bul_2|bull_pos_out[1][15]     ; Merged with bullet_location:bul_2|bull_pos_out[1][16]    ;
+; bullet_location:bul_2|bull_pos_out[1][16]     ; Merged with bullet_location:bul_2|bull_pos_out[1][17]    ;
+; bullet_location:bul_2|bull_pos_out[1][17]     ; Merged with bullet_location:bul_2|bull_pos_out[1][18]    ;
+; bullet_location:bul_2|bull_pos_out[1][18]     ; Merged with bullet_location:bul_2|bull_pos_out[1][19]    ;
+; bullet_location:bul_2|bull_pos_out[1][19]     ; Merged with bullet_location:bul_2|bull_pos_out[1][20]    ;
+; bullet_location:bul_2|bull_pos_out[1][20]     ; Merged with bullet_location:bul_2|bull_pos_out[1][21]    ;
+; bullet_location:bul_2|bull_pos_out[1][21]     ; Merged with bullet_location:bul_2|bull_pos_out[1][22]    ;
+; bullet_location:bul_2|bull_pos_out[1][22]     ; Merged with bullet_location:bul_2|bull_pos_out[1][23]    ;
+; bullet_location:bul_2|bull_pos_out[1][23]     ; Merged with bullet_location:bul_2|bull_pos_out[1][24]    ;
+; bullet_location:bul_2|bull_pos_out[1][24]     ; Merged with bullet_location:bul_2|bull_pos_out[1][25]    ;
+; bullet_location:bul_2|bull_pos_out[1][25]     ; Merged with bullet_location:bul_2|bull_pos_out[1][26]    ;
+; bullet_location:bul_2|bull_pos_out[1][26]     ; Merged with bullet_location:bul_2|bull_pos_out[1][27]    ;
+; bullet_location:bul_2|bull_pos_out[1][27]     ; Merged with bullet_location:bul_2|bull_pos_out[1][28]    ;
+; bullet_location:bul_2|bull_pos_out[1][28]     ; Merged with bullet_location:bul_2|bull_pos_out[1][29]    ;
+; bullet_location:bul_2|bull_pos_out[1][29]     ; Merged with bullet_location:bul_2|bull_pos_out[1][30]    ;
+; bullet_location:bul_2|bull_pos_out[1][30]     ; Merged with bullet_location:bul_2|bull_pos_out[0][3]     ;
+; bullet_location:bul_2|bull_pos_out[0][3]      ; Merged with bullet_location:bul_2|bull_pos_out[0][4]     ;
+; bullet_location:bul_2|bull_pos_out[0][4]      ; Merged with bullet_location:bul_2|bull_pos_out[0][10]    ;
+; bullet_location:bul_2|bull_pos_out[0][10]     ; Merged with bullet_location:bul_2|bull_pos_out[0][11]    ;
+; bullet_location:bul_2|bull_pos_out[0][11]     ; Merged with bullet_location:bul_2|bull_pos_out[0][12]    ;
+; bullet_location:bul_2|bull_pos_out[0][12]     ; Merged with bullet_location:bul_2|bull_pos_out[0][13]    ;
+; bullet_location:bul_2|bull_pos_out[0][13]     ; Merged with bullet_location:bul_2|bull_pos_out[0][14]    ;
+; bullet_location:bul_2|bull_pos_out[0][14]     ; Merged with bullet_location:bul_2|bull_pos_out[0][15]    ;
+; bullet_location:bul_2|bull_pos_out[0][15]     ; Merged with bullet_location:bul_2|bull_pos_out[0][16]    ;
+; bullet_location:bul_2|bull_pos_out[0][16]     ; Merged with bullet_location:bul_2|bull_pos_out[0][17]    ;
+; bullet_location:bul_2|bull_pos_out[0][17]     ; Merged with bullet_location:bul_2|bull_pos_out[0][18]    ;
+; bullet_location:bul_2|bull_pos_out[0][18]     ; Merged with bullet_location:bul_2|bull_pos_out[0][19]    ;
+; bullet_location:bul_2|bull_pos_out[0][19]     ; Merged with bullet_location:bul_2|bull_pos_out[0][20]    ;
+; bullet_location:bul_2|bull_pos_out[0][20]     ; Merged with bullet_location:bul_2|bull_pos_out[0][21]    ;
+; bullet_location:bul_2|bull_pos_out[0][21]     ; Merged with bullet_location:bul_2|bull_pos_out[0][22]    ;
+; bullet_location:bul_2|bull_pos_out[0][22]     ; Merged with bullet_location:bul_2|bull_pos_out[0][23]    ;
+; bullet_location:bul_2|bull_pos_out[0][23]     ; Merged with bullet_location:bul_2|bull_pos_out[0][24]    ;
+; bullet_location:bul_1|bull_pos_out[1][0]      ; Merged with bullet_location:bul_1|bull_pos_out[0][0]     ;
+; bullet_location:bul_1|bull_pos_out[0][0]      ; Merged with bullet_location:bul_2|bull_pos_out[0][0]     ;
+; bullet_location:bul_2|bull_pos_out[0][0]      ; Merged with bullet_location:bul_2|bull_pos_out[1][0]     ;
+; tank_location:tank_1|tank_pos_out[1][1]       ; Merged with tank_location:tank_1|tank_pos_out[1][6]      ;
+; tank_location:tank_1|tank_pos_out[1][6]       ; Merged with tank_location:tank_1|tank_pos_out[1][7]      ;
+; tank_location:tank_1|tank_pos_out[1][7]       ; Merged with tank_location:tank_1|tank_pos_out[1][8]      ;
+; bullet_location:bul_2|bull_pos_out[1][0]      ; Merged with bullet_location:bul_2|bull_pos_out[0][24]    ;
+; tank_location:tank_1|tank_pos_out[1][8]       ; Merged with tank_location:tank_1|tank_pos_out[1][31]     ;
+; tank_location:tank_2|tank_pos_out[0][4]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[0][5]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[0][8]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[1][0]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[1][1]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[1][31]      ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; tank_location:tank_2|tank_pos_out[1][3]       ; Merged with tank_location:tank_2|tank_pos_out[0][31]     ;
+; pixelGenerator:vid|colorAddress[0]            ; Merged with pixelGenerator:vid|colorAddress[2]           ;
+; bullet_location:bul_2|bull_pos_out[0][24]     ; Lost fanout                                              ;
+; VGA_SYNC:sync|pixel_row[9]                    ; Stuck at GND due to stuck port data_in                   ;
+; tank_location:tank_2|tank_pos_out[0][31]      ; Lost fanout                                              ;
+; tank_control:tank_1_control|current_state.die ; Lost fanout                                              ;
+; tank_control:tank_1_control|current_state.win ; Lost fanout                                              ;
+; de2lcd:lcd_message|next_command.TOGGLE_E      ; Merged with de2lcd:lcd_message|next_command.HOLD         ;
+; de2lcd:lcd_message|state.WRITE_CHAR2          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR16        ;
+; de2lcd:lcd_message|state.WRITE_CHAR3          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR17        ;
+; de2lcd:lcd_message|state.WRITE_CHAR4          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR18        ;
+; de2lcd:lcd_message|state.WRITE_CHAR15         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR1         ;
+; de2lcd:lcd_message|state.WRITE_CHAR5          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR19        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR2   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR16 ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR3   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR17 ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR4   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR18 ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR15  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR1  ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR5   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR19 ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR6   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR20 ;
+; de2lcd:lcd_message|state.WRITE_CHAR6          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR20        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR7   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR21 ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR9   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR23 ;
+; de2lcd:lcd_message|state.WRITE_CHAR7          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR21        ;
+; de2lcd:lcd_message|state.WRITE_CHAR9          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR23        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR8   ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR22 ;
+; de2lcd:lcd_message|state.WRITE_CHAR8          ; Merged with de2lcd:lcd_message|state.WRITE_CHAR22        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR28  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR14 ;
+; de2lcd:lcd_message|state.WRITE_CHAR28         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR14        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR24  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR10 ;
+; de2lcd:lcd_message|state.WRITE_CHAR24         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR10        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR25  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR11 ;
+; de2lcd:lcd_message|state.WRITE_CHAR25         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR11        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR26  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR12 ;
+; de2lcd:lcd_message|state.WRITE_CHAR26         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR12        ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR27  ; Merged with de2lcd:lcd_message|next_command.WRITE_CHAR13 ;
+; de2lcd:lcd_message|state.WRITE_CHAR27         ; Merged with de2lcd:lcd_message|state.WRITE_CHAR13        ;
+; de2lcd:lcd_message|next_command.HOLD          ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR1   ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR1          ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR16  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR16         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR17  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR17         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR18  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR18         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR19  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR19         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR20  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR20         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR21  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR21         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR22  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR22         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR23  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR23         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR10  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR10         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR11  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR11         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR12  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR12         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR13  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR13         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR14  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR14         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.WRITE_CHAR29  ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.WRITE_CHAR29         ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|next_command.RETURN_HOME   ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|state.RETURN_HOME          ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|DATA_BUS_VALUE[7]          ; Stuck at GND due to stuck port data_in                   ;
+; de2lcd:lcd_message|DATA_BUS_VALUE[1]          ; Merged with de2lcd:lcd_message|next_command.RESET1       ;
+; de2lcd:lcd_message|DATA_BUS_VALUE[0]          ; Merged with de2lcd:lcd_message|next_command.DISPLAY_ON   ;
+; de2lcd:lcd_message|DATA_BUS_VALUE[6]          ; Merged with de2lcd:lcd_message|LCD_RS                    ;
+; pixelGenerator:vid|colorAddress[1]            ; Merged with pixelGenerator:vid|colorAddress[2]           ;
+; Total Number of Removed Registers = 298       ;                                                          ;
++-----------------------------------------------+----------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -778,43 +744,39 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 181   ;
+; Total registers                              ; 150   ;
 ; Number of registers using Synchronous Clear  ; 21    ;
-; Number of registers using Synchronous Load   ; 27    ;
-; Number of registers using Asynchronous Clear ; 89    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 58    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 53    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------+
-; Inverted Register Statistics                                  ;
-+-----------------------------------------------------+---------+
-; Inverted Register                                   ; Fan out ;
-+-----------------------------------------------------+---------+
-; tank_location:tank_1|tank_pos_out[0][8]             ; 7       ;
-; tank_location:tank_1|tank_pos_out[0][5]             ; 7       ;
-; tank_location:tank_1|tank_pos_out[0][4]             ; 7       ;
-; tank_location:tank_1|tank_pos_out[0][0]             ; 9       ;
-; tank_control:tank_1_control|tank_next_pos_out[0][8] ; 1       ;
-; tank_control:tank_1_control|tank_next_pos_out[0][5] ; 1       ;
-; tank_control:tank_1_control|tank_next_pos_out[0][4] ; 1       ;
-; tank_control:tank_1_control|tank_next_pos_out[0][0] ; 1       ;
-; Total number of inverted registers = 8              ;         ;
-+-----------------------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; tank_location:tank_1|tank_pos_out[0][8] ; 6       ;
+; tank_location:tank_1|tank_pos_out[0][5] ; 6       ;
+; tank_location:tank_1|tank_pos_out[0][4] ; 6       ;
+; tank_location:tank_1|tank_pos_out[0][0] ; 8       ;
+; Total number of inverted registers = 4  ;         ;
++-----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[6]                             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[5]                ;
-; 3:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|tank_control:tank_1_control|tank_next_pos_out[0][12] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|tank_control:tank_1_control|tank_next_pos_out[0][31] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[4]                 ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[0]    ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 54 LEs               ; 27 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][11] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][4]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -1054,27 +1016,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 61                          ;
-; cycloneiii_ff         ; 181                         ;
-;     CLR               ; 62                          ;
-;     CLR SLD           ; 27                          ;
+; cycloneiii_ff         ; 150                         ;
+;     CLR               ; 26                          ;
 ;     ENA               ; 21                          ;
+;     ENA CLR           ; 32                          ;
 ;     SCLR              ; 21                          ;
 ;     plain             ; 50                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 514                         ;
-;     arith             ; 306                         ;
-;         2 data inputs ; 268                         ;
+; cycloneiii_lcell_comb ; 506                         ;
+;     arith             ; 307                         ;
+;         2 data inputs ; 269                         ;
 ;         3 data inputs ; 38                          ;
-;     normal            ; 208                         ;
+;     normal            ; 199                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 42                          ;
-;         4 data inputs ; 126                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 145                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.90                       ;
-; Average LUT depth     ; 6.20                        ;
+; Average LUT depth     ; 5.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1093,7 +1055,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Dec  5 16:46:10 2024
+    Info: Processing started: Thu Dec  5 17:35:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -1140,7 +1102,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file tankgam
     Info (12022): Found design unit 1: tankgame2-structure File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 46
     Info (12023): Found entity 1: tankgame2 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tank_control.vhd
-    Info (12022): Found design unit 1: tank_control-fsm File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 17
+    Info (12022): Found design unit 1: tank_control-fsm File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 19
     Info (12023): Found entity 1: tank_control File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file tank_control_tb.vhd
     Info (12022): Found design unit 1: tb_tank_control-testbench File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd Line: 10
@@ -1237,31 +1199,27 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register tank_control:tank_1_control|tank_next_pos_out[1][0] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 31
     Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[1][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
     Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][8] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
     Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][5] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
     Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_control:tank_1_control|tank_next_pos_out[0][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 31
-    Critical Warning (18010): Register tank_control:tank_1_control|tank_next_pos_out[0][8] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 31
-    Critical Warning (18010): Register tank_control:tank_1_control|tank_next_pos_out[0][5] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 31
-    Critical Warning (18010): Register tank_control:tank_1_control|tank_next_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 31
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "keyboard_clk" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 16
     Warning (15610): No output dependent on input pin "keyboard_data" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 17
-Info (21057): Implemented 655 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 615 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 570 logic cells
+    Info (21061): Implemented 530 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4886 megabytes
-    Info: Processing ended: Thu Dec  5 16:46:18 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
+    Info: Peak virtual memory: 4882 megabytes
+    Info: Processing ended: Thu Dec  5 17:35:55 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
 
 
