@@ -1,0 +1,9 @@
+
+State Machine - |tank_control|current_state
+Name current_state.done current_state.win current_state.die current_state.move_left current_state.move_right current_state.start 
+current_state.start 0 0 0 0 0 0 
+current_state.move_right 0 0 0 0 1 1 
+current_state.move_left 0 0 0 1 0 1 
+current_state.die 0 0 1 0 0 1 
+current_state.win 0 1 0 0 0 1 
+current_state.done 1 0 0 0 0 1 

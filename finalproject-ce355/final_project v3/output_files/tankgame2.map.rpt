@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tankgame2
-Thu Dec  5 11:40:33 2024
+Thu Dec  5 12:19:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -10,7 +10,17 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |tank_control|current_state
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +47,20 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Dec  5 11:40:33 2024                  ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 12:19:17 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; tankgame2                                          ;
 ; Top-level Entity Name              ; tank_control                                       ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; N/A until Partition Merge                          ;
-;     Total combinational functions  ; N/A until Partition Merge                          ;
-;     Dedicated logic registers      ; N/A until Partition Merge                          ;
-; Total registers                    ; N/A until Partition Merge                          ;
-; Total pins                         ; N/A until Partition Merge                          ;
-; Total virtual pins                 ; N/A until Partition Merge                          ;
-; Total memory bits                  ; N/A until Partition Merge                          ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                          ;
-; Total PLLs                         ; N/A until Partition Merge                          ;
+; Total logic elements               ; 218                                                ;
+;     Total combinational functions  ; 185                                                ;
+;     Dedicated logic registers      ; 67                                                 ;
+; Total registers                    ; 67                                                 ;
+; Total pins                         ; 135                                                ;
+; Total virtual pins                 ; 0                                                  ;
+; Total memory bits                  ; 0                                                  ;
+; Embedded Multiplier 9-bit elements ; 0                                                  ;
+; Total PLLs                         ; 0                                                  ;
 +------------------------------------+----------------------------------------------------+
 
 
@@ -149,11 +159,223 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                 ;
++--------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                                                      ; Library ;
++--------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../final_project v2/game_library.vhd ; yes             ; User VHDL File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd ;         ;
+; ../final_project v2/tank_const.vhd   ; yes             ; User VHDL File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd   ;         ;
+; tank_control.vhd                     ; yes             ; User VHDL File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd ;         ;
++--------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 218       ;
+;                                             ;           ;
+; Total combinational functions               ; 185       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 52        ;
+;     -- 3 input functions                    ; 44        ;
+;     -- <=2 input functions                  ; 89        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 93        ;
+;     -- arithmetic mode                      ; 92        ;
+;                                             ;           ;
+; Total registers                             ; 67        ;
+;     -- Dedicated logic registers            ; 67        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 135       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 67        ;
+; Total fan-out                               ; 916       ;
+; Average fan-out                             ; 1.75      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; |tank_control              ; 185 (185)           ; 67 (67)                   ; 0           ; 0            ; 0       ; 0         ; 135  ; 0            ; |tank_control       ; tank_control ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |tank_control|current_state                                                                                                                      ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+; Name                     ; current_state.done ; current_state.win ; current_state.die ; current_state.move_left ; current_state.move_right ; current_state.start ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+; current_state.start      ; 0                  ; 0                 ; 0                 ; 0                       ; 0                        ; 0                   ;
+; current_state.move_right ; 0                  ; 0                 ; 0                 ; 0                       ; 1                        ; 1                   ;
+; current_state.move_left  ; 0                  ; 0                 ; 0                 ; 1                       ; 0                        ; 1                   ;
+; current_state.die        ; 0                  ; 0                 ; 1                 ; 0                       ; 0                        ; 1                   ;
+; current_state.win        ; 0                  ; 1                 ; 0                 ; 0                       ; 0                        ; 1                   ;
+; current_state.done       ; 1                  ; 0                 ; 0                 ; 0                       ; 0                        ; 1                   ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; tank_next_pos~62                                       ;    ;
+; tank_next_pos~63                                       ;    ;
+; tank_next_pos~64                                       ;    ;
+; tank_next_pos~65                                       ;    ;
+; tank_next_pos~66                                       ;    ;
+; tank_next_pos~67                                       ;    ;
+; tank_next_pos~68                                       ;    ;
+; tank_next_pos~69                                       ;    ;
+; tank_next_pos~70                                       ;    ;
+; tank_next_pos~71                                       ;    ;
+; tank_next_pos~72                                       ;    ;
+; tank_next_pos~73                                       ;    ;
+; tank_next_pos~74                                       ;    ;
+; tank_next_pos~75                                       ;    ;
+; tank_next_pos~76                                       ;    ;
+; tank_next_pos~77                                       ;    ;
+; tank_next_pos~78                                       ;    ;
+; tank_next_pos~79                                       ;    ;
+; tank_next_pos~80                                       ;    ;
+; tank_next_pos~81                                       ;    ;
+; tank_next_pos~82                                       ;    ;
+; tank_next_pos~83                                       ;    ;
+; tank_next_pos~84                                       ;    ;
+; tank_next_pos~85                                       ;    ;
+; tank_next_pos~86                                       ;    ;
+; tank_next_pos~87                                       ;    ;
+; tank_next_pos~88                                       ;    ;
+; tank_next_pos~89                                       ;    ;
+; tank_next_pos~90                                       ;    ;
+; tank_next_pos~91                                       ;    ;
+; tank_next_pos~92                                       ;    ;
+; tank_next_pos~93                                       ;    ;
+; tank_next_pos~94                                       ;    ;
+; tank_next_pos~95                                       ;    ;
+; tank_next_pos~96                                       ;    ;
+; tank_next_pos~97                                       ;    ;
+; tank_next_pos~98                                       ;    ;
+; tank_next_pos~99                                       ;    ;
+; tank_next_pos~100                                      ;    ;
+; tank_next_pos~101                                      ;    ;
+; tank_next_pos~102                                      ;    ;
+; tank_next_pos~103                                      ;    ;
+; tank_next_pos~104                                      ;    ;
+; tank_next_pos~105                                      ;    ;
+; tank_next_pos~106                                      ;    ;
+; tank_next_pos~107                                      ;    ;
+; tank_next_pos~108                                      ;    ;
+; tank_next_pos~109                                      ;    ;
+; tank_next_pos~110                                      ;    ;
+; tank_next_pos~111                                      ;    ;
+; tank_next_pos~112                                      ;    ;
+; tank_next_pos~113                                      ;    ;
+; tank_next_pos~114                                      ;    ;
+; tank_next_pos~115                                      ;    ;
+; tank_next_pos~116                                      ;    ;
+; tank_next_pos~117                                      ;    ;
+; tank_next_pos~118                                      ;    ;
+; tank_next_pos~119                                      ;    ;
+; Add0~0                                                 ;    ;
+; Add0~1                                                 ;    ;
+; Add0~2                                                 ;    ;
+; Add0~3                                                 ;    ;
+; Number of logic cells representing combinational loops ; 62 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; tank_display~reg0                     ; Stuck at VCC due to stuck port data_in ;
+; current_state.die                     ; Lost fanout                            ;
+; current_state.win                     ; Lost fanout                            ;
+; current_state.done                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 67    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 67    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |tank_control|Selector24   ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |tank_control|Selector1    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 135                         ;
+; cycloneiii_ff         ; 67                          ;
+;     CLR               ; 65                          ;
+;     ENA CLR           ; 2                           ;
+; cycloneiii_lcell_comb ; 186                         ;
+;     arith             ; 92                          ;
+;         2 data inputs ; 86                          ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 94                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 52                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.10                        ;
+; Average LUT depth     ; 4.10                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +384,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Thu Dec  5 11:40:21 2024
+    Info: Processing started: Thu Dec  5 12:18:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -212,97 +434,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file tank_co
     Info (12022): Found design unit 1: tank_control-fsm File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 17
     Info (12023): Found entity 1: tank_control File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 7
 Info (12127): Elaborating entity "tank_control" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at tank_control.vhd(28): inferring latch(es) for signal or variable "tank_next_pos", which holds its previous value in one or more paths through the process File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Warning (10631): VHDL Process Statement warning at tank_control.vhd(28): inferring latch(es) for signal or variable "temp_display", which holds its previous value in one or more paths through the process File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "temp_display" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][0]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][1]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][2]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][3]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][4]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][5]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][6]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][7]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][8]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][9]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][10]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][11]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][12]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][13]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][14]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][15]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][16]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][17]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][18]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][19]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][20]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][21]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][22]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][23]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][24]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][25]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][26]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][27]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][28]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][29]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][30]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[1][31]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][0]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][1]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][2]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][3]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][4]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][5]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][6]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][7]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][8]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][9]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][10]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][11]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][12]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][13]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][14]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][15]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][16]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][17]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][18]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][19]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][20]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][21]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][22]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][23]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][24]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][25]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][26]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][27]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][28]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][29]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][30]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Info (10041): Inferred latch for "tank_next_pos[0][31]" at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][31]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10029): Constant driver at tank_control.vhd(28) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 28
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][30]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][29]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][28]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][27]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][26]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][25]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][24]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][23]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][22]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][21]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][20]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][19]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][18]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][17]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][16]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][15]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (10028): Can't resolve multiple constant drivers for net "tank_next_pos[0][14]" at tank_control.vhd(51) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 51
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 3 warnings
-    Error: Peak virtual memory: 4785 megabytes
-    Error: Processing ended: Thu Dec  5 11:40:33 2024
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:30
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "tank_display" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register tank_next_pos_out[1][0]~reg0 will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 30
+    Critical Warning (18010): Register tank_next_pos_out[1][31]~reg0 will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 30
+    Critical Warning (18010): Register tank_next_pos_out[0][0]~reg0 will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 30
+    Critical Warning (18010): Register tank_next_pos_out[0][31]~reg0 will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 30
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 385 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 70 input pins
+    Info (21059): Implemented 65 output pins
+    Info (21061): Implemented 250 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Thu Dec  5 12:19:17 2024
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:42
 
 

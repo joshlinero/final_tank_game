@@ -20,25 +20,23 @@ architecture fsm of tank_control is
     type state_type is (start, move_right, move_left, die, win, done);
     signal current_state, next_state : state_type;
     signal tank_next_pos : position; 
-    signal temp_display : std_logic; 
+    signal temp_display : std_logic := '1'; -- Default display ON
 
 begin
 
     -- Asynchronous Reset and Synchronous State Update
     process(clk, rst_n)
-	 begin
-		  if rst_n = '0' then
-				current_state <= start;
-				tank_next_pos <= (others => 0);
-				temp_display <= '1'; -- Default display ON
-				tank_next_pos_out <= (others => 0); -- Ensure all outputs are assigned
-				tank_display <= '1'; -- Ensure all outputs are assigned
-		  elsif rising_edge(clk) then
-				current_state <= next_state;
-				tank_next_pos_out <= tank_next_pos; 
-				tank_display <= temp_display; 
-		  end if;
-	 end process;
+    begin
+        if rst_n = '0' then
+            current_state <= start;
+            tank_next_pos_out <= (others => 0); -- Ensure all outputs are assigned
+            tank_display <= '1'; -- Ensure all outputs are assigned
+        elsif rising_edge(clk) then
+            current_state <= next_state;
+            tank_next_pos_out <= tank_next_pos; 
+            tank_display <= temp_display; 
+        end if;
+    end process;
 
     -- Next State and Output Logic
     process(current_state, we, tank_curr_pos_in, tank_speed_in, tank_next_pos)
@@ -87,7 +85,7 @@ begin
             when others =>
                 -- Explicitly assign defaults in case of unexpected state
                 next_state <= start;
-                tank_next_pos <= (others => 0); -- Rset array to zero
+                tank_next_pos <= (others => 0); -- Reset array to zero
                 temp_display <= '1';
         end case;
     end process;
