@@ -1,5 +1,5 @@
 Flow report for tankgame2
-Thu Dec  5 11:08:10 2024
+Thu Dec  5 11:40:33 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Dec  5 11:08:10 2024             ;
+; Flow Status                        ; Flow Failed - Thu Dec  5 11:40:33 2024             ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; tankgame2                                          ;
-; Top-level Entity Name              ; tankgame2                                          ;
+; Top-level Entity Name              ; tank_control                                       ;
 ; Family                             ; Cyclone IV E                                       ;
 ; Device                             ; EP4CE115F29C7                                      ;
 ; Timing Models                      ; Final                                              ;
@@ -65,28 +65,29 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2024 11:08:01 ;
+; Start date & time ; 12/05/2024 11:40:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tankgame2           ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2543711158273.173341848125592          ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                         ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
+; COMPILER_SIGNATURE_ID               ; 2543711158273.173342042233880          ; --            ; --           ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --           ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --           ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --           ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; tank_control ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; tank_control ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; tank_control ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --           ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --           ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --           ; --         ;
+; TOP_LEVEL_ENTITY                    ; tank_control                           ; tankgame2     ; --           ; --         ;
++-------------------------------------+----------------------------------------+---------------+--------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -94,8 +95,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4806 MB             ; 00:00:21                           ;
-; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4785 MB             ; 00:00:30                           ;
+; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

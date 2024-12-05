@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Thu Dec  5 11:08:10 2024
+Analysis & Synthesis Status : Failed - Thu Dec  5 11:40:33 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 Revision Name : tankgame2
-Top-level Entity Name : tankgame2
+Top-level Entity Name : tank_control
 Family : Cyclone IV E
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
