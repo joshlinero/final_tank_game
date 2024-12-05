@@ -58,33 +58,8 @@ create_clock -name {clk} -period 20.000 -waveform { 0.000 0.500 } [get_ports {cl
 # Set Clock Uncertainty
 #**************************************************************
 
-
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {de2lcd:lcd_message|CLK_400HZ}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {de2lcd:lcd_message|CLK_400HZ}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|ready_set}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|ready_set}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|keyboard_clk_filtered}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|keyboard_clk_filtered}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|scan_ready}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|scan_ready}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {reset_n}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {reset_n}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {VGA_SYNC:sync|pixel_clock_int}]  0.030  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {VGA_SYNC:sync|pixel_clock_int}]  0.030  
 set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {de2lcd:lcd_message|CLK_400HZ}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {de2lcd:lcd_message|CLK_400HZ}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|ready_set}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|ready_set}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|keyboard_clk_filtered}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|keyboard_clk_filtered}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {ps2:keyboard|keyboard:u1|scan_ready}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {ps2:keyboard|keyboard:u1|scan_ready}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {reset_n}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {reset_n}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {VGA_SYNC:sync|pixel_clock_int}]  0.030  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {VGA_SYNC:sync|pixel_clock_int}]  0.030  
+set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020 
 set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}]  0.020  
 

@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY tankgame2
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:17:46  DECEMBER 05, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -50,21 +50,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE ../miniprojects/ps2/ps2.vhd
-set_global_assignment -name VHDL_FILE ../miniprojects/ps2/oneshot.vhd
-set_global_assignment -name VHDL_FILE ../miniprojects/ps2/keyboard.vhd
-set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/vga_sync.vhd
-set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/colorROM.vhd
-set_global_assignment -name VHDL_FILE "../final_project v2/tank_location.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/pll_counter.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/pixelGenerator.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/leddcd.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/game_library.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/de2lcd.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/bullet_location.vhd"
-set_global_assignment -name VHDL_FILE "../final_project v2/tank_const.vhd"
-set_global_assignment -name VHDL_FILE tankgame2.vhd
-set_global_assignment -name VHDL_FILE tank_control.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -114,5 +99,24 @@ set_location_assignment PIN_L26 -to seg_out_1[3]
 set_location_assignment PIN_L25 -to seg_out_1[4]
 set_location_assignment PIN_J22 -to seg_out_1[5]
 set_location_assignment PIN_H22 -to seg_out_1[6]
+set_global_assignment -name SDC_FILE "../final_project v2/tankgame.out.sdc"
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/ps2.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/oneshot.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/keyboard.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/vga_sync.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/colorROM.vhd
+set_global_assignment -name VHDL_FILE "../final_project v2/tank_location.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/pll_counter.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/pixelGenerator.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/leddcd.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/game_library.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/de2lcd.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/bullet_location.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/tank_const.vhd"
+set_global_assignment -name VHDL_FILE tankgame2.vhd
+set_global_assignment -name VHDL_FILE tank_control.vhd
 set_global_assignment -name VHDL_FILE tank_control_tb.vhd
+set_location_assignment PIN_AB28 -to reset_n
+set_location_assignment PIN_G19 -to test_led1
+set_location_assignment PIN_M23 -to we_in
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

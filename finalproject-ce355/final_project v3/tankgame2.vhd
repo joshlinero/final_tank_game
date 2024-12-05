@@ -38,6 +38,7 @@ entity tankgame2 is
 		SEC_LED : out std_logic;
 		LCD_RW : buffer std_logic;
 		DATA_BUS : inout std_logic_vector(7 DOWNTO 0)
+		
 	);
 		
 end entity tankgame2;
@@ -121,7 +122,7 @@ architecture structure of tankgame2 is
 			-- Basic pixel gen stuff
 			clk		:	in std_logic;
 			ROM_clk	:	in	std_logic;
-			rst_n	:	in	std_logic;
+			rst_n		:	in	std_logic;
 			video_on	:	in	std_logic;
 			eof		:	in	std_logic;
 			pixel_row:	in	std_logic_vector(9 downto 0);
@@ -233,7 +234,6 @@ architecture structure of tankgame2 is
 		port(
         clk            : in std_logic;
         rst_n            : in std_logic;
-        we             : in std_logic;
         tank_pos_in    : in position;
         tank_pos_out   : out position;
         speed_in       : in std_logic_vector(2 downto 0);
@@ -321,7 +321,9 @@ begin
 
 	reset <= not reset_n;
 	
-	shoot_in_proc: process(clk, reset) is begin
+	shoot_in_proc: process(clk, reset) is
+		variable temp_1_speed : std_logic_vector(2 downto 0);
+	begin
 	if (reset = '1') then
 		tank_1_fire_key <= '0';
 		tank_1_speed1_key <= '0';
@@ -362,6 +364,18 @@ begin
 				end case;
 			end if;
 		end if;
+		
+		if tank_1_speed1_key = '1' then
+			temp_1_speed := SPEED_SLOW;
+		elsif tank_1_speed2_key = '1' then
+			temp_1_speed := SPEED_MEDIUM;
+		elsif tank_1_speed3_key = '1' then
+			temp_1_speed := SPEED_FAST;
+		end if;
+		
+		temp_1_speed := SPEED_SLOW;
+		
+		tank_1_next_speed <= temp_1_speed;
 	end process;
 	
 	pll : pll_counter
@@ -485,6 +499,8 @@ begin
 				tank_display     =>  tank_1_disp_flag,
 				tank_speed_in    => tank_1_curr_speed
 			);
+			
+		
 		
 		tank_1 : tank_location
 			generic map(
@@ -493,7 +509,6 @@ begin
 			port map(
 				clk => clk,
 				rst_n => reset,
-				we => global_we,
 				tank_pos_in => tank_1_next_pos,
 				tank_pos_out => tank_1_curr_pos,
 				speed_in => tank_1_next_speed,
@@ -507,7 +522,6 @@ begin
 			port map(
 				clk => clk,
 				rst_n => reset,
-				we => global_we,
 				tank_pos_in => tank_2_next_pos,
 				tank_pos_out => tank_2_curr_pos,
 				speed_in => tank_2_next_speed,

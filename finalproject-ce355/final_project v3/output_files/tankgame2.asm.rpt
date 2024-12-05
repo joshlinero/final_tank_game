@@ -1,6 +1,6 @@
 Assembler report for tankgame2
-Thu Dec  5 15:07:55 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Thu Dec  5 16:46:29 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof
+  5. Assembler Device Options: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Dec  5 15:07:55 2024 ;
+; Assembler Status      ; Successful - Thu Dec  5 16:46:29 2024 ;
 ; Revision Name         ; tankgame2                             ;
 ; Top-level Entity Name ; tankgame2                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                                                                   ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                                                                   ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
++---------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                                                              ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x005A8B32                                                                                                                                                                           ;
-; Checksum       ; 0x005A8B32                                                                                                                                                                           ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                            ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x005AC95A                                                                                                                         ;
+; Checksum       ; 0x005AC95A                                                                                                                         ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,16 +77,16 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Thu Dec  5 15:07:53 2024
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Thu Dec  5 16:46:27 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4702 megabytes
-    Info: Processing ended: Thu Dec  5 15:07:55 2024
+    Info: Processing ended: Thu Dec  5 16:46:29 2024
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

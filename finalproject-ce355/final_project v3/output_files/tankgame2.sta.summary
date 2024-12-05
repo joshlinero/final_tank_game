@@ -3,147 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -7.924
-TNS   : -383.859
-
-Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -2.647
-TNS   : -84.722
-
-Type  : Slow 1200mV 85C Model Setup 'de2lcd:lcd_message|CLK_400HZ'
-Slack : -0.941
-TNS   : -11.991
-
-Type  : Slow 1200mV 85C Model Setup 'clk_50MHZ'
-Slack : -0.570
-TNS   : -0.570
-
-Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:sync|pixel_clock_int'
-Slack : 0.351
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'de2lcd:lcd_message|CLK_400HZ'
-Slack : 0.385
+Slack : 8.160
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.386
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'clk_50MHZ'
-Slack : 0.431
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -150.775
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50MHZ'
-Slack : -3.000
-TNS   : -4.285
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -2.693
-TNS   : -60.518
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'de2lcd:lcd_message|CLK_400HZ'
-Slack : -1.285
-TNS   : -30.840
+Slack : 0.332
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -7.177
-TNS   : -338.266
-
-Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -2.310
-TNS   : -73.329
-
-Type  : Slow 1200mV 0C Model Setup 'de2lcd:lcd_message|CLK_400HZ'
-Slack : -0.757
-TNS   : -8.420
-
-Type  : Slow 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -0.450
-TNS   : -0.450
-
-Type  : Slow 1200mV 0C Model Hold 'de2lcd:lcd_message|CLK_400HZ'
-Slack : 0.338
+Slack : 9.240
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.340
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:sync|pixel_clock_int'
-Slack : 0.357
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'clk_50MHZ'
-Slack : 0.363
+Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -150.775
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
-Slack : -3.000
-TNS   : -4.285
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -2.649
-TNS   : -60.474
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'de2lcd:lcd_message|CLK_400HZ'
-Slack : -1.285
-TNS   : -30.840
+Slack : 0.315
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.343
-TNS   : -137.336
-
-Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -0.759
-TNS   : -18.316
-
-Type  : Fast 1200mV 0C Model Setup 'clk_50MHZ'
-Slack : -0.004
-TNS   : -0.004
-
-Type  : Fast 1200mV 0C Model Setup 'de2lcd:lcd_message|CLK_400HZ'
-Slack : 0.057
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk_50MHZ'
-Slack : 0.167
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'de2lcd:lcd_message|CLK_400HZ'
-Slack : 0.173
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:sync|pixel_clock_int'
-Slack : 0.174
+Slack : 14.213
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.174
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -125.490
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50MHZ'
-Slack : -3.000
-TNS   : -4.038
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:sync|pixel_clock_int'
-Slack : -1.000
-TNS   : -46.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'de2lcd:lcd_message|CLK_400HZ'
-Slack : -1.000
-TNS   : -24.000
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------

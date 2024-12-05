@@ -9,9 +9,7 @@ entity tank_location is
 		tank_loc      : position 
 	);
 	port(
-		clk, rst_n, we  : in std_logic;
-		--x_coord		 : in natural;
-		--y_coord       : in natural;
+		clk, rst_n		 : in std_logic;
 		tank_pos_in     : in position;
 		tank_pos_out    : out position;
 		speed_in        : in std_logic_vector(2 downto 0);
@@ -28,12 +26,9 @@ begin
 			tank_pos_out <= tank_loc;
 			speed_out <= SPEED_SLOW;
 			
-		elsif (rising_edge(clk)) then
-			if (we = '1') then 
-				tank_pos_out <= tank_pos_in;
-				speed_out <= speed_in;		
-			end if;
-			
+		elsif (rising_edge(clk)) then 
+			tank_pos_out <= tank_pos_in;
+			speed_out <= speed_in;
 		end if;	
 	end process;
 	
