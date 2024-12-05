@@ -282,11 +282,6 @@ architecture structure of tankgame2 is
 	signal VGA_clk_int	:	std_logic;
 	signal eof				:	std_logic;
 	
-	constant TANK_1_INIT_POS : position := (TANK_1_POS_X, TANK_1_POS_Y);
-	constant TANK_2_INIT_POS : position := (TANK_2_POS_X, TANK_2_POS_Y);
-	constant TANK_1_BULL_INIT_POS : position := (TANK_1_BULL_POS_X, TANK_1_BULL_POS_Y);
-	constant TANK_2_BULL_INIT_POS : position := (TANK_2_BULL_POS_X, TANK_2_BULL_POS_Y);
-	
 	component pll_counter is
         port(
             clk       : in std_logic;
@@ -488,7 +483,7 @@ begin
 				tank_curr_pos_in   => tank_1_curr_pos,
 				tank_next_pos_out   => tank_1_next_pos,
 				tank_display     =>  tank_1_disp_flag,
-				tank_speed_in    => tank_1_next_speed
+				tank_speed_in    => tank_1_curr_speed
 			);
 		
 		tank_1 : tank_location

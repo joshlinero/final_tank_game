@@ -21,17 +21,18 @@ architecture fsm of tank_control is
     signal current_state, next_state : state_type;
     signal tank_next_pos : position; 
     signal temp_display : std_logic := '1'; -- Default display ON
+	 signal speed : integer := 5;
 
 begin
 
     -- Asynchronous Reset and Synchronous State Update
     process(clk, rst_n)
     begin
-        if rst_n = '0' then
+        if rst_n = '1' then
             current_state <= start;
-            tank_next_pos_out <= (others => 0); -- Ensure all outputs are assigned
+            tank_next_pos_out <= TANK_1_INIT_POS; -- Ensure all outputs are assigned
             tank_display <= '1'; -- Ensure all outputs are assigned
-        elsif rising_edge(clk) then
+        elsif (rising_edge(clk)) then
             current_state <= next_state;
             tank_next_pos_out <= tank_next_pos; 
             tank_display <= temp_display; 
@@ -40,54 +41,71 @@ begin
 
     -- Next State and Output Logic
     process(current_state, we, tank_curr_pos_in, tank_speed_in, tank_next_pos)
+			variable new_pos : position;
+			variable new_state : state_type;
     begin
         -- Default assignments to avoid latches
-        next_state <= current_state;
-        tank_next_pos <= tank_curr_pos_in;
+        new_state := current_state;
+        new_pos := tank_curr_pos_in;
         temp_display <= '1'; -- Default display ON
 
         case current_state is
             when start =>
                 if we = '1' then
-                    next_state <= move_right;
+                    new_state := move_right;
+					 else
+					     new_state := start;
+						  
                 end if;
 
             when move_right =>
                 if we = '1' then
-                    if tank_next_pos(0) + TANK_WIDTH < 640 then
-                        tank_next_pos(0) <= tank_next_pos(0) + to_integer(unsigned(tank_speed_in));
+                    if new_pos(0) + TANK_WIDTH < 640 then
+                        new_pos(0) := new_pos(0) + to_integer(unsigned(tank_speed_in)); -- + speed;
+								new_pos(1) := new_pos(1);
+								new_state := move_right;
                     else
-                        next_state <= move_left;
+                        new_state := move_left;
                     end if;
+						  
+					 else
+					     new_state := move_right; 
                 end if;
+
 
             when move_left =>
                 if we = '1' then
-                    if tank_next_pos(0) > 0 then
-                        tank_next_pos(0) <= tank_next_pos(0) - to_integer(unsigned(tank_speed_in));
+                    if new_pos(0) > 0 then
+                        new_pos(0) := new_pos(0) - to_integer(unsigned(tank_speed_in));  --  - speed;
+								new_pos(1) := new_pos(1);
+								new_state := move_left;
                     else
-                        next_state <= move_right;
+                        new_state := move_right;
                     end if;
+					 else
+					     new_state := move_left;
                 end if;
 
             when die =>
                 temp_display <= '0'; -- Turn off display
-                next_state <= done;
+                new_state := done;
 
             when win =>
                 temp_display <= '1'; -- Keep display ON
-                next_state <= done;
+                new_state := done;
 
             when done =>
                 -- Maintain the current state values explicitly
-                next_state <= done;
+                new_state := done;
 
             when others =>
                 -- Explicitly assign defaults in case of unexpected state
-                next_state <= start;
-                tank_next_pos <= (others => 0); -- Reset array to zero
+                new_state := start;
+                new_pos := (others => 0); -- Reset array to zero
                 temp_display <= '1';
         end case;
+		  tank_next_pos <= new_pos;
+		  next_state <= new_state;
     end process;
 
 end architecture fsm;
