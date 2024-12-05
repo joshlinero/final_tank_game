@@ -1,0 +1,96 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use work.tank_const.all;
+use work.game_library.all;
+
+
+entity tank_control is
+	port(
+		clk, rst_n, we  : in std_logic;
+
+		tank_curr_pos_in     : in position;
+		tank_next_pos_out    : out position;
+		tank_display         : out std_logic
+		--speed_in             : in std_logic_vector(2 downto 0);
+		--speed_out            : out std_logic_vector(2 downto 0)
+	);	
+end entity tank_control;
+
+
+architecture fsm of tank_control is
+
+    type state_type is (start, move_right, move_left, die, win);
+    signal current_state, next_state : state_type;
+	 signal direction : std_logic;
+	 signal speed : integer := 5;
+
+begin
+
+    process(clk, rst_n)
+    begin
+        if rst_n = '0' then
+            current_state <= start; 
+				tank_next_pos_out <= 
+				tank_display <= '1';
+        elsif rising_edge(clk) then
+            current_state <= next_state;
+        end if;
+    end process;
+
+    process(current_state, we, tank_curr_pos_in)
+    begin
+        next_state <= current_state;
+        
+        -- State transitions
+        case current_state is
+            when start =>
+                if we = '1' then
+                    next_state <= move_right; 
+                end if;
+
+            when move_right =>
+					 if we = '1' then
+						   if tank_curr_pos_in(0) < 640 then
+								 tank_curr_pos_out(0) <= tank_curr_pos_in(0) + speed;
+								 tank_curr_pos_out(1) <= tank_curr_pos_in(1);
+								 tank_display <= '1';
+								 next_state <= move_right;
+								 
+							elsif tank_curr_pos_in(0) >= 640 then
+								 next_state <= move_left;
+								 tank_display <= '1';
+							end if;
+						  
+
+            when move_left =>
+                if we = '1' then
+						   if tank_curr_pos_in(0) > 0 then
+								 tank_curr_pos_out(0) <= tank_curr_pos_in(0) - speed;
+								 tank_curr_pos_out(1) <= tank_curr_pos_in(1);
+								 tank_display <= '1';
+								 next_state <= move_left;
+							elsif tank_curr_pos_in(0) <= 0 then
+								 next_state <= move_right;
+							end if;
+
+             when die =>
+                tank_display <= '0'; 
+                next_state <= done; 
+
+            when win =>
+                tank_display <= '1'; 
+                next_state <= done; -- Transition to done state
+
+            when done =>
+                next_state <= done; 
+                tank_next_pos_out <= tank_curr_pos_in; 
+					 
+				
+            when others =>
+                next_state <= start; -- Default to start
+        end case;
+    end process;
+
+end architecture fsm;
+
