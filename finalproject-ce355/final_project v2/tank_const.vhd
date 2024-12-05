@@ -11,7 +11,7 @@ package tank_const is
 	 constant TANK_GUNH   : natural := 15;
 	 constant TANK_1_POS_X : natural := 320 - (TANK_WIDTH / 2);
 	 constant TANK_1_POS_Y : natural := 470 - TANK_HEIGHT;
-	 constant TANK_2_POS_X : natural := (320 + (TANK_WIDTH / 2));
+	 constant TANK_2_POS_X : natural := 320 - (TANK_WIDTH / 2);
 	 constant TANK_2_POS_Y : natural := 30 - TANK_HEIGHT;
 	 constant TANK_1_BULL_POS_X : natural := TANK_1_POS_X + (TANK_WIDTH / 2) - (TANK_GUNW/2);
 	 constant TANK_1_BULL_POS_Y : natural := TANK_1_POS_Y - TANK_GUNH;
