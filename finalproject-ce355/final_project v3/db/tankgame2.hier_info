@@ -11,8 +11,10 @@ clk => pixelgenerator:vid.clk
 clk => ps2:keyboard.clock_50MHz
 clk => tank_control:tank_1_control.clk
 clk => tank_location:tank_1.clk
+clk => speed_control:tank_1_speed.clk
 clk => tank_control:tank_2_control.clk
 clk => tank_location:tank_2.clk
+clk => speed_control:tank_2_speed.clk
 clk => bullet_control:bullet_1_control.clk
 clk => bullet_location:bul_1.clk
 clk => bullet_location:bul_2.clk
@@ -30,8 +32,10 @@ reset_n => tank_1_speed1_key.PRESET
 reset_n => tank_1_fire_key.ACLR
 reset_n => tank_control:tank_1_control.rst_n
 reset_n => tank_location:tank_1.rst_n
+reset_n => speed_control:tank_1_speed.rst_n
 reset_n => tank_control:tank_2_control.rst_n
 reset_n => tank_location:tank_2.rst_n
+reset_n => speed_control:tank_2_speed.rst_n
 reset_n => bullet_control:bullet_1_control.rst_n
 reset_n => bullet_location:bul_1.rst_n
 reset_n => bullet_location:bul_2.rst_n
@@ -2069,6 +2073,30 @@ speed_out[1] <= speed_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 speed_out[2] <= speed_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|tankgame2|speed_control:tank_1_speed
+clk => tank_speed_out[0]~reg0.CLK
+clk => tank_speed_out[1]~reg0.CLK
+clk => tank_speed_out[2]~reg0.CLK
+rst_n => tank_speed_out[0]~reg0.ACLR
+rst_n => tank_speed_out[1]~reg0.ACLR
+rst_n => tank_speed_out[2]~reg0.ACLR
+speed1 => tank_speed_out.OUTPUTSELECT
+speed1 => tank_speed_out.OUTPUTSELECT
+speed1 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+tank_speed_in[0] => tank_speed_out.DATAA
+tank_speed_in[1] => tank_speed_out.DATAA
+tank_speed_in[2] => tank_speed_out.DATAA
+tank_speed_out[0] <= tank_speed_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tank_speed_out[1] <= tank_speed_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tank_speed_out[2] <= tank_speed_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |tankgame2|tank_control:tank_2_control
 clk => current_state~1.DATAIN
 rst_n => current_state~3.DATAIN
@@ -2705,6 +2733,30 @@ speed_in[2] => speed_out[2]~reg0.DATAIN
 speed_out[0] <= speed_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 speed_out[1] <= speed_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 speed_out[2] <= speed_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tankgame2|speed_control:tank_2_speed
+clk => tank_speed_out[0]~reg0.CLK
+clk => tank_speed_out[1]~reg0.CLK
+clk => tank_speed_out[2]~reg0.CLK
+rst_n => tank_speed_out[0]~reg0.ACLR
+rst_n => tank_speed_out[1]~reg0.ACLR
+rst_n => tank_speed_out[2]~reg0.ACLR
+speed1 => tank_speed_out.OUTPUTSELECT
+speed1 => tank_speed_out.OUTPUTSELECT
+speed1 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed2 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+speed3 => tank_speed_out.OUTPUTSELECT
+tank_speed_in[0] => tank_speed_out.DATAA
+tank_speed_in[1] => tank_speed_out.DATAA
+tank_speed_in[2] => tank_speed_out.DATAA
+tank_speed_out[0] <= tank_speed_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tank_speed_out[1] <= tank_speed_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tank_speed_out[2] <= tank_speed_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |tankgame2|bullet_control:bullet_1_control

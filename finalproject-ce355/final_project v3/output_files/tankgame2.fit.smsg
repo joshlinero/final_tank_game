@@ -1,3 +1,10 @@
+Warning (332060): Node: VGA_SYNC:sync|pixel_clock_int was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ps2:keyboard|keyboard:u1|scan_ready was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ps2:keyboard|keyboard:u1|keyboard_clk_filtered was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ps2:keyboard|keyboard:u1|ready_set was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: clk_50MHZ was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: de2lcd:lcd_message|CLK_400HZ was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: bullet_control:bullet_1_control|current_state.done was determined to be a clock but was found without an associated clock assignment.
 Extra Info (176273): Performing register packing on registers with non-logic cell location assignments
 Extra Info (176274): Completed register packing on registers with non-logic cell location assignments
 Extra Info (176236): Started Fast Input/Output/OE register processing

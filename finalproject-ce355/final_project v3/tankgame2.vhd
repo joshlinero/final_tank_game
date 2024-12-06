@@ -310,6 +310,15 @@ architecture structure of tankgame2 is
 	signal global_we : std_logic;
 	signal pulse_out : std_logic;
 	
+	component speed_control is
+		port(
+			clk, rst_n		 			: in std_logic;
+			speed1, speed2, speed3	: in std_logic;
+			tank_speed_in    			: in std_logic_vector(2 downto 0);
+			tank_speed_out   			: out std_logic_vector(2 downto 0)
+		);
+	end component speed_control;
+	
 begin
 
 	score_1_slv <= std_logic_vector(to_unsigned(score_1_signal, 4));
@@ -338,7 +347,7 @@ begin
 
 	reset <= not reset_n;
 	
-	shoot_in_proc: process(clk, reset, key_ready, hist1, key_code) is
+	input_proc: process(clk, reset, key_ready, hist1, key_code) is
 	begin
 	if (reset = '1') then
 		tank_1_fire_key <= '0';
@@ -351,7 +360,7 @@ begin
 		tank_2_speed3_key <= '0';
 	elsif (rising_edge(clk)) then
 		if key_ready = '1' and hist1 /= "11110000" then
-			case key_code is
+			case hist0 is
 				when "00011101" =>
 					tank_1_fire_key <= '1';
 				when "00011100" =>
@@ -379,22 +388,6 @@ begin
 					tank_2_speed3_key <= '0';
 				end case;
 			end if;
-		end if;
-		
-		if tank_1_speed1_key = '1' then
-			tank_1_next_speed <= SPEED_SLOW;
-		elsif tank_1_speed2_key = '1' then
-			tank_1_next_speed <= SPEED_MEDIUM;
-		elsif tank_1_speed3_key = '1' then
-			tank_1_next_speed <= SPEED_FAST;
-		end if;
-		
-		if tank_2_speed1_key = '1' then
-			tank_2_next_speed <= SPEED_SLOW;
-		elsif tank_2_speed2_key = '1' then
-			tank_2_next_speed <= SPEED_MEDIUM;
-		elsif tank_2_speed3_key = '1' then
-			tank_2_next_speed <= SPEED_FAST;
 		end if;
 		
 	end process;
@@ -534,6 +527,17 @@ begin
 				speed_out => tank_1_curr_speed
 			);
 			
+		tank_1_speed : speed_control
+			port map(
+				clk => clk,
+				rst_n => reset,
+				speed1 => tank_1_speed1_key,
+				speed2 => tank_1_speed2_key,
+				speed3 => tank_1_speed3_key,
+				tank_speed_in => tank_1_curr_speed,
+				tank_speed_out => tank_1_next_speed
+			);
+			
 		tank_2_control : tank_control
 			port map(
 				clk => clk,
@@ -557,6 +561,17 @@ begin
 				tank_pos_out => tank_2_curr_pos,
 				speed_in => tank_2_next_speed,
 				speed_out => tank_2_curr_speed
+			);
+			
+		tank_2_speed : speed_control
+			port map(
+				clk => clk,
+				rst_n => reset,
+				speed1 => tank_2_speed1_key,
+				speed2 => tank_2_speed2_key,
+				speed3 => tank_2_speed3_key,
+				tank_speed_in => tank_2_curr_speed,
+				tank_speed_out => tank_2_next_speed
 			);
 			
 		bullet_1_control : bullet_control
