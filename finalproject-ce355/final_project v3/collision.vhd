@@ -20,7 +20,7 @@ end entity collision;
 architecture fsm of collision is
 
 	-- Define the states, including 'done'
-	type state_type is (start, check_hit, hit, win, done);
+	type state_type is (start, check_hit, win, done);
 	signal current_state, next_state : state_type;
 
 begin
@@ -42,70 +42,59 @@ begin
 	begin
 		-- Default assignments to avoid latches
 		next_state <= current_state;
-		--collsion_hit <= ;
+		collsion_hit <= '0';
 		--bullet_disp <= '0';
 		
 		case current_state is
 		
 			when start =>
-				next_state <= check_hit;
+				if bullet_fired_in = '1' then
+					next_state <= check_hit;
+					collsion_hit <= '0';
+				else
+				   next_state <= start;
+					collsion_hit <= '0';
+				end if;
 				
 				
 			when check_hit =>
---				if we = '1' then
---					if direction = '0' then
---						bullet_pos_out(1) <= bullet_pos_in(1) - speed;
---						bullet_pos_out(0) <= bullet_pos_in(0);
---					else
---						bullet_pos_out(1) <= bullet_pos_in(1) + speed;
---						bullet_pos_out(0) <= bullet_pos_in(0);
---					end if;
---				end if;
-				if (((tank_pos_in(1) > tank_1_pos_in(1) - TANK_GUNH) 
-					   and (tank_pos_in(1) - BULLET_H < tank_1_pos_in(1) + TANK_HEIGHT) 
-					   and (tank_pos_in(0) - BULLET_W/2 < tank_1_pos_in(0) + TANK_WIDTH) 
-					   and (tank_pos_in(0) + BULLET_W/2 > tank_1_pos_in(0))
-					   and bul_2_hit = '0')) then
-					next_state <= hit_boundary;
-				else
-					next_state <= move_bullet;
+
+				if direction = '0' then
+					if (((bullet_pos_in(1) < tank_pos_in(1) + TANK_HEIGHT + TANK_GUNH) 
+					   and (bullet_pos_in(0) < tank_pos_in(0) + TANK_WIDTH)
+					   and (bullet_pos_in(0) + BULLET_W > tank_pos_in(0)))) then
+						collsion_hit <= '1';
+						next_state <= done;
+					else
+						collsion_hit <= '0';
+						next_state <= check_hit;
+					end if;
+				else 
+					if (((bullet_pos_in(1) > tank_pos_in(1) - TANK_GUNH) 
+						and (bullet_pos_in(1) - BULLET_H < tank_pos_in(1) + TANK_HEIGHT) 
+					   and (bullet_pos_in(0) < tank_pos_in(0) + TANK_WIDTH) 
+					   and (bullet_pos_in(0) + BULLET_W > tank_pos_in(0)))) then
+					   collsion_hit <= '1';
+						next_state <= done;
+					else
+						collsion_hit <= '0';
+					   next_state <= check_hit;
+					end if;
 				end if;
-				bullet_fired_out <= '1';
-			
-			when hit_boundary =>
-				next_state <= start;
-			   bullet_disp <= '0'; -- Turn off display	
-				bullet_fired_out <= '0';
-				bullet_pos_out(0) <= -1000;
-				bullet_pos_out(1) <= -1000;
-			
-			when die =>
-				bullet_disp <= '0'; -- Turn off display
-				next_state <= done;
-				bullet_pos_out(0) <= -1000;
-				bullet_pos_out(1) <= -1000;
-				bullet_fired_out <= '0';
-			
+				
 			when win =>
-				bullet_disp <= '1'; -- Keep display ON
+				collsion_hit <= '0';
 				next_state <= done;
-				bullet_pos_out <= bullet_pos_in;
-				bullet_fired_out <= '1';
 			
 			when done =>
 				-- Maintain the current state values explicitly
-				next_state <= done;
-				bullet_pos_out(0) <= -1000;
-				bullet_pos_out(1) <= -1000;
-				bullet_fired_out <= '0';
+				collsion_hit <= '0';
+				next_state <= start;
 			
 			when others =>
 				-- Explicitly assign defaults in case of unexpected state
 				next_state <= start;
-				bullet_disp <= '1';
-				bullet_pos_out(0) <= 300;
-				bullet_pos_out(1) <= 300;
-				bullet_fired_out <= '0';
+				collsion_hit <= '0';
 				
 			end case;
 	end process;

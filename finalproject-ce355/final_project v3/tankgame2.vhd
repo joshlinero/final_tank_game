@@ -96,6 +96,9 @@ architecture structure of tankgame2 is
 	signal tank_1_bul_dir : std_logic := '0';
 	signal tank_2_bul_dir : std_logic := '1';
 	
+	signal collision_1_hit : std_logic;
+	signal collision_2_hit : std_logic;
+	
 	signal score_1_signal : integer;
 	signal score_2_signal : integer;
 	signal score_1_slv : std_logic_vector(3 downto 0);
@@ -237,11 +240,24 @@ architecture structure of tankgame2 is
 		bullet_fired_in    : in std_logic;
 		bullet_fired_out   : out std_logic;
 		bullet_disp        : out std_logic;
-		direction            : in std_logic
+		direction            : in std_logic;
+		collision_hit   : in std_logic
 	);
 	end component bullet_control;
 	-- speed control
-   -- collision control
+
+	-- collision control
+	component collision is
+	   port(
+		clk, rst_n, we  : in std_logic;
+		
+		tank_pos_in : in position;
+		bullet_pos_in      : in position;
+		bullet_fired_in    : in std_logic;
+		collsion_hit       : out std_logic;
+		direction          : in std_logic
+		);
+	end component collision;
 	-- game win control
 	
 	
@@ -588,7 +604,8 @@ begin
 				bullet_fired_in => tank_1_bul_curr_fire,
 				bullet_fired_out => tank_1_bul_next_fire,
 				bullet_disp => tank_1_bul_disp_flag,
-				direction => tank_1_bul_dir
+				direction => tank_1_bul_dir,
+				collision_hit => collision_1_hit
 			);
 			
 			
@@ -619,7 +636,8 @@ begin
 				bullet_fired_in => tank_2_bul_curr_fire,
 				bullet_fired_out => tank_2_bul_next_fire,
 				bullet_disp => tank_2_bul_disp_flag,
-				direction => tank_2_bul_dir
+				direction => tank_2_bul_dir,
+				collision_hit => collision_2_hit
 			);
 		
 		bul_2 : bullet_location
@@ -634,7 +652,19 @@ begin
 				bull_pos_out => tank_2_bul_curr_pos,
 				fired_in => tank_2_bul_next_fire,
 				fired_out => tank_2_bul_curr_fire
-			);	
+			);
+		
+		collision_1 : collision
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				tank_pos_in => tank_1_curr_pos,
+				bullet_pos_in => tank_1_bul_curr_pos,
+				bullet_fired_in => tank_1_bul_curr_fire,
+				collsion_hit => collision_1_hit,
+				direction => tank_1_bul_dir
+			);
 			
 	   score_decoder_1 : leddcd 
 		port map(

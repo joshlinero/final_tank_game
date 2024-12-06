@@ -15,14 +15,16 @@ entity bullet_control is
 		bullet_fired_in    : in std_logic;
 		bullet_fired_out   : out std_logic;
 		bullet_disp        : out std_logic;
-		direction            : in std_logic
+		direction          : in std_logic;
+		collision_hit      : in std_logic
+		
 		);
 end entity bullet_control;
 
 architecture fsm of bullet_control is
 
 	-- Define the states, including 'done'
-	type state_type is (start, move_bullet, hit_boundary, die, win, done);
+	type state_type is (start, move_bullet, hit_boundary, get_hit, die, win, done);
 	signal current_state, next_state : state_type;
 	--signal bullet_next_pos : position; 
 	--signal bullet_fired_temp : std_logic;
@@ -106,7 +108,13 @@ begin
 				else
 					next_state <= move_bullet;
 				end if;
+				
 				bullet_fired_out <= '1';
+				
+				if collision_hit = '1' then
+					bullet_fired_out <= '0';
+				   next_state <= hit_boundary;
+				end if;
 			
 			when hit_boundary =>
 				next_state <= start;
