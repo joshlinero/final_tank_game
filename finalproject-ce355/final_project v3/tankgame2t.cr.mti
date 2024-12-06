@@ -1,6 +1,6 @@
 {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:29 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -10,7 +10,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Compiling package tank_const
 -- Compiling package body tank_const
 -- Loading package tank_const
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:01
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd}
@@ -36,7 +36,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:30 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -46,12 +46,12 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity tank_location
 -- Compiling architecture behavioral of tank_location
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:28 on Dec 05,2024
+Start time: 19:35:42 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -59,12 +59,12 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Compiling package game_library
 -- Compiling package body game_library
 -- Loading package game_library
-End time: 19:05:28 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:42 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:28 on Dec 05,2024
+Start time: 19:35:42 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -72,7 +72,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package NUMERIC_STD
 -- Compiling entity pll_counter
 -- Compiling architecture behavioral of pll_counter
-End time: 19:05:28 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:42 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd}
@@ -96,7 +96,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:30 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -106,7 +106,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity bullet_location
 -- Compiling architecture behavioral of bullet_location
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd
@@ -142,7 +142,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:29 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -152,19 +152,8 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity pixelGenerator
 -- Compiling architecture behavioral of pixelGenerator
-End time: 19:05:29 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
-
-} {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package game_library
--- Loading package tank_const
--- Compiling entity tankgame2
--- Compiling architecture structure of tankgame2
 
 } {} {}} C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -183,6 +172,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity colorROM
 -- Compiling architecture SYN of colorrom
+
+} {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package game_library
+-- Loading package tank_const
+-- Compiling entity tb_tank_control
+-- Compiling architecture testbench of tb_tank_control
+-- Loading entity tank_control
+-- Loading entity tank_location
 
 } {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -205,9 +207,9 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity keyboard
 -- Compiling architecture a of keyboard
 
-} {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd}} {0 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd}
+} {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:30 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -217,16 +219,25 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity tb_tank_control
 -- Compiling architecture testbench of tb_tank_control
-** Error: (vcom-13) Recompile work.tank_control because work.tank_const has changed.
-** Error (suppressible): C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd(26): (vcom-1195) Cannot find expanded name "work.tank_control".
-** Error: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd(26): Unknown expanded name.
-** Error: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd(98): VHDL Compiler exiting
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:00
-Errors: 4, Warnings: 0
+-- Loading entity tank_control
+-- Loading entity tank_location
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
 
-} {13.0 14.0 15.0 17.0} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd}
+} {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:30 on Dec 05,2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package game_library
+-- Loading package tank_const
+-- Compiling entity bullet_control_tb
+-- Compiling architecture behavior of bullet_control_tb
+
+} {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd}} {0 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -236,10 +247,17 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity bullet_control_tb
 -- Compiling architecture behavior of bullet_control_tb
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
+** Error: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd(61): Nonresolved signal 'tank_1_bul_curr_pos' has multiple sources.
+  Drivers:
+    C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd(114):Process stim_proc
+       Driven at:
+          C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd(131)
+    C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd(99):Instantiation bullet_location_inst
+** Error: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd(155): VHDL Compiler exiting
+End time: 19:35:44 on Dec 05,2024, Elapsed time: 0:00:01
+Errors: 2, Warnings: 0
 
-} {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd}
+} {13.0 14.0 19.0 20.0} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -250,7 +268,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:28 on Dec 05,2024
+Start time: 19:35:42 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -259,7 +277,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package STD_LOGIC_UNSIGNED
 -- Compiling entity de2lcd
 -- Compiling architecture a of de2lcd
-End time: 19:05:28 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:42 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd}
@@ -284,7 +302,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:29 on Dec 05,2024
+Start time: 19:35:42 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -294,35 +312,24 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity tank_control
 -- Compiling architecture fsm of tank_control
-End time: 19:05:29 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:28 on Dec 05,2024
+Start time: 19:35:42 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity leddcd
 -- Compiling architecture data_flow of leddcd
-End time: 19:05:28 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:42 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
-
-} {} {}} {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package game_library
--- Loading package tank_const
--- Compiling entity bullet_control
--- Compiling architecture fsm of bullet_control
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:30 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -332,7 +339,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity bullet_control
 -- Compiling architecture fsm of bullet_control
-End time: 19:05:30 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}} C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/de2lcd/de2lcd.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/de2lcd/de2lcd.vhd
@@ -347,7 +354,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 
 } {} {}} {{C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd}} {1 {vcom -work work -2002 -explicit {C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-Start time: 19:05:29 on Dec 05,2024
+Start time: 19:35:43 on Dec 05,2024
 vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -357,7 +364,7 @@ vcom -reportprogress 300 -work work -2002 -explicit C:/Users/joshu/OneDrive/Docu
 -- Loading package tank_const
 -- Compiling entity tankgame2
 -- Compiling architecture structure of tankgame2
-End time: 19:05:29 on Dec 05,2024, Elapsed time: 0:00:00
+End time: 19:35:43 on Dec 05,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 } {} {}}

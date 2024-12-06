@@ -70,7 +70,7 @@ begin
 						bullet_pos_out(1) <= tank_pos_in(1) - TANK_GUNH - BULLET_H;
 					else
 						bullet_pos_out(0) <= tank_pos_in(0) + TANK_WIDTH/2 - BULLET_W/2;
-						bullet_pos_out(1) <= tank_pos_in(1) + TANK_GUNH + BULLET_H;
+						bullet_pos_out(1) <= tank_pos_in(1) + TANK_GUNH;
 					end if;
 				else 
 					bullet_disp <= '0';
@@ -100,8 +100,8 @@ begin
 						bullet_pos_out(0) <= bullet_pos_in(0);
 					end if;
 				end if;
-				if (direction = '0' and bullet_pos_in(1) <= 0) or 
-					(direction = '1' and bullet_pos_in(1) + BULLET_H >= 480) then
+				if (direction = '0' and bullet_pos_in(1) < 0) or 
+					(direction = '1' and bullet_pos_in(1) + BULLET_H > 480) then
 					next_state <= hit_boundary;
 				else
 					next_state <= move_bullet;

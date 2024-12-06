@@ -47,7 +47,6 @@ architecture behavior of bullet_control_tb is
     signal we               : std_logic := '0';
     signal tank_pos_in      : position := (0, 0);
     signal fire             : std_logic := '0';
-    constant bullet_pos_in    : position := (0, 0);
     signal bullet_fired_in  : std_logic := '0';
     signal direction        : std_logic := '0';
 
@@ -58,9 +57,10 @@ architecture behavior of bullet_control_tb is
 
     -- Signals for bullet_location component
     signal tank_1_bul_next_pos  : position := (0, 0);
-    signal tank_1_bul_curr_pos  : position;
+    signal tank_1_bul_curr_pos  : position; -- Now only driven by bullet_location
     signal tank_1_bul_next_fire : std_logic := '0';
     signal tank_1_bul_curr_fire : std_logic;
+    constant init_pos : position := (0, 0);
 
     -- Clock generation process
     constant clk_period : time := 10 ns;
@@ -86,7 +86,7 @@ begin
     -- Instantiate the bullet_location component
     bullet_location_inst: bullet_location
         generic map(
-            bullet_loc => bullet_pos_in
+            bullet_loc => init_pos
         )
         port map(
             clk        => clk,
@@ -118,17 +118,17 @@ begin
         rst_n <= '0';
         wait for clk_period * 2;
         rst_n <= '1';
+		  wait for clk_period * 2;
 
         -- Test case 1: Fire bullet upwards
         fire <= '1';
         tank_pos_in <= (100, 300);
         direction <= '0'; -- Upwards
-        wait for clk_period;
+        wait for clk_period * 2;
         fire <= '0';
         wait for clk_period * 10;
 
         -- Test case 2: Bullet reaches boundary
-        tank_1_bul_curr_pos <= (100, 5);
         we <= '1';
         wait for clk_period;
         we <= '0';

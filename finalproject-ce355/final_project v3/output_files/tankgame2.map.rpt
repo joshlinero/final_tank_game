@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tankgame2
-Thu Dec  5 19:26:45 2024
+Thu Dec  5 20:02:56 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
 
 
@@ -70,13 +70,13 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec  5 19:26:45 2024              ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 20:02:56 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
 ; Revision Name                      ; tankgame2                                          ;
 ; Top-level Entity Name              ; tankgame2                                          ;
 ; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 1,502                                              ;
-;     Total combinational functions  ; 1,437                                              ;
+; Total logic elements               ; 1,491                                              ;
+;     Total combinational functions  ; 1,426                                              ;
 ;     Dedicated logic registers      ; 388                                                ;
 ; Total registers                    ; 388                                                ;
 ; Total pins                         ; 61                                                 ;
@@ -241,16 +241,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,502     ;
+; Estimated Total logic elements              ; 1,491     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1437      ;
+; Total combinational functions               ; 1426      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 407       ;
-;     -- 3 input functions                    ; 274       ;
-;     -- <=2 input functions                  ; 756       ;
+;     -- 4 input functions                    ; 393       ;
+;     -- 3 input functions                    ; 275       ;
+;     -- <=2 input functions                  ; 758       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 577       ;
+;     -- normal mode                          ; 566       ;
 ;     -- arithmetic mode                      ; 860       ;
 ;                                             ;           ;
 ; Total registers                             ; 388       ;
@@ -264,8 +264,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 278       ;
-; Total fan-out                               ; 5404      ;
-; Average fan-out                             ; 2.73      ;
+; Total fan-out                               ; 5355      ;
+; Average fan-out                             ; 2.72      ;
 +---------------------------------------------+-----------+
 
 
@@ -274,14 +274,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |tankgame2                                   ; 1437 (57)           ; 388 (8)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
+; |tankgame2                                   ; 1426 (57)           ; 388 (8)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
 ;    |VGA_SYNC:sync|                           ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|VGA_SYNC:sync                                                                                     ; VGA_SYNC        ; work         ;
-;    |bullet_control:bullet_1_control|         ; 140 (140)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_1_control                                                                   ; bullet_control  ; work         ;
-;    |bullet_control:bullet_2_control|         ; 172 (172)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_2_control                                                                   ; bullet_control  ; work         ;
+;    |bullet_control:bullet_1_control|         ; 136 (136)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_1_control                                                                   ; bullet_control  ; work         ;
+;    |bullet_control:bullet_2_control|         ; 174 (174)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_2_control                                                                   ; bullet_control  ; work         ;
 ;    |bullet_location:bul_1|                   ; 1 (1)               ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_location:bul_1                                                                             ; bullet_location ; work         ;
 ;    |bullet_location:bul_2|                   ; 1 (1)               ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_location:bul_2                                                                             ; bullet_location ; work         ;
 ;    |de2lcd:lcd_message|                      ; 54 (54)             ; 45 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|de2lcd:lcd_message                                                                                ; de2lcd          ; work         ;
-;    |pixelGenerator:vid|                      ; 579 (579)           ; 3 (3)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
+;    |pixelGenerator:vid|                      ; 576 (576)           ; 3 (3)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
 ;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors                                                                ; colorROM        ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481 ; work         ;
@@ -289,10 +289,10 @@ https://fpgasoftware.intel.com/eula.
 ;    |ps2:keyboard|                            ; 19 (0)              ; 52 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|ps2:keyboard                                                                                      ; ps2             ; work         ;
 ;       |keyboard:u1|                          ; 17 (17)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|ps2:keyboard|keyboard:u1                                                                          ; keyboard        ; work         ;
 ;       |oneshot:pulser|                       ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|ps2:keyboard|oneshot:pulser                                                                       ; oneshot         ; work         ;
-;    |tank_control:tank_1_control|             ; 158 (122)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control                                                                       ; tank_control    ; work         ;
+;    |tank_control:tank_1_control|             ; 155 (119)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control                                                                       ; tank_control    ; work         ;
 ;       |lpm_add_sub:Add0|                     ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control|lpm_add_sub:Add0                                                      ; lpm_add_sub     ; work         ;
 ;          |add_sub_pvi:auto_generated|        ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_1_control|lpm_add_sub:Add0|add_sub_pvi:auto_generated                           ; add_sub_pvi     ; work         ;
-;    |tank_control:tank_2_control|             ; 158 (122)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_2_control                                                                       ; tank_control    ; work         ;
+;    |tank_control:tank_2_control|             ; 155 (119)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_2_control                                                                       ; tank_control    ; work         ;
 ;       |lpm_add_sub:Add0|                     ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_2_control|lpm_add_sub:Add0                                                      ; lpm_add_sub     ; work         ;
 ;          |add_sub_pvi:auto_generated|        ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_control:tank_2_control|lpm_add_sub:Add0|add_sub_pvi:auto_generated                           ; add_sub_pvi     ; work         ;
 ;    |tank_location:tank_1|                    ; 6 (6)               ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|tank_location:tank_1                                                                              ; tank_location   ; work         ;
@@ -701,31 +701,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; tank_location:tank_2|tank_pos_out[0][5]   ; 5       ;
 ; tank_location:tank_2|tank_pos_out[0][4]   ; 5       ;
 ; tank_location:tank_2|tank_pos_out[0][0]   ; 8       ;
-; bullet_location:bul_1|bull_pos_out[0][31] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][30] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][29] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][28] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][27] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][26] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][25] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][24] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][23] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][22] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][21] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][20] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][19] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][18] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][17] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][16] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][15] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][14] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][13] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][12] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][11] ; 2       ;
-; bullet_location:bul_1|bull_pos_out[0][10] ; 2       ;
 ; bullet_location:bul_1|bull_pos_out[0][4]  ; 2       ;
 ; bullet_location:bul_1|bull_pos_out[0][3]  ; 2       ;
-; bullet_location:bul_1|bull_pos_out[1][31] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[0][10] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][11] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][12] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][13] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][14] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][15] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][16] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][17] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][18] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][19] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][20] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][21] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][22] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][23] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][24] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][25] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][26] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][27] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][28] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][29] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][30] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[0][31] ; 2       ;
+; bullet_location:bul_1|bull_pos_out[1][31] ; 6       ;
 ; bullet_location:bul_1|bull_pos_out[1][30] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[1][29] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[1][28] ; 3       ;
@@ -747,8 +747,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; bullet_location:bul_1|bull_pos_out[1][12] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[1][11] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[1][10] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][4]  ; 5       ;
-; bullet_location:bul_2|bull_pos_out[0][31] ; 3       ;
+; bullet_location:bul_1|bull_pos_out[1][4]  ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][3]  ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][31] ; 2       ;
 ; bullet_location:bul_2|bull_pos_out[0][30] ; 2       ;
 ; bullet_location:bul_2|bull_pos_out[0][29] ; 2       ;
 ; bullet_location:bul_2|bull_pos_out[0][28] ; 2       ;
@@ -792,7 +793,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; bullet_location:bul_2|bull_pos_out[1][14] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][13] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][12] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][11] ; 3       ;
 ; Total number of inverted registers = 108* ;         ;
 +-------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
@@ -804,20 +804,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |tankgame2|pixelGenerator:vid|colorAddress[2]        ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[5]                  ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[8]     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|ps2:keyboard|keyboard:u1|INCNT[2]         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][6]  ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][6]  ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][26]  ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][10]  ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][24] ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[0][30] ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][4]  ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][3]  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][31] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][4]   ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][0]   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[8]                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[18]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|ps2:keyboard|keyboard:u1|INCNT[3]         ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][1]  ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][23]  ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][6]   ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][29] ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[0][10] ;
+; 4:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][13] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][11] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][0]  ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][5]   ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][4]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
@@ -1080,20 +1079,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 22                          ;
 ;     plain             ; 71                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 1440                        ;
+; cycloneiii_lcell_comb ; 1429                        ;
 ;     arith             ; 860                         ;
 ;         2 data inputs ; 642                         ;
 ;         3 data inputs ; 218                         ;
-;     normal            ; 580                         ;
+;     normal            ; 569                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 37                          ;
-;         2 data inputs ; 78                          ;
-;         3 data inputs ; 56                          ;
-;         4 data inputs ; 407                         ;
+;         2 data inputs ; 80                          ;
+;         3 data inputs ; 57                          ;
+;         4 data inputs ; 393                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.00                       ;
-; Average LUT depth     ; 6.67                        ;
+; Average LUT depth     ; 6.69                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1112,7 +1111,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Thu Dec  5 19:26:35 2024
+    Info: Processing started: Thu Dec  5 20:02:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1297,9 +1296,6 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
@@ -1321,6 +1317,9 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][12] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][11] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][10] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
     Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
@@ -1382,16 +1381,16 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1596 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1585 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 1511 logic cells
+    Info (21061): Implemented 1500 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 153 warnings
     Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Thu Dec  5 19:26:45 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Processing ended: Thu Dec  5 20:02:56 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
 
 
