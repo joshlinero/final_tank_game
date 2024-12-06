@@ -11,7 +11,8 @@ entity tank_control is
 		tank_curr_pos_in     : in position;
 		tank_next_pos_out    : out position;
 		tank_display         : out std_logic;
-		tank_speed_in        : in std_logic_vector(2 downto 0)
+		tank_speed_in        : in std_logic_vector(2 downto 0);
+		winner               : in std_logic
 	);
 	
 end entity tank_control;
@@ -19,7 +20,7 @@ end entity tank_control;
 architecture fsm of tank_control is
 
 	-- Define the states, including 'done'
-	type state_type is (start, move_right, move_left, die, win, done);
+	type state_type is (start, move_right, move_left, die, done);
 	signal current_state, next_state : state_type;
 
 begin
@@ -47,7 +48,11 @@ begin
 			when start =>
 				tank_next_pos_out <= tank_curr_pos_in;
 				tank_display <= '1';
-				next_state <= move_right;
+				if winner = '1' then
+					next_state <= die;
+				else
+					next_state <= move_right;
+				end if;
 		
 			when move_right =>
 				if we = '1' then
@@ -61,6 +66,10 @@ begin
 					next_state <= move_left;
 				else
 					next_state <= move_right;
+				end if;
+				
+				if winner = '1' then
+					next_state <= die;
 				end if;
 			
 		
@@ -77,14 +86,11 @@ begin
 				else
 					next_state <= move_left;
 				end if;
-			
+				if winner = '1' then
+					next_state <= die;
+				end if;
 			when die =>
 				tank_next_pos_out <= TANK_1_INIT_POS;
-				tank_display <= '0';
-				next_state <= done;
-			
-			when win =>
-				tank_next_pos_out <= tank_curr_pos_in;
 				tank_display <= '0';
 				next_state <= done;
 			

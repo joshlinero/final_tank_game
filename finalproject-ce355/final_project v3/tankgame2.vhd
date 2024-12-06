@@ -101,6 +101,8 @@ architecture structure of tankgame2 is
 	
 	signal score_1_signal : integer;
 	signal score_2_signal : integer;
+	signal tank_1_wins : std_logic;
+	signal tank_2_wins : std_logic;
 	signal score_1_slv : std_logic_vector(3 downto 0);
 	signal score_2_slv : std_logic_vector(3 downto 0);
 	signal segments_out_signal_1 : std_logic_vector(6 downto 0);
@@ -223,7 +225,8 @@ architecture structure of tankgame2 is
 		tank_curr_pos_in     : in position;
 		tank_next_pos_out    : out position;
 		tank_display         : out std_logic;
-		tank_speed_in        : in std_logic_vector(2 downto 0)
+		tank_speed_in        : in std_logic_vector(2 downto 0);
+		winner               : in std_logic
 	);	
 	end component tank_control;
 	
@@ -241,7 +244,8 @@ architecture structure of tankgame2 is
 		bullet_fired_out   : out std_logic;
 		bullet_disp        : out std_logic;
 		direction            : in std_logic;
-		collision_hit   : in std_logic
+		collision_hit   : in std_logic;
+		winner             : in std_logic
 	);
 	end component bullet_control;
 	-- speed control
@@ -259,6 +263,15 @@ architecture structure of tankgame2 is
 		);
 	end component collision;
 	-- game win control
+	component game_winner is
+	port(
+		clk, rst_n, we  : in std_logic;
+		
+		winner			    : out std_logic;
+		score              : out integer;
+		collision_hit      : in std_logic
+		);
+	end component game_winner;
 	
 	
 	
@@ -345,15 +358,26 @@ begin
 	seg_out_1 <= segments_out_signal_1;
 	seg_out_2 <= segments_out_signal_2;
 	
-	no_winner_signal <= '1' when 
-	     ((score_1_signal < 3) and (score_2_signal < 3)) 
-		   else
-				'0';
-								
-	winner_signal <= '1' when 
-			(score_1_signal >= 3) 
-			else
-				'0';
+	
+	
+	process(score_1_signal, score_2_signal, tank_1_wins, tank_2_wins)
+	begin
+		 no_winner_signal <= '0';
+		 winner_signal <= '0';
+
+		 if (score_1_signal < 3) and (score_2_signal < 3) then
+			  no_winner_signal <= '1';
+		 else
+			  no_winner_signal <= '0';
+		 end if;
+		 
+		 if tank_1_wins = '1' then
+			  winner_signal <= '1';
+		 elsif tank_2_wins = '1' then
+			  winner_signal <= '0';
+		 end if;
+	end process;
+
 				
 	LCD_RS <= LCD_RS_signal; 
 	LCD_E <= LCD_E_signal;
@@ -529,7 +553,8 @@ begin
 				tank_curr_pos_in   => tank_1_curr_pos,
 				tank_next_pos_out   => tank_1_next_pos,
 				tank_display     =>  tank_1_disp_flag,
-				tank_speed_in    => tank_1_curr_speed
+				tank_speed_in    => tank_1_curr_speed,
+				winner => tank_2_wins
 			);
 		
 		tank_1 : tank_location
@@ -569,7 +594,8 @@ begin
 				bullet_fired_out => tank_1_bul_next_fire,
 				bullet_disp => tank_1_bul_disp_flag,
 				direction => tank_1_bul_dir,
-				collision_hit => collision_1_hit
+				collision_hit => collision_1_hit,
+				winner => tank_2_wins
 			);
 			
 			
@@ -607,7 +633,8 @@ begin
 				tank_curr_pos_in   => tank_2_curr_pos,
 				tank_next_pos_out   => tank_2_next_pos,
 				tank_display     =>  tank_2_disp_flag,
-				tank_speed_in    => tank_2_curr_speed
+				tank_speed_in    => tank_2_curr_speed,
+				winner => tank_1_wins
 			);
 				
 			
@@ -648,7 +675,8 @@ begin
 				bullet_fired_out => tank_2_bul_next_fire,
 				bullet_disp => tank_2_bul_disp_flag,
 				direction => tank_2_bul_dir,
-				collision_hit => collision_2_hit
+				collision_hit => collision_2_hit,
+				winner => tank_1_wins
 			);
 		
 		bul_2 : bullet_location
@@ -676,6 +704,27 @@ begin
 				collsion_hit => collision_2_hit,
 				direction => tank_2_bul_dir
 			);
+			
+		gamewin1 : game_winner
+			port map (
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				winner => tank_1_wins,		
+				score => score_1_signal,            
+				collision_hit => collision_1_hit
+			);
+			
+		gamewin2 : game_winner
+			port map (
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				winner => tank_2_wins,		
+				score => score_2_signal,            
+				collision_hit => collision_2_hit
+			);
+			
 			
 	   score_decoder_1 : leddcd 
 		port map(

@@ -16,7 +16,8 @@ entity bullet_control is
 		bullet_fired_out   : out std_logic;
 		bullet_disp        : out std_logic;
 		direction          : in std_logic;
-		collision_hit      : in std_logic
+		collision_hit      : in std_logic;
+		winner             : in std_logic
 		
 		);
 end entity bullet_control;
@@ -24,7 +25,7 @@ end entity bullet_control;
 architecture fsm of bullet_control is
 
 	-- Define the states, including 'done'
-	type state_type is (start, move_bullet, hit_boundary, get_hit, die, win, done);
+	type state_type is (start, move_bullet, hit_boundary, get_hit, die, done);
 	signal current_state, next_state : state_type;
 	--signal bullet_next_pos : position; 
 	--signal bullet_fired_temp : std_logic;
@@ -82,6 +83,10 @@ begin
 					bullet_pos_out(1) <= -1000;
 				end if;
 				
+				if winner = '1' then
+					next_state <= die;
+				end if;
+				
 --			when make_bullet =>
 --				if direction = '0' then
 --					new_pos(0) := tank_pos_in(0) + TANK_WIDTH/2 - BULLET_W/2;
@@ -115,26 +120,28 @@ begin
 					bullet_fired_out <= '0';
 				   next_state <= hit_boundary;
 				end if;
+				
+				if winner = '1' then
+					next_state <= die;
+				end if;
 			
 			when hit_boundary =>
-				next_state <= start;
 			   bullet_disp <= '0'; -- Turn off display	
 				bullet_fired_out <= '0';
 				bullet_pos_out(0) <= -1000;
 				bullet_pos_out(1) <= -1000;
+				if winner = '1' then
+					next_state <= die;
+				else
+					next_state <= start;
+				end if;
 			
 			when die =>
-				bullet_disp <= '0'; -- Turn off display
+				bullet_disp <= '0'; -- Keep display ON
 				next_state <= done;
 				bullet_pos_out(0) <= -1000;
 				bullet_pos_out(1) <= -1000;
 				bullet_fired_out <= '0';
-			
-			when win =>
-				bullet_disp <= '1'; -- Keep display ON
-				next_state <= done;
-				bullet_pos_out <= bullet_pos_in;
-				bullet_fired_out <= '1';
 			
 			when done =>
 				-- Maintain the current state values explicitly

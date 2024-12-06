@@ -128,7 +128,7 @@ BEGIN
 							next_command <= RESET1;
 						elsif winner = '1' then
 							next_command <= WRITE_CHAR1;
-						else
+						elsif winner = '0' then
 							next_command <= WRITE_CHAR15;
 						end if;
 -- Write ASCII hex character in first LCD character location
@@ -374,7 +374,7 @@ BEGIN
 							next_command <= RESET1;
 						elsif winner = '1' then
 							next_command <= WRITE_CHAR1;
-						else
+						elsif winner = '0' then
 							next_command <= WRITE_CHAR15;
 						end if;
 -- The next two states occur at the end of each command to the LCD
