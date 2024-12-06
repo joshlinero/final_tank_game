@@ -8,6 +8,7 @@ entity bullet_control is
 	port(
 		clk, rst_n, we  : in std_logic;
 		
+		tank_pos_in : in position;
 		fire            : in std_logic;
 		bullet_pos_in      : in position;
 		bullet_pos_out     : out position;
@@ -47,7 +48,7 @@ begin
 	end process;
 	
 	-- Next State and Output Logic
-	process(current_state, we, bullet_pos_in, fire, bullet_fired_in, direction, speed)
+	process(current_state, we, bullet_pos_in, fire, bullet_fired_in, direction, speed, tank_pos_in)
 		--variable new_pos : position;
 		--variable new_state : state_type;
 	begin
@@ -64,8 +65,19 @@ begin
 					bullet_disp <= '1';
 					next_state <= move_bullet;
 					bullet_fired_out <= '1';
+					if direction = '0' then
+						bullet_pos_out(0) <= tank_pos_in(0) + TANK_WIDTH/2 - BULLET_W/2;
+						bullet_pos_out(1) <= tank_pos_in(1) - TANK_GUNH - BULLET_H;
+					else
+						bullet_pos_out(0) <= tank_pos_in(0) + TANK_WIDTH/2 - BULLET_W/2;
+						bullet_pos_out(1) <= tank_pos_in(1) + TANK_GUNH + BULLET_H;
+					end if;
 				else 
+					bullet_disp <= '0';
+					bullet_fired_out <= '0';
 				   next_state <= start;
+					bullet_pos_out(0) <= -1000;
+					bullet_pos_out(1) <= -1000;
 				end if;
 				
 --			when make_bullet =>
@@ -83,43 +95,31 @@ begin
 					if direction = '0' then
 						bullet_pos_out(1) <= bullet_pos_in(1) - speed;
 						bullet_pos_out(0) <= bullet_pos_in(0);
-						bullet_fired_out <= '1';
 					else
 						bullet_pos_out(1) <= bullet_pos_in(1) + speed;
 						bullet_pos_out(0) <= bullet_pos_in(0);
-						bullet_fired_out <= '1';
 					end if;
 				end if;
-				if direction = '0' then
-					if bullet_pos_in(1) <= 0 then
-						next_state <= hit_boundary;
-						bullet_fired_out <= '0';
-					else
-						next_state <= move_bullet;
-						bullet_fired_out <= '1';
-					end if;
-				else 
-					if bullet_pos_in(1) + BULLET_H >= 480 then
-						next_state <= hit_boundary;
-						bullet_fired_out <= '0';
-					else
-						next_state <= move_bullet;
-						bullet_fired_out <= '1';
-					end if;
+				if (direction = '0' and bullet_pos_in(1) <= 0) or 
+					(direction = '1' and bullet_pos_in(1) + BULLET_H >= 480) then
+					next_state <= hit_boundary;
+				else
+					next_state <= move_bullet;
 				end if;
+				bullet_fired_out <= '1';
 			
 			when hit_boundary =>
 				next_state <= start;
 			   bullet_disp <= '0'; -- Turn off display	
 				bullet_fired_out <= '0';
-				bullet_pos_out(0) <= 1000;
-				bullet_pos_out(1) <= 1000;
+				bullet_pos_out(0) <= -1000;
+				bullet_pos_out(1) <= -1000;
 			
 			when die =>
 				bullet_disp <= '0'; -- Turn off display
 				next_state <= done;
-				bullet_pos_out(0) <= 1000;
-				bullet_pos_out(1) <= 1000;
+				bullet_pos_out(0) <= -1000;
+				bullet_pos_out(1) <= -1000;
 				bullet_fired_out <= '0';
 			
 			when win =>
@@ -131,8 +131,8 @@ begin
 			when done =>
 				-- Maintain the current state values explicitly
 				next_state <= done;
-				bullet_pos_out(0) <= 1000;
-				bullet_pos_out(1) <= 1000;
+				bullet_pos_out(0) <= -1000;
+				bullet_pos_out(1) <= -1000;
 				bullet_fired_out <= '0';
 			
 			when others =>

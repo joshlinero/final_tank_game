@@ -229,6 +229,8 @@ architecture structure of tankgame2 is
 		port(
 		clk, rst_n, we  : in std_logic;
 		
+		
+		tank_pos_in : in position;
 		fire            : in std_logic;
 		bullet_pos_in      : in position;
 		bullet_pos_out     : out position;
@@ -564,6 +566,7 @@ begin
 				clk => clk,
 				rst_n => reset,
 				we => global_we,
+				tank_pos_in => tank_1_curr_pos,
 				fire => tank_1_fire_key,
 				bullet_pos_in => tank_1_bul_curr_pos,
 				bullet_pos_out => tank_1_bul_next_pos,
@@ -586,6 +589,22 @@ begin
 				bull_pos_out => tank_1_bul_curr_pos,
 				fired_in => tank_1_bul_next_fire,
 				fired_out => tank_1_bul_curr_fire
+			);
+		
+		
+		bullet_2_control : bullet_control
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				tank_pos_in => tank_2_curr_pos,
+				fire => tank_2_fire_key,
+				bullet_pos_in => tank_2_bul_curr_pos,
+				bullet_pos_out => tank_2_bul_next_pos,
+				bullet_fired_in => tank_2_bul_curr_fire,
+				bullet_fired_out => tank_2_bul_next_fire,
+				bullet_disp => tank_2_bul_disp_flag,
+				direction => tank_2_bul_dir
 			);
 		
 		bul_2 : bullet_location
