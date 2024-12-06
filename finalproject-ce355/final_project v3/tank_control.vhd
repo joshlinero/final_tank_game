@@ -7,7 +7,7 @@ use work.game_library.all;
 entity tank_control is
 
 	port(
-		clk, rst_n, we  : in std_logic;
+		clk, rst_n, we  		: in std_logic;
 		tank_curr_pos_in     : in position;
 		tank_next_pos_out    : out position;
 		tank_display         : out std_logic;
@@ -21,8 +21,6 @@ architecture fsm of tank_control is
 	-- Define the states, including 'done'
 	type state_type is (start, move_right, move_left, die, win, done);
 	signal current_state, next_state : state_type;
-	
-	signal speed : integer := 5;
 
 begin
 
@@ -47,7 +45,7 @@ begin
 		case current_state is
 		
 			when start =>
-				tank_next_pos_out <= TANK_1_INIT_POS;
+				tank_next_pos_out <= tank_curr_pos_in;
 				tank_display <= '1';
 				next_state <= move_right;
 		
