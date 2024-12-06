@@ -1,6 +1,11 @@
 Flow report for tankgame2
+<<<<<<< HEAD
 Thu Dec  5 20:03:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+=======
+Thu Dec  5 19:27:00 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 
 
 ---------------------
@@ -38,6 +43,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 
+<<<<<<< HEAD
 +-----------------------------------------------------------------------------------------+
 ; Flow Summary                                                                            ;
 +------------------------------------+----------------------------------------------------+
@@ -58,6 +64,28 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                    ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                      ;
 +------------------------------------+----------------------------------------------------+
+=======
++-------------------------------------------------------------------------------------+
+; Flow Summary                                                                        ;
++------------------------------------+------------------------------------------------+
+; Flow Status                        ; Successful - Thu Dec  5 19:26:58 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; tankgame2                                      ;
+; Top-level Entity Name              ; tankgame2                                      ;
+; Family                             ; Cyclone IV E                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 1,106 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 1,064 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 295 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 295                                            ;
+; Total pins                         ; 61 / 529 ( 12 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 
 
 +-----------------------------------------+
@@ -65,7 +93,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< HEAD
 ; Start date & time ; 12/05/2024 20:02:46 ;
+=======
+; Start date & time ; 12/05/2024 19:26:38 ;
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tankgame2           ;
 +-------------------+---------------------+
@@ -76,7 +108,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
+<<<<<<< HEAD
 ; COMPILER_SIGNATURE_ID               ; 2543711158273.173345056662872          ; --            ; --          ; --         ;
+=======
+; COMPILER_SIGNATURE_ID               ; 277302806905695.173344839809380        ; --            ; --          ; --         ;
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -94,11 +130,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4851 MB             ; 00:00:20                           ;
 ; Fitter               ; 00:00:13     ; 1.0                     ; 5882 MB             ; 00:00:18                           ;
 ; Assembler            ; 00:00:03     ; 1.0                     ; 4707 MB             ; 00:00:03                           ;
 ; Timing Analyzer      ; 00:00:02     ; 1.2                     ; 4890 MB             ; 00:00:02                           ;
 ; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:43                           ;
+=======
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4886 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:09     ; 1.1                     ; 6712 MB             ; 00:00:24                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4708 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.3                     ; 5003 MB             ; 00:00:02                           ;
+; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:45                           ;
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,10 +151,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Fitter               ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-EE5CPGQ  ; Windows 10 ; 10.0       ; x86_64         ;
+=======
+; Analysis & Synthesis ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ChoachPC         ; Windows 10 ; 10.0       ; x86_64         ;
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 +----------------------+------------------+------------+------------+----------------+
 
 

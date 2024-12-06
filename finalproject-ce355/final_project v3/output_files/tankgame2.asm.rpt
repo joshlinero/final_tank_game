@@ -1,6 +1,11 @@
 Assembler report for tankgame2
+<<<<<<< HEAD
 Thu Dec  5 20:03:14 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+=======
+Thu Dec  5 19:26:58 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 
 
 ---------------------
@@ -38,7 +43,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< HEAD
 ; Assembler Status      ; Successful - Thu Dec  5 20:03:14 2024 ;
+=======
+; Assembler Status      ; Successful - Thu Dec  5 19:26:58 2024 ;
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 ; Revision Name         ; tankgame2                             ;
 ; Top-level Entity Name ; tankgame2                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -62,6 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
+<<<<<<< HEAD
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Assembler Device Options: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,6 +80,16 @@ https://fpgasoftware.intel.com/eula.
 ; JTAG usercode  ; 0x00626D97                                                                                                                                                                           ;
 ; Checksum       ; 0x00626D97                                                                                                                                                                           ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                            ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x005F420F                                                                                                                         ;
+; Checksum       ; 0x005F420F                                                                                                                         ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------+
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 
 
 +--------------------+
@@ -77,16 +97,27 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
+<<<<<<< HEAD
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
     Info: Processing started: Thu Dec  5 20:03:11 2024
+=======
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Thu Dec  5 19:26:56 2024
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4708 megabytes
+<<<<<<< HEAD
     Info: Processing ended: Thu Dec  5 20:03:14 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
+=======
+    Info: Processing ended: Thu Dec  5 19:26:58 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
 
 
