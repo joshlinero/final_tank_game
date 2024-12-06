@@ -51,7 +51,7 @@ begin
 	end process;
 	
 	-- Next State and Output Logic
-	process(current_state, we, bullet_pos_in, fire, bullet_fired_in, direction, speed, tank_pos_in)
+	process(current_state, we, bullet_pos_in, fire, bullet_fired_in, direction, speed, tank_pos_in, winner, collision_hit)
 		--variable new_pos : position;
 		--variable new_state : state_type;
 	begin

@@ -36,7 +36,7 @@ begin
 	end process;
 	
 	-- Next State and Output Logic
-	process(current_state, we, tank_curr_pos_in, tank_speed_in)
+	process(current_state, we, tank_curr_pos_in, tank_speed_in, winner)
 	begin
 		-- Default assignments to avoid latches
 		next_state <= current_state;
