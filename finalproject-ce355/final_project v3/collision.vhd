@@ -37,13 +37,10 @@ begin
 	
 	-- Next State and Output Logic
 	process(current_state, we, bullet_pos_in, bullet_fired_in, direction, tank_pos_in)
-		--variable new_pos : position;
-		--variable new_state : state_type;
 	begin
 		-- Default assignments to avoid latches
 		next_state <= current_state;
 		collsion_hit <= '0';
-		--bullet_disp <= '0';
 		
 		case current_state is
 		
@@ -60,7 +57,8 @@ begin
 			when check_hit =>
 
 				if direction = '0' then
-					if (((bullet_pos_in(1) < tank_pos_in(1) + TANK_HEIGHT + TANK_GUNH) 
+					if (((bullet_pos_in(1) < tank_pos_in(1) + TANK_HEIGHT + TANK_GUNH)
+						and (bullet_pos_in(1) - BULLET_H < tank_pos_in(1) + TANK_HEIGHT)
 					   and (bullet_pos_in(0) < tank_pos_in(0) + TANK_WIDTH)
 					   and (bullet_pos_in(0) + BULLET_W > tank_pos_in(0)))) then
 						collsion_hit <= '1';
@@ -70,8 +68,8 @@ begin
 						next_state <= check_hit;
 					end if;
 				else 
-					if (((bullet_pos_in(1) > tank_pos_in(1) - TANK_GUNH) 
-						and (bullet_pos_in(1) - BULLET_H < tank_pos_in(1) + TANK_HEIGHT) 
+					if (((bullet_pos_in(1) + BULLET_H > tank_pos_in(1) - TANK_GUNH) 
+						and (bullet_pos_in(1) < tank_pos_in(1) + TANK_HEIGHT) 
 					   and (bullet_pos_in(0) < tank_pos_in(0) + TANK_WIDTH) 
 					   and (bullet_pos_in(0) + BULLET_W > tank_pos_in(0)))) then
 					   collsion_hit <= '1';

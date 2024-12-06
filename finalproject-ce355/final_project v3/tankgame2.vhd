@@ -556,6 +556,49 @@ begin
 				tank_speed_out => tank_1_next_speed
 			);
 			
+		bullet_1_control : bullet_control
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				tank_pos_in => tank_1_curr_pos,
+				fire => tank_1_fire_key,
+				bullet_pos_in => tank_1_bul_curr_pos,
+				bullet_pos_out => tank_1_bul_next_pos,
+				bullet_fired_in => tank_1_bul_curr_fire,
+				bullet_fired_out => tank_1_bul_next_fire,
+				bullet_disp => tank_1_bul_disp_flag,
+				direction => tank_1_bul_dir,
+				collision_hit => collision_1_hit
+			);
+			
+			
+		bul_1 : bullet_location
+			generic map(
+				bullet_loc => TANK_1_BULL_INIT_POS
+			)
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				bull_pos_in => tank_1_bul_next_pos,
+				bull_pos_out => tank_1_bul_curr_pos,
+				fired_in => tank_1_bul_next_fire,
+				fired_out => tank_1_bul_curr_fire
+			);
+			
+		collision_1 : collision
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				tank_pos_in => tank_2_curr_pos,
+				bullet_pos_in => tank_1_bul_curr_pos,
+				bullet_fired_in => tank_1_bul_curr_fire,
+				collsion_hit => collision_1_hit,
+				direction => tank_1_bul_dir
+			);
+			
 		tank_2_control : tank_control
 			port map(
 				clk => clk,
@@ -592,38 +635,6 @@ begin
 				tank_speed_out => tank_2_next_speed
 			);
 			
-		bullet_1_control : bullet_control
-			port map(
-				clk => clk,
-				rst_n => reset,
-				we => global_we,
-				tank_pos_in => tank_1_curr_pos,
-				fire => tank_1_fire_key,
-				bullet_pos_in => tank_1_bul_curr_pos,
-				bullet_pos_out => tank_1_bul_next_pos,
-				bullet_fired_in => tank_1_bul_curr_fire,
-				bullet_fired_out => tank_1_bul_next_fire,
-				bullet_disp => tank_1_bul_disp_flag,
-				direction => tank_1_bul_dir,
-				collision_hit => collision_1_hit
-			);
-			
-			
-		bul_1 : bullet_location
-			generic map(
-				bullet_loc => TANK_1_BULL_INIT_POS
-			)
-			port map(
-				clk => clk,
-				rst_n => reset,
-				we => global_we,
-				bull_pos_in => tank_1_bul_next_pos,
-				bull_pos_out => tank_1_bul_curr_pos,
-				fired_in => tank_1_bul_next_fire,
-				fired_out => tank_1_bul_curr_fire
-			);
-		
-		
 		bullet_2_control : bullet_control
 			port map(
 				clk => clk,
@@ -653,17 +664,17 @@ begin
 				fired_in => tank_2_bul_next_fire,
 				fired_out => tank_2_bul_curr_fire
 			);
-		
-		collision_1 : collision
+			
+		collision_2 : collision
 			port map(
 				clk => clk,
 				rst_n => reset,
 				we => global_we,
 				tank_pos_in => tank_1_curr_pos,
-				bullet_pos_in => tank_1_bul_curr_pos,
-				bullet_fired_in => tank_1_bul_curr_fire,
-				collsion_hit => collision_1_hit,
-				direction => tank_1_bul_dir
+				bullet_pos_in => tank_2_bul_curr_pos,
+				bullet_fired_in => tank_2_bul_curr_fire,
+				collsion_hit => collision_2_hit,
+				direction => tank_2_bul_dir
 			);
 			
 	   score_decoder_1 : leddcd 

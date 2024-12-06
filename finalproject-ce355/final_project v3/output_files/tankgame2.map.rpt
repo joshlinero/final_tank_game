@@ -1,6 +1,6 @@
 Analysis & Synthesis report for tankgame2
-Thu Dec  5 21:27:50 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Thu Dec  5 22:09:46 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -16,36 +16,38 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |tankgame2|de2lcd:lcd_message|next_command
  10. State Machine - |tankgame2|de2lcd:lcd_message|state
- 11. State Machine - |tankgame2|collision:collision_1|current_state
+ 11. State Machine - |tankgame2|collision:collision_2|current_state
  12. State Machine - |tankgame2|bullet_control:bullet_2_control|current_state
- 13. State Machine - |tankgame2|bullet_control:bullet_1_control|current_state
- 14. State Machine - |tankgame2|tank_control:tank_2_control|current_state
- 15. State Machine - |tankgame2|tank_control:tank_1_control|current_state
- 16. User-Specified and Inferred Latches
- 17. Registers Removed During Synthesis
- 18. Removed Registers Triggering Further Register Optimizations
- 19. General Register Statistics
- 20. Inverted Register Statistics
- 21. Multiplexer Restructuring Statistics (Restructuring Performed)
- 22. Source assignments for pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated
- 23. Parameter Settings for User Entity Instance: pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component
- 24. Parameter Settings for User Entity Instance: tank_location:tank_1
- 25. Parameter Settings for User Entity Instance: tank_location:tank_2
+ 13. State Machine - |tankgame2|tank_control:tank_2_control|current_state
+ 14. State Machine - |tankgame2|collision:collision_1|current_state
+ 15. State Machine - |tankgame2|bullet_control:bullet_1_control|current_state
+ 16. State Machine - |tankgame2|tank_control:tank_1_control|current_state
+ 17. User-Specified and Inferred Latches
+ 18. Registers Removed During Synthesis
+ 19. Removed Registers Triggering Further Register Optimizations
+ 20. General Register Statistics
+ 21. Inverted Register Statistics
+ 22. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 23. Source assignments for pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated
+ 24. Parameter Settings for User Entity Instance: pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component
+ 25. Parameter Settings for User Entity Instance: tank_location:tank_1
  26. Parameter Settings for User Entity Instance: bullet_location:bul_1
- 27. Parameter Settings for User Entity Instance: bullet_location:bul_2
- 28. Parameter Settings for Inferred Entity Instance: tank_control:tank_2_control|lpm_add_sub:Add0
- 29. Parameter Settings for Inferred Entity Instance: tank_control:tank_1_control|lpm_add_sub:Add0
- 30. altsyncram Parameter Settings by Entity Instance
- 31. Port Connectivity Checks: "de2lcd:lcd_message"
- 32. Port Connectivity Checks: "leddcd:score_decoder_2"
- 33. Port Connectivity Checks: "leddcd:score_decoder_1"
- 34. Port Connectivity Checks: "collision:collision_1"
- 35. Port Connectivity Checks: "bullet_control:bullet_2_control"
- 36. Port Connectivity Checks: "bullet_control:bullet_1_control"
- 37. Port Connectivity Checks: "ps2:keyboard"
- 38. Post-Synthesis Netlist Statistics for Top Partition
- 39. Elapsed Time Per Partition
- 40. Analysis & Synthesis Messages
+ 27. Parameter Settings for User Entity Instance: tank_location:tank_2
+ 28. Parameter Settings for User Entity Instance: bullet_location:bul_2
+ 29. Parameter Settings for Inferred Entity Instance: tank_control:tank_2_control|lpm_add_sub:Add0
+ 30. Parameter Settings for Inferred Entity Instance: tank_control:tank_1_control|lpm_add_sub:Add0
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "de2lcd:lcd_message"
+ 33. Port Connectivity Checks: "leddcd:score_decoder_2"
+ 34. Port Connectivity Checks: "leddcd:score_decoder_1"
+ 35. Port Connectivity Checks: "collision:collision_2"
+ 36. Port Connectivity Checks: "bullet_control:bullet_2_control"
+ 37. Port Connectivity Checks: "collision:collision_1"
+ 38. Port Connectivity Checks: "bullet_control:bullet_1_control"
+ 39. Port Connectivity Checks: "ps2:keyboard"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -69,24 +71,24 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                            ;
-+------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec  5 21:27:50 2024              ;
-; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
-; Revision Name                      ; tankgame2                                          ;
-; Top-level Entity Name              ; tankgame2                                          ;
-; Family                             ; Cyclone IV E                                       ;
-; Total logic elements               ; 1,562                                              ;
-;     Total combinational functions  ; 1,493                                              ;
-;     Dedicated logic registers      ; 396                                                ;
-; Total registers                    ; 396                                                ;
-; Total pins                         ; 61                                                 ;
-; Total virtual pins                 ; 0                                                  ;
-; Total memory bits                  ; 192                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                  ;
-; Total PLLs                         ; 0                                                  ;
-+------------------------------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 22:09:46 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; tankgame2                                      ;
+; Top-level Entity Name              ; tankgame2                                      ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 1,695                                          ;
+;     Total combinational functions  ; 1,626                                          ;
+;     Dedicated logic registers      ; 400                                            ;
+; Total registers                    ; 400                                            ;
+; Total pins                         ; 61                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 192                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -180,64 +182,67 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                          ;
-+-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path              ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                                                               ; Library ;
-+-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ../miniprojects/ps2/ps2.vhd                   ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd                   ;         ;
-; ../miniprojects/ps2/oneshot.vhd               ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd               ;         ;
-; ../miniprojects/ps2/keyboard.vhd              ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd              ;         ;
-; ../miniprojects/Mini_project_vga/vga_sync.vhd ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd ;         ;
-; ../miniprojects/Mini_project_vga/colorROM.vhd ; yes             ; User Wizard-Generated File             ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd ;         ;
-; ../final_project v2/tank_location.vhd         ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd         ;         ;
-; ../final_project v2/pll_counter.vhd           ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd           ;         ;
-; ../final_project v2/pixelGenerator.vhd        ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd        ;         ;
-; ../final_project v2/leddcd.vhd                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd                ;         ;
-; ../final_project v2/game_library.vhd          ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd          ;         ;
-; ../final_project v2/de2lcd.vhd                ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd                ;         ;
-; ../final_project v2/bullet_location.vhd       ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd       ;         ;
-; ../final_project v2/tank_const.vhd            ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd            ;         ;
-; tankgame2.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd             ;         ;
-; tank_control.vhd                              ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd          ;         ;
-; bullet_control.vhd                            ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd        ;         ;
-; collision.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/collision.vhd             ;         ;
-; speed_control.vhd                             ; yes             ; User VHDL File                         ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd         ;         ;
-; altsyncram.tdf                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                        ;         ;
-; stratix_ram_block.inc                         ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                                 ;         ;
-; lpm_mux.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                           ;         ;
-; lpm_decode.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                                                        ;         ;
-; aglobal231.inc                                ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                                                                        ;         ;
-; a_rdenreg.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                         ;         ;
-; altrom.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altrom.inc                                                                                                            ;         ;
-; altram.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altram.inc                                                                                                            ;         ;
-; altdpram.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                                                                          ;         ;
-; db/altsyncram_e481.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/db/altsyncram_e481.tdf    ;         ;
-; ../miniprojects/Mini_project_vga/colorROM.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif ;         ;
-; lpm_add_sub.tdf                               ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                                                       ;         ;
-; addcore.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/addcore.inc                                                                                                           ;         ;
-; look_add.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/look_add.inc                                                                                                          ;         ;
-; bypassff.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/bypassff.inc                                                                                                          ;         ;
-; altshift.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altshift.inc                                                                                                          ;         ;
-; alt_stratix_add_sub.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                                                               ;         ;
-; db/add_sub_pvi.tdf                            ; yes             ; Auto-Generated Megafunction            ; C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/db/add_sub_pvi.tdf        ;         ;
-+-----------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                        ;
++-----------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                             ; Library ;
++-----------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; ../miniprojects/ps2/ps2.vhd                   ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd                   ;         ;
+; ../miniprojects/ps2/oneshot.vhd               ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd               ;         ;
+; ../miniprojects/ps2/keyboard.vhd              ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd              ;         ;
+; ../miniprojects/Mini_project_vga/vga_sync.vhd ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd ;         ;
+; ../miniprojects/Mini_project_vga/colorROM.vhd ; yes             ; User Wizard-Generated File             ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd ;         ;
+; ../final_project v2/tank_location.vhd         ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd         ;         ;
+; ../final_project v2/pll_counter.vhd           ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd           ;         ;
+; ../final_project v2/pixelGenerator.vhd        ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd        ;         ;
+; ../final_project v2/leddcd.vhd                ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd                ;         ;
+; ../final_project v2/game_library.vhd          ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd          ;         ;
+; ../final_project v2/de2lcd.vhd                ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd                ;         ;
+; ../final_project v2/bullet_location.vhd       ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd       ;         ;
+; ../final_project v2/tank_const.vhd            ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd            ;         ;
+; tankgame2.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd             ;         ;
+; tank_control.vhd                              ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd          ;         ;
+; bullet_control.vhd                            ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd        ;         ;
+; collision.vhd                                 ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/collision.vhd             ;         ;
+; speed_control.vhd                             ; yes             ; User VHDL File                         ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd         ;         ;
+; altsyncram.tdf                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                 ;         ;
+; stratix_ram_block.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                          ;         ;
+; lpm_mux.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                    ;         ;
+; lpm_decode.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                 ;         ;
+; aglobal231.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                 ;         ;
+; a_rdenreg.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                  ;         ;
+; altrom.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                     ;         ;
+; altram.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                     ;         ;
+; altdpram.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                   ;         ;
+; db/altsyncram_e481.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/db/altsyncram_e481.tdf    ;         ;
+; ../miniprojects/Mini_project_vga/colorROM.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.mif ;         ;
+; lpm_add_sub.tdf                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                ;         ;
+; addcore.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/addcore.inc                                                    ;         ;
+; look_add.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/look_add.inc                                                   ;         ;
+; bypassff.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc                                                   ;         ;
+; altshift.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc                                                   ;         ;
+; alt_stratix_add_sub.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                        ;         ;
+; db/add_sub_pvi.tdf                            ; yes             ; Auto-Generated Megafunction            ; C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/db/add_sub_pvi.tdf        ;         ;
++-----------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -245,20 +250,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,562     ;
+; Estimated Total logic elements              ; 1,695     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1493      ;
+; Total combinational functions               ; 1626      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 359       ;
-;     -- 3 input functions                    ; 389       ;
-;     -- <=2 input functions                  ; 745       ;
+;     -- 4 input functions                    ; 395       ;
+;     -- 3 input functions                    ; 447       ;
+;     -- <=2 input functions                  ; 784       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 571       ;
-;     -- arithmetic mode                      ; 922       ;
+;     -- normal mode                          ; 615       ;
+;     -- arithmetic mode                      ; 1011      ;
 ;                                             ;           ;
-; Total registers                             ; 396       ;
-;     -- Dedicated logic registers            ; 396       ;
+; Total registers                             ; 400       ;
+;     -- Dedicated logic registers            ; 400       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 61        ;
@@ -267,9 +272,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 286       ;
-; Total fan-out                               ; 5563      ;
-; Average fan-out                             ; 2.72      ;
+; Maximum fan-out                             ; 290       ;
+; Total fan-out                               ; 5970      ;
+; Average fan-out                             ; 2.74      ;
 +---------------------------------------------+-----------+
 
 
@@ -278,15 +283,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |tankgame2                                   ; 1493 (43)           ; 396 (8)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
+; |tankgame2                                   ; 1626 (43)           ; 400 (8)                   ; 192         ; 0            ; 0       ; 0         ; 61   ; 0            ; |tankgame2                                                                                                   ; tankgame2       ; work         ;
 ;    |VGA_SYNC:sync|                           ; 59 (59)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|VGA_SYNC:sync                                                                                     ; VGA_SYNC        ; work         ;
-;    |bullet_control:bullet_1_control|         ; 167 (167)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_1_control                                                                   ; bullet_control  ; work         ;
-;    |bullet_control:bullet_2_control|         ; 171 (171)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_2_control                                                                   ; bullet_control  ; work         ;
+;    |bullet_control:bullet_1_control|         ; 166 (166)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_1_control                                                                   ; bullet_control  ; work         ;
+;    |bullet_control:bullet_2_control|         ; 177 (177)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_control:bullet_2_control                                                                   ; bullet_control  ; work         ;
 ;    |bullet_location:bul_1|                   ; 1 (1)               ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_location:bul_1                                                                             ; bullet_location ; work         ;
-;    |bullet_location:bul_2|                   ; 1 (1)               ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_location:bul_2                                                                             ; bullet_location ; work         ;
-;    |collision:collision_1|                   ; 133 (133)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|collision:collision_1                                                                             ; collision       ; work         ;
+;    |bullet_location:bul_2|                   ; 1 (1)               ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|bullet_location:bul_2                                                                             ; bullet_location ; work         ;
+;    |collision:collision_1|                   ; 140 (140)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|collision:collision_1                                                                             ; collision       ; work         ;
+;    |collision:collision_2|                   ; 183 (183)           ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|collision:collision_2                                                                             ; collision       ; work         ;
 ;    |de2lcd:lcd_message|                      ; 54 (54)             ; 45 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|de2lcd:lcd_message                                                                                ; de2lcd          ; work         ;
-;    |pixelGenerator:vid|                      ; 515 (515)           ; 3 (3)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
+;    |pixelGenerator:vid|                      ; 453 (453)           ; 3 (3)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid                                                                                ; pixelGenerator  ; work         ;
 ;       |colorROM:colors|                      ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors                                                                ; colorROM        ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_e481:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192         ; 0            ; 0       ; 0         ; 0    ; 0            ; |tankgame2|pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated ; altsyncram_e481 ; work         ;
@@ -417,7 +423,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------+
-; State Machine - |tankgame2|collision:collision_1|current_state                                                   ;
+; State Machine - |tankgame2|collision:collision_2|current_state                                                   ;
 +-------------------------+--------------------+-------------------+-------------------------+---------------------+
 ; Name                    ; current_state.done ; current_state.win ; current_state.check_hit ; current_state.start ;
 +-------------------------+--------------------+-------------------+-------------------------+---------------------+
@@ -445,6 +451,34 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |tankgame2|tank_control:tank_2_control|current_state                                                                                             ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+; Name                     ; current_state.done ; current_state.win ; current_state.die ; current_state.move_left ; current_state.move_right ; current_state.start ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+; current_state.start      ; 0                  ; 0                 ; 0                 ; 0                       ; 0                        ; 0                   ;
+; current_state.move_right ; 0                  ; 0                 ; 0                 ; 0                       ; 1                        ; 1                   ;
+; current_state.move_left  ; 0                  ; 0                 ; 0                 ; 1                       ; 0                        ; 1                   ;
+; current_state.die        ; 0                  ; 0                 ; 1                 ; 0                       ; 0                        ; 1                   ;
+; current_state.win        ; 0                  ; 1                 ; 0                 ; 0                       ; 0                        ; 1                   ;
+; current_state.done       ; 1                  ; 0                 ; 0                 ; 0                       ; 0                        ; 1                   ;
++--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------+
+; State Machine - |tankgame2|collision:collision_1|current_state                                                   ;
++-------------------------+--------------------+-------------------+-------------------------+---------------------+
+; Name                    ; current_state.done ; current_state.win ; current_state.check_hit ; current_state.start ;
++-------------------------+--------------------+-------------------+-------------------------+---------------------+
+; current_state.start     ; 0                  ; 0                 ; 0                       ; 0                   ;
+; current_state.check_hit ; 0                  ; 0                 ; 1                       ; 1                   ;
+; current_state.win       ; 0                  ; 1                 ; 0                       ; 1                   ;
+; current_state.done      ; 1                  ; 0                 ; 0                       ; 1                   ;
++-------------------------+--------------------+-------------------+-------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |tankgame2|bullet_control:bullet_1_control|current_state                                                                                                                       ;
 +----------------------------+--------------------+-------------------+-------------------+-----------------------+----------------------------+---------------------------+---------------------+
@@ -458,21 +492,6 @@ Encoding Type:  One-Hot
 ; current_state.win          ; 0                  ; 1                 ; 0                 ; 0                     ; 0                          ; 0                         ; 1                   ;
 ; current_state.done         ; 1                  ; 0                 ; 0                 ; 0                     ; 0                          ; 0                         ; 1                   ;
 +----------------------------+--------------------+-------------------+-------------------+-----------------------+----------------------------+---------------------------+---------------------+
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |tankgame2|tank_control:tank_2_control|current_state                                                                                             ;
-+--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
-; Name                     ; current_state.done ; current_state.win ; current_state.die ; current_state.move_left ; current_state.move_right ; current_state.start ;
-+--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
-; current_state.start      ; 0                  ; 0                 ; 0                 ; 0                       ; 0                        ; 0                   ;
-; current_state.move_right ; 0                  ; 0                 ; 0                 ; 0                       ; 1                        ; 1                   ;
-; current_state.move_left  ; 0                  ; 0                 ; 0                 ; 1                       ; 0                        ; 1                   ;
-; current_state.die        ; 0                  ; 0                 ; 1                 ; 0                       ; 0                        ; 1                   ;
-; current_state.win        ; 0                  ; 1                 ; 0                 ; 0                       ; 0                        ; 1                   ;
-; current_state.done       ; 1                  ; 0                 ; 0                 ; 0                       ; 0                        ; 1                   ;
-+--------------------------+--------------------+-------------------+-------------------+-------------------------+--------------------------+---------------------+
 
 
 Encoding Type:  One-Hot
@@ -575,10 +594,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; tank_control:tank_2_control|current_state.win         ; Lost fanout                                                    ;
 ; tank_control:tank_1_control|current_state.die         ; Lost fanout                                                    ;
 ; tank_control:tank_1_control|current_state.win         ; Lost fanout                                                    ;
-; collision:collision_1|current_state.win               ; Stuck at GND due to stuck port data_in                         ;
+; collision:collision_2|current_state.win               ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_2_control|current_state.get_hit ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_2_control|current_state.die     ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_2_control|current_state.win     ; Stuck at GND due to stuck port data_in                         ;
+; collision:collision_1|current_state.win               ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_1_control|current_state.get_hit ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_1_control|current_state.die     ; Stuck at GND due to stuck port data_in                         ;
 ; bullet_control:bullet_1_control|current_state.win     ; Stuck at GND due to stuck port data_in                         ;
@@ -653,7 +673,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; de2lcd:lcd_message|DATA_BUS_VALUE[6]                  ; Merged with de2lcd:lcd_message|LCD_RS                          ;
 ; tank_location:tank_2|tank_pos_out[1][31]              ; Stuck at GND due to stuck port clock                           ;
 ; tank_location:tank_2|tank_pos_out[1][3]               ; Stuck at GND due to stuck port clock                           ;
-; Total Number of Removed Registers = 146               ;                                                                ;
+; Total Number of Removed Registers = 147               ;                                                                ;
 +-------------------------------------------------------+----------------------------------------------------------------+
 
 
@@ -699,10 +719,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 396   ;
+; Total registers                              ; 400   ;
 ; Number of registers using Synchronous Clear  ; 29    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 251   ;
+; Number of registers using Asynchronous Clear ; 255   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 233   ;
 ; Number of registers using Preset             ; 0     ;
@@ -718,10 +738,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; tank_location:tank_1|tank_pos_out[0][5]   ; 6       ;
 ; tank_location:tank_1|tank_pos_out[0][4]   ; 6       ;
 ; tank_location:tank_1|tank_pos_out[0][0]   ; 10      ;
-; tank_location:tank_2|tank_pos_out[0][8]   ; 5       ;
-; tank_location:tank_2|tank_pos_out[0][5]   ; 5       ;
-; tank_location:tank_2|tank_pos_out[0][4]   ; 5       ;
-; tank_location:tank_2|tank_pos_out[0][0]   ; 8       ;
+; tank_location:tank_2|tank_pos_out[0][8]   ; 6       ;
+; tank_location:tank_2|tank_pos_out[0][5]   ; 6       ;
+; tank_location:tank_2|tank_pos_out[0][4]   ; 6       ;
+; tank_location:tank_2|tank_pos_out[0][0]   ; 10      ;
 ; bullet_location:bul_1|bull_pos_out[0][31] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[0][30] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[0][29] ; 3       ;
@@ -746,74 +766,74 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; bullet_location:bul_1|bull_pos_out[0][10] ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[0][4]  ; 3       ;
 ; bullet_location:bul_1|bull_pos_out[0][3]  ; 4       ;
-; bullet_location:bul_1|bull_pos_out[1][31] ; 6       ;
-; bullet_location:bul_1|bull_pos_out[1][30] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][29] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][28] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][27] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][26] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][25] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][24] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][23] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][22] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][21] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][20] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][19] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][18] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][17] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][16] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][15] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][14] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][13] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][12] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][11] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][10] ; 3       ;
-; bullet_location:bul_1|bull_pos_out[1][4]  ; 6       ;
-; bullet_location:bul_1|bull_pos_out[1][3]  ; 5       ;
-; bullet_location:bul_2|bull_pos_out[0][31] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][30] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][29] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][28] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][27] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][26] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][25] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][24] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][23] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][22] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][21] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][20] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][19] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][18] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][17] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][16] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][15] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][14] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][13] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][12] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][11] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][10] ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][4]  ; 2       ;
-; bullet_location:bul_2|bull_pos_out[0][3]  ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][31] ; 4       ;
-; bullet_location:bul_2|bull_pos_out[1][30] ; 3       ;
+; bullet_location:bul_1|bull_pos_out[1][31] ; 8       ;
+; bullet_location:bul_1|bull_pos_out[1][30] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][29] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][28] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][27] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][26] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][25] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][24] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][23] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][22] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][21] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][20] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][19] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][18] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][17] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][16] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][15] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][14] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][13] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][12] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][11] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][10] ; 4       ;
+; bullet_location:bul_1|bull_pos_out[1][4]  ; 7       ;
+; bullet_location:bul_1|bull_pos_out[1][3]  ; 6       ;
+; bullet_location:bul_2|bull_pos_out[1][4]  ; 10      ;
+; bullet_location:bul_2|bull_pos_out[1][3]  ; 7       ;
+; bullet_location:bul_2|bull_pos_out[1][10] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][11] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][12] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][13] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][14] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][15] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][16] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][17] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][18] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][19] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][20] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][21] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][22] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][23] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][24] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][25] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][29] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][28] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][27] ; 3       ;
 ; bullet_location:bul_2|bull_pos_out[1][26] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][25] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][24] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][23] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][22] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][21] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][20] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][19] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][18] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][17] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][16] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][15] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][14] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][13] ; 3       ;
-; bullet_location:bul_2|bull_pos_out[1][12] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[1][30] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][31] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][30] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][29] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][28] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][27] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][26] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][25] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][24] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][23] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][22] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][21] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][20] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][19] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][18] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][17] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][16] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][15] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][14] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][13] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][12] ; 3       ;
+; bullet_location:bul_2|bull_pos_out[0][11] ; 3       ;
 ; Total number of inverted registers = 108* ;         ;
 +-------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
@@ -825,25 +845,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |tankgame2|pixelGenerator:vid|colorAddress[0]           ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[1]                     ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[15]       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |tankgame2|VGA_SYNC:sync|v_count[6]                     ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |tankgame2|de2lcd:lcd_message|CLK_COUNT_400HZ[18]       ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |tankgame2|speed_control:tank_2_speed|tank_speed_out[0] ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |tankgame2|speed_control:tank_1_speed|tank_speed_out[1] ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|ps2:keyboard|keyboard:u1|INCNT[2]            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][2]     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][8]     ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[0][8]     ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][7]     ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][15]     ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][16]     ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][2]     ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][5]     ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][17]    ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[0][30]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][3]     ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][5]      ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][31]     ;
-; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][11]    ;
-; 6:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][12]    ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][16]     ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][15]     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][8]     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][8]     ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[0][29]    ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[0][20]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][0]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_2|tank_pos_out[0][8]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |tankgame2|tank_location:tank_1|tank_pos_out[0][0]      ;
+; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][30]    ;
+; 6:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |tankgame2|bullet_location:bul_1|bull_pos_out[1][23]    ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |tankgame2|bullet_location:bul_2|bull_pos_out[1][0]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
@@ -928,16 +948,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: tank_location:tank_2 ;
-+----------------+-----------------+--------------------------------+
-; Parameter Name ; Value           ; Type                           ;
-+----------------+-----------------+--------------------------------+
-; tank_loc       ; A(D"305",D"10") ; Array/Record                   ;
-+----------------+-----------------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: bullet_location:bul_1 ;
 +----------------+------------------+--------------------------------+
@@ -945,6 +955,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+--------------------------------+
 ; bullet_loc     ; A(D"317",D"435") ; Array/Record                   ;
 +----------------+------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tank_location:tank_2 ;
++----------------+-----------------+--------------------------------+
+; Parameter Name ; Value           ; Type                           ;
++----------------+-----------------+--------------------------------+
+; tank_loc       ; A(D"305",D"10") ; Array/Record                   ;
++----------------+-----------------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1065,11 +1085,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------+
-; Port Connectivity Checks: "collision:collision_1" ;
+; Port Connectivity Checks: "collision:collision_2" ;
 +-----------+-------+----------+--------------------+
 ; Port      ; Type  ; Severity ; Details            ;
 +-----------+-------+----------+--------------------+
-; direction ; Input ; Info     ; Stuck at GND       ;
+; direction ; Input ; Info     ; Stuck at VCC       ;
 +-----------+-------+----------+--------------------+
 
 
@@ -1080,6 +1100,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+------------------------------+
 ; direction ; Input ; Info     ; Stuck at VCC                 ;
 +-----------+-------+----------+------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "collision:collision_1" ;
++-----------+-------+----------+--------------------+
+; Port      ; Type  ; Severity ; Details            ;
++-----------+-------+----------+--------------------+
+; direction ; Input ; Info     ; Stuck at GND       ;
++-----------+-------+----------+--------------------+
 
 
 +-------------------------------------------------------------+
@@ -1108,8 +1137,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 61                          ;
-; cycloneiii_ff         ; 396                         ;
-;     CLR               ; 65                          ;
+; cycloneiii_ff         ; 400                         ;
+;     CLR               ; 69                          ;
 ;     CLR SCLR          ; 5                           ;
 ;     ENA               ; 52                          ;
 ;     ENA CLR           ; 179                         ;
@@ -1117,20 +1146,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 22                          ;
 ;     plain             ; 71                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 1496                        ;
-;     arith             ; 922                         ;
-;         2 data inputs ; 642                         ;
-;         3 data inputs ; 280                         ;
-;     normal            ; 574                         ;
+; cycloneiii_lcell_comb ; 1629                        ;
+;     arith             ; 1011                        ;
+;         2 data inputs ; 669                         ;
+;         3 data inputs ; 342                         ;
+;     normal            ; 618                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 37                          ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 109                         ;
-;         4 data inputs ; 359                         ;
+;         1 data inputs ; 38                          ;
+;         2 data inputs ; 78                          ;
+;         3 data inputs ; 105                         ;
+;         4 data inputs ; 395                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.00                       ;
-; Average LUT depth     ; 6.83                        ;
+; Average LUT depth     ; 6.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1148,86 +1177,85 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Thu Dec  5 21:27:40 2024
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Thu Dec  5 22:09:38 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tankgame2 -c tankgame2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd
-    Info (12022): Found design unit 1: ps2-structural File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 19
-    Info (12023): Found entity 1: ps2 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd
-    Info (12022): Found design unit 1: oneshot-dd File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 14
-    Info (12023): Found entity 1: oneshot File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd
-    Info (12022): Found design unit 1: keyboard-a File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 14
-    Info (12023): Found entity 1: keyboard File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/vga_sync.vhd
-    Info (12022): Found design unit 1: VGA_SYNC-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 16
-    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/colorrom.vhd
-    Info (12022): Found design unit 1: colorrom-SYN File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 52
-    Info (12023): Found entity 1: colorROM File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 42
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd
-    Info (12022): Found design unit 1: tank_location-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 20
-    Info (12023): Found entity 1: tank_location File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd
-    Info (12022): Found design unit 1: pll_counter-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd Line: 13
-    Info (12023): Found entity 1: pll_counter File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelgenerator.vhd
-    Info (12022): Found design unit 1: pixelGenerator-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 27
-    Info (12023): Found entity 1: pixelGenerator File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd
-    Info (12022): Found design unit 1: leddcd-data_flow File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd Line: 12
-    Info (12023): Found entity 1: leddcd File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd Line: 5
-Info (12021): Found 2 design units, including 0 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd
-    Info (12022): Found design unit 1: game_library File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 4
-    Info (12022): Found design unit 2: game_library-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd
-    Info (12022): Found design unit 1: de2lcd-a File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 15
-    Info (12023): Found entity 1: de2lcd File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd
-    Info (12022): Found design unit 1: bullet_location-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 20
-    Info (12023): Found entity 1: bullet_location File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 7
-Info (12021): Found 2 design units, including 0 entities, in source file /users/joshu/onedrive/documents/masters-northwestern/masters_fall/ce-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd
-    Info (12022): Found design unit 1: tank_const File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd Line: 7
-    Info (12022): Found design unit 2: tank_const-body File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd Line: 49
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd
+    Info (12022): Found design unit 1: ps2-structural File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 19
+    Info (12023): Found entity 1: ps2 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd
+    Info (12022): Found design unit 1: oneshot-dd File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 14
+    Info (12023): Found entity 1: oneshot File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd
+    Info (12022): Found design unit 1: keyboard-a File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 14
+    Info (12023): Found entity 1: keyboard File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/vga_sync.vhd
+    Info (12022): Found design unit 1: VGA_SYNC-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 16
+    Info (12023): Found entity 1: VGA_SYNC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/miniprojects/mini_project_vga/colorrom.vhd
+    Info (12022): Found design unit 1: colorrom-SYN File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 52
+    Info (12023): Found entity 1: colorROM File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 42
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd
+    Info (12022): Found design unit 1: tank_location-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 20
+    Info (12023): Found entity 1: tank_location File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd
+    Info (12022): Found design unit 1: pll_counter-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd Line: 13
+    Info (12023): Found entity 1: pll_counter File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pll_counter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/pixelgenerator.vhd
+    Info (12022): Found design unit 1: pixelGenerator-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 27
+    Info (12023): Found entity 1: pixelGenerator File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd
+    Info (12022): Found design unit 1: leddcd-data_flow File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd Line: 12
+    Info (12023): Found entity 1: leddcd File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/leddcd.vhd Line: 5
+Info (12021): Found 2 design units, including 0 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd
+    Info (12022): Found design unit 1: game_library File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 4
+    Info (12022): Found design unit 2: game_library-body File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/game_library.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd
+    Info (12022): Found design unit 1: de2lcd-a File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 15
+    Info (12023): Found entity 1: de2lcd File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd
+    Info (12022): Found design unit 1: bullet_location-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 20
+    Info (12023): Found entity 1: bullet_location File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 7
+Info (12021): Found 2 design units, including 0 entities, in source file /users/antb2/desktop/school/ce 355/final/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd
+    Info (12022): Found design unit 1: tank_const File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd Line: 7
+    Info (12022): Found design unit 2: tank_const-body File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_const.vhd Line: 49
 Info (12021): Found 2 design units, including 1 entities, in source file tankgame2.vhd
-    Info (12022): Found design unit 1: tankgame2-structure File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 46
-    Info (12023): Found entity 1: tankgame2 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 8
+    Info (12022): Found design unit 1: tankgame2-structure File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 46
+    Info (12023): Found entity 1: tankgame2 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file tank_control.vhd
-    Info (12022): Found design unit 1: tank_control-fsm File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 19
-    Info (12023): Found entity 1: tank_control File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 7
+    Info (12022): Found design unit 1: tank_control-fsm File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 19
+    Info (12023): Found entity 1: tank_control File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file tank_control_tb.vhd
-    Info (12022): Found design unit 1: tb_tank_control-testbench File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd Line: 10
-    Info (12023): Found entity 1: tb_tank_control File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd Line: 7
+    Info (12022): Found design unit 1: tb_tank_control-testbench File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd Line: 10
+    Info (12023): Found entity 1: tb_tank_control File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control_tb.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bullet_control.vhd
-    Info (12022): Found design unit 1: bullet_control-fsm File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 24
-    Info (12023): Found entity 1: bullet_control File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 7
+    Info (12022): Found design unit 1: bullet_control-fsm File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 24
+    Info (12023): Found entity 1: bullet_control File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bullet_control_tb.vhd
-    Info (12022): Found design unit 1: bullet_control_tb-behavior File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd Line: 10
-    Info (12023): Found entity 1: bullet_control_tb File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd Line: 7
+    Info (12022): Found design unit 1: bullet_control_tb-behavior File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd Line: 10
+    Info (12023): Found entity 1: bullet_control_tb File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control_tb.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file collision.vhd
-    Info (12022): Found design unit 1: collision-fsm File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/collision.vhd Line: 20
-    Info (12023): Found entity 1: collision File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/collision.vhd Line: 7
+    Info (12022): Found design unit 1: collision-fsm File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/collision.vhd Line: 20
+    Info (12023): Found entity 1: collision File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/collision.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file speed_control.vhd
-    Info (12022): Found design unit 1: speed_control-behavioral File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd Line: 16
-    Info (12023): Found entity 1: speed_control File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd Line: 7
+    Info (12022): Found design unit 1: speed_control-behavioral File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd Line: 16
+    Info (12023): Found entity 1: speed_control File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/speed_control.vhd Line: 7
 Info (12127): Elaborating entity "tankgame2" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at tankgame2.vhd(96): used explicit default value for signal "tank_1_bul_dir" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 96
-Warning (10540): VHDL Signal Declaration warning at tankgame2.vhd(97): used explicit default value for signal "tank_2_bul_dir" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 97
-Warning (10541): VHDL Signal Declaration warning at tankgame2.vhd(100): used implicit default value for signal "collision_2_hit" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 100
-Warning (10541): VHDL Signal Declaration warning at tankgame2.vhd(102): used implicit default value for signal "score_1_signal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 102
-Warning (10541): VHDL Signal Declaration warning at tankgame2.vhd(103): used implicit default value for signal "score_2_signal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 103
-Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(110): object "hist3" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 110
-Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(110): object "hist2" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 110
-Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(111): object "key_code" assigned a value but never read File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 111
-Info (12128): Elaborating entity "pll_counter" for hierarchy "pll_counter:pll" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 413
-Info (12128): Elaborating entity "pixelGenerator" for hierarchy "pixelGenerator:vid" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 420
-Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:vid|colorROM:colors" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 58
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
-Info (12130): Elaborated megafunction instantiation "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
-Info (12133): Instantiated megafunction "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Warning (10540): VHDL Signal Declaration warning at tankgame2.vhd(96): used explicit default value for signal "tank_1_bul_dir" because signal was never assigned a value File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 96
+Warning (10540): VHDL Signal Declaration warning at tankgame2.vhd(97): used explicit default value for signal "tank_2_bul_dir" because signal was never assigned a value File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 97
+Warning (10541): VHDL Signal Declaration warning at tankgame2.vhd(102): used implicit default value for signal "score_1_signal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 102
+Warning (10541): VHDL Signal Declaration warning at tankgame2.vhd(103): used implicit default value for signal "score_2_signal" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 103
+Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(110): object "hist3" assigned a value but never read File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 110
+Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(110): object "hist2" assigned a value but never read File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 110
+Warning (10036): Verilog HDL or VHDL warning at tankgame2.vhd(111): object "key_code" assigned a value but never read File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 111
+Info (12128): Elaborating entity "pll_counter" for hierarchy "pll_counter:pll" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 413
+Info (12128): Elaborating entity "pixelGenerator" for hierarchy "pixelGenerator:vid" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 420
+Info (12128): Elaborating entity "colorROM" for hierarchy "pixelGenerator:vid|colorROM:colors" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/pixelGenerator.vhd Line: 58
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Info (12130): Elaborated megafunction instantiation "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
+Info (12133): Instantiated megafunction "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/colorROM.vhd Line: 84
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "colorROM.mif"
@@ -1242,189 +1270,189 @@ Info (12133): Instantiated megafunction "pixelGenerator:vid|colorROM:colors|alts
     Info (12134): Parameter "width_a" = "24"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_e481.tdf
-    Info (12023): Found entity 1: altsyncram_e481 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/db/altsyncram_e481.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_e481" for hierarchy "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:sync" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 447
-Info (12128): Elaborating entity "ps2" for hierarchy "ps2:keyboard" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 463
-Info (12128): Elaborating entity "keyboard" for hierarchy "ps2:keyboard|keyboard:u1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 47
-Info (12128): Elaborating entity "oneshot" for hierarchy "ps2:keyboard|oneshot:pulser" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 57
-Info (12128): Elaborating entity "tank_control" for hierarchy "tank_control:tank_1_control" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 524
-Info (12128): Elaborating entity "tank_location" for hierarchy "tank_location:tank_1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 535
-Info (12128): Elaborating entity "speed_control" for hierarchy "speed_control:tank_1_speed" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 548
-Info (12128): Elaborating entity "tank_location" for hierarchy "tank_location:tank_2" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 571
-Info (12128): Elaborating entity "bullet_control" for hierarchy "bullet_control:bullet_1_control" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 595
-Warning (10540): VHDL Signal Declaration warning at bullet_control.vhd(32): used explicit default value for signal "speed" because signal was never assigned a value File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 32
-Warning (10492): VHDL Process Statement warning at bullet_control.vhd(114): signal "collision_hit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 114
-Warning (10631): VHDL Process Statement warning at bullet_control.vhd(53): inferring latch(es) for signal or variable "bullet_disp", which holds its previous value in one or more paths through the process File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 53
-Info (10041): Inferred latch for "bullet_disp" at bullet_control.vhd(53) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 53
-Info (12128): Elaborating entity "bullet_location" for hierarchy "bullet_location:bul_1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 612
-Info (12128): Elaborating entity "bullet_location" for hierarchy "bullet_location:bul_2" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 643
-Info (12128): Elaborating entity "collision" for hierarchy "collision:collision_1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 657
-Info (12128): Elaborating entity "leddcd" for hierarchy "leddcd:score_decoder_1" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 669
-Info (12128): Elaborating entity "de2lcd" for hierarchy "de2lcd:lcd_message" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 681
-Warning (10541): VHDL Signal Declaration warning at de2lcd.vhd(8): used implicit default value for signal "SEC_LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 8
-Warning (10631): VHDL Process Statement warning at de2lcd.vhd(50): inferring latch(es) for signal or variable "init", which holds its previous value in one or more paths through the process File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 50
-Info (10041): Inferred latch for "init" at de2lcd.vhd(54) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 54
+    Info (12023): Found entity 1: altsyncram_e481 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/db/altsyncram_e481.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_e481" for hierarchy "pixelGenerator:vid|colorROM:colors|altsyncram:altsyncram_component|altsyncram_e481:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:sync" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 447
+Info (12128): Elaborating entity "ps2" for hierarchy "ps2:keyboard" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 463
+Info (12128): Elaborating entity "keyboard" for hierarchy "ps2:keyboard|keyboard:u1" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 47
+Info (12128): Elaborating entity "oneshot" for hierarchy "ps2:keyboard|oneshot:pulser" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/ps2.vhd Line: 57
+Info (12128): Elaborating entity "tank_control" for hierarchy "tank_control:tank_1_control" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 524
+Info (12128): Elaborating entity "tank_location" for hierarchy "tank_location:tank_1" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 535
+Info (12128): Elaborating entity "speed_control" for hierarchy "speed_control:tank_1_speed" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 548
+Info (12128): Elaborating entity "bullet_control" for hierarchy "bullet_control:bullet_1_control" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 559
+Warning (10540): VHDL Signal Declaration warning at bullet_control.vhd(32): used explicit default value for signal "speed" because signal was never assigned a value File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at bullet_control.vhd(114): signal "collision_hit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 114
+Warning (10631): VHDL Process Statement warning at bullet_control.vhd(53): inferring latch(es) for signal or variable "bullet_disp", which holds its previous value in one or more paths through the process File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 53
+Info (10041): Inferred latch for "bullet_disp" at bullet_control.vhd(53) File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 53
+Info (12128): Elaborating entity "bullet_location" for hierarchy "bullet_location:bul_1" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 576
+Info (12128): Elaborating entity "collision" for hierarchy "collision:collision_1" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 590
+Info (12128): Elaborating entity "tank_location" for hierarchy "tank_location:tank_2" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 614
+Info (12128): Elaborating entity "bullet_location" for hierarchy "bullet_location:bul_2" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 654
+Info (12128): Elaborating entity "leddcd" for hierarchy "leddcd:score_decoder_1" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 680
+Info (12128): Elaborating entity "de2lcd" for hierarchy "de2lcd:lcd_message" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 692
+Warning (10541): VHDL Signal Declaration warning at de2lcd.vhd(8): used implicit default value for signal "SEC_LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 8
+Warning (10631): VHDL Process Statement warning at de2lcd.vhd(50): inferring latch(es) for signal or variable "init", which holds its previous value in one or more paths through the process File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 50
+Info (10041): Inferred latch for "init" at de2lcd.vhd(54) File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 54
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "tank_control:tank_2_control|Add0" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "tank_control:tank_1_control|Add0" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
-Info (12130): Elaborated megafunction instantiation "tank_control:tank_2_control|lpm_add_sub:Add0" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
-Info (12133): Instantiated megafunction "tank_control:tank_2_control|lpm_add_sub:Add0" with the following parameter: File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "tank_control:tank_2_control|Add0" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "tank_control:tank_1_control|Add0" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
+Info (12130): Elaborated megafunction instantiation "tank_control:tank_2_control|lpm_add_sub:Add0" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
+Info (12133): Instantiated megafunction "tank_control:tank_2_control|lpm_add_sub:Add0" with the following parameter: File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tank_control.vhd Line: 54
     Info (12134): Parameter "LPM_WIDTH" = "32"
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_pvi.tdf
-    Info (12023): Found entity 1: add_sub_pvi File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/db/add_sub_pvi.tdf Line: 23
-Info (13000): Registers with preset signals will power-up high File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Info (12023): Found entity 1: add_sub_pvi File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/db/add_sub_pvi.tdf Line: 23
+Info (13000): Registers with preset signals will power-up high File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[0]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[1]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[2]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[3]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[4]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[5]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
-    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[6]~synth" File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[0]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[1]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[2]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[3]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[4]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[5]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
+    Warning (13010): Node "de2lcd:lcd_message|DATA_BUS[6]~synth" File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 10
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg_out_1[0]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[1]" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[2]" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[3]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[4]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[5]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_1[6]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
-    Warning (13410): Pin "seg_out_2[0]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[1]" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[2]" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[3]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[4]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[5]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "seg_out_2[6]" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
-    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 36
-    Warning (13410): Pin "SEC_LED" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 38
-    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 39
+    Warning (13410): Pin "seg_out_1[0]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[1]" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[2]" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[3]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[4]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[5]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_1[6]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 30
+    Warning (13410): Pin "seg_out_2[0]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[1]" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[2]" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[3]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[4]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[5]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "seg_out_2[6]" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 31
+    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 36
+    Warning (13410): Pin "SEC_LED" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 38
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][27] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][26] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][25] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][24] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][23] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][22] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][21] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][20] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][19] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][18] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][17] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][16] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][15] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][14] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][13] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][12] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][11] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][10] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][27] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][26] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][25] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][24] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][23] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][22] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][21] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][20] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][19] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][18] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][17] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][16] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][15] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][14] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][13] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][12] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][11] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][10] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][27] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][26] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][25] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][24] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][23] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][22] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][21] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][20] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][19] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][18] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][17] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][16] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][15] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][14] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][13] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][12] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][11] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][10] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][30] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][29] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][28] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][27] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][26] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][25] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][24] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][23] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][22] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][21] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][20] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][19] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][18] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][17] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][16] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][15] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][14] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][13] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][12] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][11] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][10] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][0] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
-    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][31] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][8] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][5] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[1][31] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][31] will power up to Low File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][8] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][5] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][4] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
-    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[1][3] will power up to High File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][30] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][29] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][28] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][27] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][26] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][25] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][24] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][23] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][22] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][21] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][20] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][19] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][18] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][17] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][16] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][15] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][14] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][13] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][12] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][11] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][10] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][3] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[0][0] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][3] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][0] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][30] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][29] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][28] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][27] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][26] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][25] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][24] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][23] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][22] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][21] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][20] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][19] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][18] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][17] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][16] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][15] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][14] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][13] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][12] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][11] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_1|bull_pos_out[1][10] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][3] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][0] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][30] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][29] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][28] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][27] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][26] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][25] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][24] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][23] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][22] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][21] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][20] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][19] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][18] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][17] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][16] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][15] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][14] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][13] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][12] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][11] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[1][10] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][30] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][29] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][28] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][27] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][26] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][25] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][24] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][23] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][22] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][21] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][20] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][19] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][18] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][17] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][16] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][15] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][14] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][13] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][12] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][11] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][10] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][3] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register bullet_location:bul_2|bull_pos_out[0][0] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/bullet_location.vhd Line: 26
+    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][8] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][5] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_1|tank_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[1][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][31] will power up to Low File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][8] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][5] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[0][4] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
+    Critical Warning (18010): Register tank_location:tank_2|tank_pos_out[1][3] will power up to High File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/tank_location.vhd Line: 25
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1653 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1786 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 1568 logic cells
+    Info (21061): Implemented 1701 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 147 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Thu Dec  5 21:27:50 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 146 warnings
+    Info: Peak virtual memory: 4898 megabytes
+    Info: Processing ended: Thu Dec  5 22:09:46 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 

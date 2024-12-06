@@ -85,7 +85,7 @@ state.RESET3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 state.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |tankgame2|collision:collision_1|current_state
+State Machine - |tankgame2|collision:collision_2|current_state
 Name current_state.done current_state.win current_state.check_hit current_state.start 
 current_state.start 0 0 0 0 
 current_state.check_hit 0 0 1 1 
@@ -93,16 +93,6 @@ current_state.win 0 1 0 1
 current_state.done 1 0 0 1 
 
 State Machine - |tankgame2|bullet_control:bullet_2_control|current_state
-Name current_state.done current_state.win current_state.die current_state.get_hit current_state.hit_boundary current_state.move_bullet current_state.start 
-current_state.start 0 0 0 0 0 0 0 
-current_state.move_bullet 0 0 0 0 0 1 1 
-current_state.hit_boundary 0 0 0 0 1 0 1 
-current_state.get_hit 0 0 0 1 0 0 1 
-current_state.die 0 0 1 0 0 0 1 
-current_state.win 0 1 0 0 0 0 1 
-current_state.done 1 0 0 0 0 0 1 
-
-State Machine - |tankgame2|bullet_control:bullet_1_control|current_state
 Name current_state.done current_state.win current_state.die current_state.get_hit current_state.hit_boundary current_state.move_bullet current_state.start 
 current_state.start 0 0 0 0 0 0 0 
 current_state.move_bullet 0 0 0 0 0 1 1 
@@ -120,6 +110,23 @@ current_state.move_left 0 0 0 1 0 1
 current_state.die 0 0 1 0 0 1 
 current_state.win 0 1 0 0 0 1 
 current_state.done 1 0 0 0 0 1 
+
+State Machine - |tankgame2|collision:collision_1|current_state
+Name current_state.done current_state.win current_state.check_hit current_state.start 
+current_state.start 0 0 0 0 
+current_state.check_hit 0 0 1 1 
+current_state.win 0 1 0 1 
+current_state.done 1 0 0 1 
+
+State Machine - |tankgame2|bullet_control:bullet_1_control|current_state
+Name current_state.done current_state.win current_state.die current_state.get_hit current_state.hit_boundary current_state.move_bullet current_state.start 
+current_state.start 0 0 0 0 0 0 0 
+current_state.move_bullet 0 0 0 0 0 1 1 
+current_state.hit_boundary 0 0 0 0 1 0 1 
+current_state.get_hit 0 0 0 1 0 0 1 
+current_state.die 0 0 1 0 0 0 1 
+current_state.win 0 1 0 0 0 0 1 
+current_state.done 1 0 0 0 0 0 1 
 
 State Machine - |tankgame2|tank_control:tank_1_control|current_state
 Name current_state.done current_state.win current_state.die current_state.move_left current_state.move_right current_state.start 
