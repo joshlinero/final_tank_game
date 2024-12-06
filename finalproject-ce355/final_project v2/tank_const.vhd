@@ -24,8 +24,8 @@ package tank_const is
 	 constant TANK_2_BULL_INIT_POS : position := (TANK_2_BULL_POS_X, TANK_2_BULL_POS_Y);
 	 constant TANK_1_COLOR : std_logic_vector(2 downto 0) := "000";
 	 constant TANK_2_COLOR : std_logic_vector(2 downto 0) := "010";
-	 constant BULLET_H    : integer := 40;
-	 constant BULLET_W    : integer := 30;
+	 constant BULLET_H    : integer := 80;
+	 constant BULLET_W    : integer := 60;
 	 constant BULLET_START_Y : integer := 395;
 	 constant SPEED_SLOW   : std_logic_vector(2 downto 0) := "001";
     constant SPEED_MEDIUM : std_logic_vector(2 downto 0) := "010";

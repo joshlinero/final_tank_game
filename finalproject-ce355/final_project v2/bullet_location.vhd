@@ -29,10 +29,8 @@ begin
 		bull_pos_out(1) <= -1000;
 		
     elsif (rising_edge(clk)) then
-      if (we = '1') then
         bull_pos_out <= bull_pos_in;
 		  fired_out <= fired_in;
-      end if;
     end if;
   end process;
 end architecture behavioral;

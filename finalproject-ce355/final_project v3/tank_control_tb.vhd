@@ -5,7 +5,7 @@ use work.tank_const.all;
 use work.game_library.all;
 
 entity tb_tank_control is
-end tb_tank_control;
+end entity tb_tank_control;
 
 architecture testbench of tb_tank_control is
     -- Signals for the tank_control ports
@@ -17,21 +17,41 @@ architecture testbench of tb_tank_control is
     signal tank_display     : std_logic;
     signal tank_speed_in    : std_logic_vector(2 downto 0) := "001"; -- Speed = 1
 
+    -- Signals for the tank_location ports
+    signal tank_pos_in      : position := (0, 0);
+    signal tank_pos_out     : position;
+    signal speed_in         : std_logic_vector(2 downto 0) := "001"; -- Speed = 1
+    signal speed_out        : std_logic_vector(2 downto 0);
+
     -- Testbench clock period
     constant clk_period : time := 10 ns;
 
 begin
 
     -- Instantiate the tank_control module
-    uut: entity work.tank_control
+    tank_control_inst: entity work.tank_control
         port map(
             clk              => clk,
             rst_n            => rst_n,
             we               => we,
-            tank_curr_pos_in => tank_curr_pos_in,
-            tank_next_pos_out => tank_next_pos_out,
+            tank_curr_pos_in => tank_pos_out, -- Input from tank_location
+            tank_next_pos_out => tank_pos_in, -- Output to tank_location
             tank_display     => tank_display,
-            tank_speed_in    => tank_speed_in
+            tank_speed_in    => speed_out    -- Output from tank_location
+        );
+
+    -- Instantiate the tank_location module
+    tank_location_inst: entity work.tank_location
+        generic map(
+            tank_loc => TANK_1_INIT_POS -- Replace with your initial tank position constant
+        )
+        port map(
+            clk          => clk,
+            rst_n        => rst_n,
+            tank_pos_in  => tank_pos_in, -- Input from tank_control
+            tank_pos_out => tank_pos_out, -- Output to tank_control
+            speed_in     => tank_speed_in, -- Input from testbench
+            speed_out    => speed_out     -- Output to tank_control
         );
 
     -- Clock process
@@ -48,51 +68,48 @@ begin
     -- Testbench stimulus process
     stimulus_process: process
     begin
-        -- Test Reset
+        -- Apply Reset
         rst_n <= '1';
         wait for 2 * clk_period;
         rst_n <= '0';
         wait for clk_period;
-		  --rst_n <= '0';
-		  --wait for clk_period;
+        rst_n <= '1';
 
-        -- Test Start State -> Move Right
+        -- Test Case 1: Move Right
         we <= '1';
-        wait for 5 * clk_period; -- Allow time for transitions
+        tank_speed_in <= "010"; -- Speed = 2
+        wait for 10 * clk_period;
 
-        -- Test Move Right -> Move Left
-        tank_curr_pos_in(0) <= 639 - TANK_WIDTH; -- Near right boundary
-        wait for 2 * clk_period;
-		  tank_curr_pos_in(0) <= 640 - TANK_WIDTH; -- Near right boundary
-        wait for 2 * clk_period;
-
-        -- Test Move Left -> Move Right
-        tank_curr_pos_in(0) <= 1; -- Near left boundary
-        wait for 2 * clk_period;
-		  tank_curr_pos_in(0) <= 0; -- Near left boundary
-        wait for 2 * clk_period;
-
-        -- Test Die State
-        we <= '0'; -- Simulate a condition to enter "die"
-        wait for clk_period;
-        tank_curr_pos_in(0) <= 0; -- Trigger die state
+        -- Test Case 2: Boundary Check (Right Edge)
+        tank_pos_out(0) <= 639 - TANK_WIDTH; -- Near right boundary
         wait for 5 * clk_period;
 
-        -- Test Win State
+        -- Test Case 3: Boundary Check (Left Edge)
+        tank_pos_out(0) <= 1; -- Near left boundary
+        wait for 5 * clk_period;
+
+        -- Test Case 4: Reset and Move Left
         rst_n <= '0';
         wait for 2 * clk_period;
         rst_n <= '1';
-        we <= '1';
-        tank_curr_pos_in(0) <= 0; -- Reset to start state
-        wait for clk_period;
-        -- Add your win state condition here
+        tank_speed_in <= "001"; -- Speed = 1
+        tank_pos_out(0) <= 100; -- Start at position 100
+        wait for 10 * clk_period;
+
+        -- Test Case 5: Simulate Die State
+        we <= '0'; -- Disable updates to simulate "die" state
         wait for 5 * clk_period;
 
-        -- Test Done State
-        -- Add appropriate conditions to simulate entering 'done'
+        -- Test Case 6: Simulate Win State
+        rst_n <= '0';
+        wait for 2 * clk_period;
+        rst_n <= '1';
+        tank_pos_out(0) <= 0; -- Reset to start position
+        wait for 10 * clk_period;
 
-        -- Finish simulation
+        -- End simulation
         wait;
     end process;
 
 end architecture testbench;
+

@@ -95,12 +95,12 @@ begin
             else
                 colorAddress <= color_white;
             end if;
-				if ((tank_2_bul_pos(0) - BULLET_W) < pixel_column_int and pixel_column_int < (tank_2_bul_pos(0) + BULLET_W) and
-						(tank_2_bul_pos(1) - BULLET_H) < pixel_row_int and pixel_row_int < (tank_2_bul_pos(1) + BULLET_H) and 
+				if ((tank_2_bul_pos(0)) < pixel_column_int and pixel_column_int < (tank_2_bul_pos(0) + BULLET_W) and
+						(tank_2_bul_pos(1)) < pixel_row_int and pixel_row_int < (tank_2_bul_pos(1) + BULLET_H) and 
 						tank_2_bul_disp_flag = '1') then
 					   colorAddress <= color_green;
-				elsif ((tank_1_bul_pos(0) - BULLET_W) < pixel_column_int and pixel_column_int < (tank_1_bul_pos(0) + BULLET_W) and
-						(tank_1_bul_pos(1) - BULLET_H) < pixel_row_int and pixel_row_int < (tank_1_bul_pos(1) + BULLET_H) and
+				elsif ((tank_1_bul_pos(0)) < pixel_column_int and pixel_column_int < (tank_1_bul_pos(0) + BULLET_W) and
+						(tank_1_bul_pos(1)) < pixel_row_int and pixel_row_int < (tank_1_bul_pos(1) + BULLET_H) and
 						tank_1_bul_disp_flag = '1') then
 					   colorAddress <= color_yellow;
 				end if;
