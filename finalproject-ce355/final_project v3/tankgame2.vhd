@@ -93,6 +93,9 @@ architecture structure of tankgame2 is
 	signal tank_2_bul_curr_fire:	std_logic := '0';
 	signal tank_2_bul_next_fire:	std_logic := '0';
 	
+	signal tank_1_bul_dir : std_logic := '0';
+	signal tank_2_bul_dir : std_logic := '1';
+	
 	signal score_1_signal : integer;
 	signal score_2_signal : integer;
 	signal score_1_slv : std_logic_vector(3 downto 0);
@@ -220,7 +223,21 @@ architecture structure of tankgame2 is
 		tank_speed_in        : in std_logic_vector(2 downto 0)
 	);	
 	end component tank_control;
+	
 	-- bullet control
+	component bullet_control is
+		port(
+		clk, rst_n, we  : in std_logic;
+		
+		fire            : in std_logic;
+		bullet_pos_in      : in position;
+		bullet_pos_out     : out position;
+		bullet_fired_in    : in std_logic;
+		bullet_fired_out   : out std_logic;
+		bullet_disp        : out std_logic;
+		direction            : in std_logic
+	);
+	end component bullet_control;
 	-- speed control
    -- collision control
 	-- game win control
@@ -541,6 +558,21 @@ begin
 				speed_in => tank_2_next_speed,
 				speed_out => tank_2_curr_speed
 			);
+			
+		bullet_1_control : bullet_control
+			port map(
+				clk => clk,
+				rst_n => reset,
+				we => global_we,
+				fire => tank_1_fire_key,
+				bullet_pos_in => tank_1_bul_curr_pos,
+				bullet_pos_out => tank_1_bul_next_pos,
+				bullet_fired_in => tank_1_bul_curr_fire,
+				bullet_fired_out => tank_1_bul_next_fire,
+				bullet_disp => tank_1_bul_disp_flag,
+				direction => tank_1_bul_dir
+			);
+			
 			
 		bul_1 : bullet_location
 			generic map(
