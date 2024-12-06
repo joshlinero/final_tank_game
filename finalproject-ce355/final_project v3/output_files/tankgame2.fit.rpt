@@ -1,6 +1,6 @@
 Fitter report for tankgame2
-Fri Dec  6 13:08:10 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Fri Dec  6 13:55:51 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -68,26 +68,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------------+
-; Fitter Summary                                                                          ;
-+------------------------------------+----------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Dec  6 13:08:10 2024              ;
-; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
-; Revision Name                      ; tankgame2                                          ;
-; Top-level Entity Name              ; tankgame2                                          ;
-; Family                             ; Cyclone IV E                                       ;
-; Device                             ; EP4CE115F29C7                                      ;
-; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 1,983 / 114,480 ( 2 % )                            ;
-;     Total combinational functions  ; 1,895 / 114,480 ( 2 % )                            ;
-;     Dedicated logic registers      ; 615 / 114,480 ( < 1 % )                            ;
-; Total registers                    ; 615                                                ;
-; Total pins                         ; 61 / 529 ( 12 % )                                  ;
-; Total virtual pins                 ; 0                                                  ;
-; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                          ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                    ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                      ;
-+------------------------------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Fitter Summary                                                                      ;
++------------------------------------+------------------------------------------------+
+; Fitter Status                      ; Successful - Fri Dec  6 13:55:51 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; tankgame2                                      ;
+; Top-level Entity Name              ; tankgame2                                      ;
+; Family                             ; Cyclone IV E                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
+; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 1,983 / 114,480 ( 2 % )                        ;
+;     Total combinational functions  ; 1,895 / 114,480 ( 2 % )                        ;
+;     Dedicated logic registers      ; 615 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 615                                            ;
+; Total pins                         ; 61 / 529 ( 12 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 192 / 3,981,312 ( < 1 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -155,19 +155,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
-; Maximum used               ; 6           ;
+; Average used               ; 1.14        ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   1.2%      ;
-;     Processor 3            ;   1.1%      ;
+;     Processor 3            ;   1.0%      ;
 ;     Processor 4            ;   1.0%      ;
 ;     Processor 5            ;   1.0%      ;
-;     Processor 6            ;   1.0%      ;
+;     Processor 6            ;   0.9%      ;
+;     Processor 7            ;   0.9%      ;
+;     Processor 8            ;   0.9%      ;
+;     Processors 9-16        ;   0.9%      ;
 +----------------------------+-------------+
 
 
@@ -209,7 +212,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.pin.
+The pin-out file can be found in C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -2413,11 +2416,12 @@ Note: This table only shows the top 100 path(s) that have the largest delay adde
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "tankgame2"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device EP4CE40F29C7 is compatible
     Info (176445): Device EP4CE40F29I7 is compatible
@@ -2443,37 +2447,37 @@ Info (332111): Found 1 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   20.000          clk
-Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 12
+Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 12
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node de2lcd:lcd_message|CLK_400HZ File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
-        Info (176357): Destination node bullet_control:bullet_1_control|current_state.done File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
-        Info (176357): Destination node bullet_control:bullet_1_control|current_state.move_bullet File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
-        Info (176357): Destination node bullet_control:bullet_2_control|current_state.done File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
-        Info (176357): Destination node bullet_control:bullet_2_control|current_state.move_bullet File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
-        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
-Info (176353): Automatically promoted node de2lcd:lcd_message|CLK_400HZ  File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
+        Info (176357): Destination node de2lcd:lcd_message|CLK_400HZ File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
+        Info (176357): Destination node bullet_control:bullet_1_control|current_state.done File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
+        Info (176357): Destination node bullet_control:bullet_1_control|current_state.move_bullet File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
+        Info (176357): Destination node bullet_control:bullet_2_control|current_state.done File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
+        Info (176357): Destination node bullet_control:bullet_2_control|current_state.move_bullet File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/bullet_control.vhd Line: 29
+        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
+Info (176353): Automatically promoted node de2lcd:lcd_message|CLK_400HZ  File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node de2lcd:lcd_message|CLK_400HZ~0 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
-Info (176353): Automatically promoted node VGA_SYNC:sync|pixel_clock_int  File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 55
+        Info (176357): Destination node de2lcd:lcd_message|CLK_400HZ~0 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v2/de2lcd.vhd Line: 26
+Info (176353): Automatically promoted node VGA_SYNC:sync|pixel_clock_int  File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 55
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node VGA_SYNC:sync|pixel_clock_int~0 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 55
-        Info (176357): Destination node VGA_clk~output File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 21
-Info (176353): Automatically promoted node ps2:keyboard|keyboard:u1|keyboard_clk_filtered  File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
+        Info (176357): Destination node VGA_SYNC:sync|pixel_clock_int~0 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/Mini_project_vga/vga_sync.vhd Line: 55
+        Info (176357): Destination node VGA_clk~output File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 21
+Info (176353): Automatically promoted node ps2:keyboard|keyboard:u1|keyboard_clk_filtered  File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node ps2:keyboard|keyboard:u1|ready_set File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 18
-        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~1 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
-        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~2 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
-        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~3 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
-Info (176353): Automatically promoted node ps2:keyboard|keyboard:u1|scan_ready  File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 10
+        Info (176357): Destination node ps2:keyboard|keyboard:u1|ready_set File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 18
+        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~1 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
+        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~2 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
+        Info (176357): Destination node ps2:keyboard|keyboard:u1|keyboard_clk_filtered~3 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 19
+Info (176353): Automatically promoted node ps2:keyboard|keyboard:u1|scan_ready  File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/keyboard.vhd Line: 10
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node input_proc~0
         Info (176357): Destination node ps2:keyboard|oneshot:pulser|process_0~0
-        Info (176357): Destination node ps2:keyboard|oneshot:pulser|delay~0 File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 15
+        Info (176357): Destination node ps2:keyboard|oneshot:pulser|delay~0 File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/miniprojects/ps2/oneshot.vhd Line: 15
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -2483,7 +2487,7 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 11% of the available device resources in the region that extends from location X23_Y37 to location X33_Y48
@@ -2491,32 +2495,32 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.42 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.56 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169064): Following 8 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin DATA_BUS[0] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[1] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[2] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[3] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[4] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[5] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[6] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-    Info (169065): Pin DATA_BUS[7] has a permanently enabled output enable File: C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
-Info (144001): Generated suppressed messages file C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 5898 megabytes
-    Info: Processing ended: Fri Dec  6 13:08:10 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (169065): Pin DATA_BUS[0] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[1] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[2] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[3] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[4] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[5] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[6] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+    Info (169065): Pin DATA_BUS[7] has a permanently enabled output enable File: C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/tankgame2.vhd Line: 40
+Info (144001): Generated suppressed messages file C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 6723 megabytes
+    Info: Processing ended: Fri Dec  6 13:55:51 2024
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.fit.smsg.
+The suppressed messages can be found in C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.fit.smsg.
 
 

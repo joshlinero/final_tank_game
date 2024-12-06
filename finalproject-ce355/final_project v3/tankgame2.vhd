@@ -30,7 +30,7 @@ entity tankgame2 is
 		seg_out_1	:	out std_logic_vector(6 downto 0);
 		seg_out_2	:	out std_logic_vector(6 downto 0);
 		
-		-- LCD (to implement)
+		-- LCD
 		LCD_RS : out std_logic;
 		LCD_E  : out std_logic;
 		LCD_ON  : out std_logic;

@@ -1,6 +1,6 @@
 Timing Analyzer report for tankgame2
-Fri Dec  6 13:08:17 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+Fri Dec  6 13:55:58 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
 ---------------------
@@ -79,18 +79,18 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                            ;
-+-----------------------+------------------------------------------------------------+
-; Quartus Prime Version ; Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                                     ;
-; Revision Name         ; tankgame2                                                  ;
-; Device Family         ; Cyclone IV E                                               ;
-; Device Name           ; EP4CE115F29C7                                              ;
-; Timing Models         ; Final                                                      ;
-; Delay Model           ; Combined                                                   ;
-; Rise/Fall Delays      ; Enabled                                                    ;
-+-----------------------+------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; tankgame2                                              ;
+; Device Family         ; Cyclone IV E                                           ;
+; Device Name           ; EP4CE115F29C7                                          ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Combined                                               ;
+; Rise/Fall Delays      ; Enabled                                                ;
++-----------------------+--------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -98,18 +98,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.19        ;
-; Maximum used               ; 6           ;
+; Average used               ; 1.43        ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   7.2%      ;
-;     Processor 3            ;   4.5%      ;
-;     Processor 4            ;   3.0%      ;
-;     Processors 5-6         ;   2.4%      ;
+;     Processor 2            ;   8.3%      ;
+;     Processor 3            ;   5.5%      ;
+;     Processor 4            ;   2.7%      ;
+;     Processors 5-16        ;   2.2%      ;
 +----------------------------+-------------+
 
 
@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------+--------------------------+
 ; SDC File Path                        ; Status ; Read at                  ;
 +--------------------------------------+--------+--------------------------+
-; ../final_project v2/tankgame.out.sdc ; OK     ; Fri Dec  6 13:08:16 2024 ;
+; ../final_project v2/tankgame.out.sdc ; OK     ; Fri Dec  6 13:55:57 2024 ;
 +--------------------------------------+--------+--------------------------+
 
 
@@ -333,8 +333,8 @@ No paths to report.
 ; 0.434 ; ps2:keyboard|keyboard:u1|filter[7]                   ; ps2:keyboard|keyboard:u1|filter[6]                   ; clk          ; clk         ; 0.000        ; 0.082      ; 0.702      ;
 ; 0.436 ; ps2:keyboard|keyboard:u1|filter[1]                   ; ps2:keyboard|keyboard:u1|filter[0]                   ; clk          ; clk         ; 0.000        ; 0.082      ; 0.704      ;
 ; 0.436 ; ps2:keyboard|keyboard:u1|filter[5]                   ; ps2:keyboard|keyboard:u1|filter[4]                   ; clk          ; clk         ; 0.000        ; 0.082      ; 0.704      ;
-; 0.440 ; de2lcd:lcd_message|CLK_400HZ                         ; de2lcd:lcd_message|CLK_400HZ                         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; bullet_control:bullet_2_control|current_state.done   ; bullet_control:bullet_2_control|current_state.done   ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; de2lcd:lcd_message|CLK_400HZ                         ; de2lcd:lcd_message|CLK_400HZ                         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; bullet_control:bullet_1_control|current_state.done   ; bullet_control:bullet_1_control|current_state.done   ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.442 ; ps2:keyboard|keyboard:u1|filter[2]                   ; ps2:keyboard|keyboard:u1|filter[1]                   ; clk          ; clk         ; 0.000        ; 0.082      ; 0.710      ;
 ; 0.453 ; game_winner:gamewin1|current_state.scored            ; game_winner:gamewin1|current_state.check_winner      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.720      ;
@@ -581,6 +581,12 @@ No paths to report.
 ; 0.354 ; collision:collision_1|current_state.start            ; collision:collision_1|current_state.start            ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; tank_location:tank_1|tank_pos_out[1][31]             ; tank_location:tank_1|tank_pos_out[1][31]             ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; tank_control:tank_1_control|current_state.done       ; tank_control:tank_1_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.355 ; tank_control:tank_2_control|current_state.done       ; tank_control:tank_2_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; tank_control:tank_1_control|current_state.move_left  ; tank_control:tank_1_control|current_state.move_left  ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; game_winner:gamewin2|winner_reg                      ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|current_state.done              ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; tank_1_speed3_key                                    ; tank_1_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; tank_2_speed1_key                                    ; tank_2_speed1_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; bullet_control:bullet_2_control|current_state.start  ; bullet_control:bullet_2_control|current_state.start  ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; game_winner:gamewin2|current_state.start             ; game_winner:gamewin2|current_state.start             ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; collision:collision_2|current_state.check_hit        ; collision:collision_2|current_state.check_hit        ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
@@ -588,19 +594,13 @@ No paths to report.
 ; 0.355 ; tank_1_speed2_key                                    ; tank_1_speed2_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; collision:collision_2|current_state.start            ; collision:collision_2|current_state.start            ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; tank_2_speed3_key                                    ; tank_2_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; tank_control:tank_2_control|current_state.done       ; tank_control:tank_2_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; tank_control:tank_1_control|current_state.move_left  ; tank_control:tank_1_control|current_state.move_left  ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; game_winner:gamewin2|winner_reg                      ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|current_state.done              ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; tank_1_speed3_key                                    ; tank_1_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; tank_2_speed1_key                                    ; tank_2_speed1_key                                    ; clk          ; clk         ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.365 ; tank_control:tank_1_control|current_state.die        ; tank_control:tank_1_control|current_state.die        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.608      ;
 ; 0.366 ; tank_control:tank_2_control|current_state.die        ; tank_control:tank_2_control|current_state.die        ; clk          ; clk         ; 0.000        ; 0.071      ; 0.608      ;
 ; 0.377 ; ps2:keyboard|oneshot:pulser|delay                    ; ps2:keyboard|oneshot:pulser|pulse_out                ; clk          ; clk         ; 0.000        ; 0.074      ; 0.622      ;
 ; 0.380 ; game_winner:gamewin1|current_state.start             ; game_winner:gamewin1|current_state.scored            ; clk          ; clk         ; 0.000        ; 0.072      ; 0.623      ;
 ; 0.380 ; collision:collision_2|current_state.start            ; collision:collision_2|current_state.check_hit        ; clk          ; clk         ; 0.000        ; 0.071      ; 0.622      ;
-; 0.387 ; de2lcd:lcd_message|CLK_400HZ                         ; de2lcd:lcd_message|CLK_400HZ                         ; clk          ; clk         ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; bullet_control:bullet_2_control|current_state.done   ; bullet_control:bullet_2_control|current_state.done   ; clk          ; clk         ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; de2lcd:lcd_message|CLK_400HZ                         ; de2lcd:lcd_message|CLK_400HZ                         ; clk          ; clk         ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; bullet_control:bullet_1_control|current_state.done   ; bullet_control:bullet_1_control|current_state.done   ; clk          ; clk         ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.396 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.071      ; 0.638      ;
 ; 0.400 ; ps2:keyboard|keyboard:u1|filter[7]                   ; ps2:keyboard|keyboard:u1|filter[6]                   ; clk          ; clk         ; 0.000        ; 0.074      ; 0.645      ;
@@ -834,6 +834,10 @@ No paths to report.
 ; 0.181 ; tank_control:tank_2_control|current_state.move_right ; tank_control:tank_2_control|current_state.move_right ; clk          ; clk         ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; tank_control:tank_2_control|current_state.move_left  ; tank_control:tank_2_control|current_state.move_left  ; clk          ; clk         ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; ps2:keyboard|oneshot:pulser|delay                    ; ps2:keyboard|oneshot:pulser|delay                    ; clk          ; clk         ; 0.000        ; 0.042      ; 0.307      ;
+; 0.182 ; tank_control:tank_2_control|current_state.done       ; tank_control:tank_2_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; tank_control:tank_1_control|current_state.move_left  ; tank_control:tank_1_control|current_state.move_left  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; game_winner:gamewin2|winner_reg                      ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|current_state.done              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; bullet_control:bullet_2_control|current_state.start  ; bullet_control:bullet_2_control|current_state.start  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; game_winner:gamewin1|current_state.done              ; game_winner:gamewin1|current_state.done              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; game_winner:gamewin1|winner_reg                      ; game_winner:gamewin1|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
@@ -844,20 +848,16 @@ No paths to report.
 ; 0.182 ; tank_control:tank_1_control|current_state.move_right ; tank_control:tank_1_control|current_state.move_right ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; tank_location:tank_1|tank_pos_out[1][31]             ; tank_location:tank_1|tank_pos_out[1][31]             ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; tank_control:tank_1_control|current_state.done       ; tank_control:tank_1_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; tank_control:tank_2_control|current_state.done       ; tank_control:tank_2_control|current_state.done       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; tank_control:tank_1_control|current_state.move_left  ; tank_control:tank_1_control|current_state.move_left  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; game_winner:gamewin2|winner_reg                      ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|current_state.done              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.183 ; tank_1_speed3_key                                    ; tank_1_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; tank_2_speed1_key                                    ; tank_2_speed1_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.183 ; game_winner:gamewin2|current_state.start             ; game_winner:gamewin2|current_state.start             ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.183 ; collision:collision_2|current_state.check_hit        ; collision:collision_2|current_state.check_hit        ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.183 ; tank_1_speed2_key                                    ; tank_1_speed2_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.183 ; collision:collision_2|current_state.start            ; collision:collision_2|current_state.start            ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.183 ; tank_2_speed3_key                                    ; tank_2_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
-; 0.183 ; tank_1_speed3_key                                    ; tank_1_speed3_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
-; 0.183 ; tank_2_speed1_key                                    ; tank_2_speed1_key                                    ; clk          ; clk         ; 0.000        ; 0.040      ; 0.307      ;
 ; 0.188 ; game_winner:gamewin2|current_state.done              ; game_winner:gamewin2|winner_reg                      ; clk          ; clk         ; 0.000        ; 0.041      ; 0.313      ;
-; 0.189 ; tank_control:tank_1_control|current_state.die        ; tank_control:tank_1_control|current_state.die        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.314      ;
 ; 0.189 ; tank_control:tank_2_control|current_state.die        ; tank_control:tank_2_control|current_state.die        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.314      ;
+; 0.189 ; tank_control:tank_1_control|current_state.die        ; tank_control:tank_1_control|current_state.die        ; clk          ; clk         ; 0.000        ; 0.041      ; 0.314      ;
 ; 0.191 ; ps2:keyboard|oneshot:pulser|delay                    ; ps2:keyboard|oneshot:pulser|pulse_out                ; clk          ; clk         ; 0.000        ; 0.042      ; 0.317      ;
 ; 0.191 ; ps2:keyboard|keyboard:u1|filter[4]                   ; ps2:keyboard|keyboard:u1|filter[3]                   ; clk          ; clk         ; 0.000        ; 0.043      ; 0.318      ;
 ; 0.191 ; ps2:keyboard|keyboard:u1|filter[7]                   ; ps2:keyboard|keyboard:u1|filter[6]                   ; clk          ; clk         ; 0.000        ; 0.043      ; 0.318      ;
@@ -1452,12 +1452,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
-    Info: Processing started: Fri Dec  6 13:08:15 2024
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Dec  6 13:55:56 2024
 Info: Command: quartus_sta tankgame2 -c tankgame2
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): The Timing Analyzer is analyzing 2 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -1512,17 +1512,17 @@ Info (332146): Worst-case minimum pulse width slack is 0.500
     Info (332119):     0.500               0.000 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info (144001): Generated suppressed messages file C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sta.smsg
+Info (144001): Generated suppressed messages file C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sta.smsg
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4889 megabytes
-    Info: Processing ended: Fri Dec  6 13:08:17 2024
+    Info: Peak virtual memory: 5012 megabytes
+    Info: Processing ended: Fri Dec  6 13:55:58 2024
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +-------------------------------------+
 ; Timing Analyzer Suppressed Messages ;
 +-------------------------------------+
-The suppressed messages can be found in C:/Users/joshu/OneDrive/Documents/Masters-Northwestern/Masters_Fall/CE-355/final_tank_game_2/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sta.smsg.
+The suppressed messages can be found in C:/Users/antb2/Desktop/School/CE 355/Final/final_tank_game/finalproject-ce355/final_project v3/output_files/tankgame2.sta.smsg.
 
 
