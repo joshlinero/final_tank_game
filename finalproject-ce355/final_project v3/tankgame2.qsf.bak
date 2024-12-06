@@ -1,0 +1,130 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2024  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 23.1std.1 Build 993 05/14/2024 SC Standard Edition
+# Date created = 09:17:46  December 05, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		tankgame2_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY tankgame2
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:17:46  DECEMBER 05, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_Y2 -to clk
+set_location_assignment PIN_AG14 -to clk_50MHZ
+set_location_assignment PIN_G13 -to HORI_sync
+set_location_assignment PIN_G6 -to keyboard_clk
+set_location_assignment PIN_H5 -to keyboard_data
+set_location_assignment PIN_E12 -to VGA_R[0]
+set_location_assignment PIN_E11 -to VGA_R[1]
+set_location_assignment PIN_D10 -to VGA_R[2]
+set_location_assignment PIN_F12 -to VGA_R[3]
+set_location_assignment PIN_G10 -to VGA_R[4]
+set_location_assignment PIN_J12 -to VGA_R[5]
+set_location_assignment PIN_H8 -to VGA_R[6]
+set_location_assignment PIN_H10 -to VGA_R[7]
+set_location_assignment PIN_G8 -to VGA_G[0]
+set_location_assignment PIN_G11 -to VGA_G[1]
+set_location_assignment PIN_F8 -to VGA_G[2]
+set_location_assignment PIN_H12 -to VGA_G[3]
+set_location_assignment PIN_C8 -to VGA_G[4]
+set_location_assignment PIN_B8 -to VGA_G[5]
+set_location_assignment PIN_F10 -to VGA_G[6]
+set_location_assignment PIN_C9 -to VGA_G[7]
+set_location_assignment PIN_A12 -to VGA_clk
+set_location_assignment PIN_F11 -to VGA_BLANK
+set_location_assignment PIN_B10 -to VGA_B[0]
+set_location_assignment PIN_A10 -to VGA_B[1]
+set_location_assignment PIN_C11 -to VGA_B[2]
+set_location_assignment PIN_B11 -to VGA_B[3]
+set_location_assignment PIN_A11 -to VGA_B[4]
+set_location_assignment PIN_C12 -to VGA_B[5]
+set_location_assignment PIN_D11 -to VGA_B[6]
+set_location_assignment PIN_D12 -to VGA_B[7]
+set_location_assignment PIN_C13 -to VERT_sync
+set_location_assignment PIN_AD17 -to seg_out_2[0]
+set_location_assignment PIN_AE17 -to seg_out_2[1]
+set_location_assignment PIN_AG17 -to seg_out_2[2]
+set_location_assignment PIN_AH17 -to seg_out_2[3]
+set_location_assignment PIN_AF17 -to seg_out_2[4]
+set_location_assignment PIN_AG18 -to seg_out_2[5]
+set_location_assignment PIN_AA4 -to seg_out_2[6]
+set_location_assignment PIN_G18 -to seg_out_1[0]
+set_location_assignment PIN_F22 -to seg_out_1[1]
+set_location_assignment PIN_E17 -to seg_out_1[2]
+set_location_assignment PIN_L26 -to seg_out_1[3]
+set_location_assignment PIN_L25 -to seg_out_1[4]
+set_location_assignment PIN_J22 -to seg_out_1[5]
+set_location_assignment PIN_H22 -to seg_out_1[6]
+set_global_assignment -name SDC_FILE "../final_project v2/tankgame.out.sdc"
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/ps2.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/oneshot.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/ps2/keyboard.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/vga_sync.vhd
+set_global_assignment -name VHDL_FILE ../miniprojects/Mini_project_vga/colorROM.vhd
+set_global_assignment -name VHDL_FILE "../final_project v2/tank_location.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/pll_counter.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/pixelGenerator.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/leddcd.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/game_library.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/de2lcd.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/bullet_location.vhd"
+set_global_assignment -name VHDL_FILE "../final_project v2/tank_const.vhd"
+set_global_assignment -name VHDL_FILE tankgame2.vhd
+set_global_assignment -name VHDL_FILE tank_control.vhd
+set_global_assignment -name VHDL_FILE tank_control_tb.vhd
+set_location_assignment PIN_AB28 -to reset_n
+set_location_assignment PIN_G19 -to test_led1
+set_location_assignment PIN_M23 -to we_in
+set_global_assignment -name VHDL_FILE bullet_control.vhd
+<<<<<<< HEAD
+set_global_assignment -name VHDL_FILE bullet_control_tb.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE collision.vhd
+=======
+set_global_assignment -name VHDL_FILE speed_control.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+>>>>>>> 5fbee2aa0c73850714db238987c651136be4c326
